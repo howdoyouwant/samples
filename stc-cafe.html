@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>STC Cafe — 73 Wentworth Ave, Sydney</title>
+<meta name="description" content="STC Cafe, Wentworth Ave, Sydney — loaded breakfast wraps and coffee, open from 6:30am. Pickup and delivery available.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;600;700&family=Noto+Sans+SC:wght@400;600;700&family=Noto+Sans+KR:wght@400;600;700&family=Noto+Sans+JP:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --espresso:#241509;
+    --espresso-2:#39220f;
+    --parchment:#F7EFDA;
+    --parchment-dim:#EADFC2;
+    --ink:#2A1B10;
+    --yolk:#E8A33D;
+    --yolk-soft:#F0C077;
+    --rust:#B5502E;
+    --avocado:#6E7F44;
+    --line:rgba(247,239,218,.16);
+    --line-dark:rgba(42,27,16,.14);
+    --radius:6px;
+    --wrap:1120px;
+  }
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--parchment);
+    color:var(--ink);
+    font-family:'Inter',system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.5;
+  }
+  body[data-font="ar"]{font-family:'Noto Sans Arabic','Inter',sans-serif;}
+  body[data-font="zh"]{font-family:'Noto Sans SC','Inter',sans-serif;}
+  body[data-font="ko"]{font-family:'Noto Sans KR','Inter',sans-serif;}
+  body[data-font="ja"]{font-family:'Noto Sans JP','Inter',sans-serif;}
+  body[data-font="hi"]{font-family:'Noto Sans Devanagari','Inter',sans-serif;}
+  h1,h2,.display{
+    font-family:'Bricolage Grotesque','Inter',sans-serif;
+    font-weight:800;
+    letter-spacing:-0.01em;
+    margin:0;
+    color:inherit;
+  }
+  body[data-font="ar"] h1, body[data-font="ar"] h2{font-family:'Noto Sans Arabic','Bricolage Grotesque',sans-serif;}
+  body[data-font="zh"] h1, body[data-font="zh"] h2{font-family:'Noto Sans SC','Bricolage Grotesque',sans-serif;}
+  body[data-font="ko"] h1, body[data-font="ko"] h2{font-family:'Noto Sans KR','Bricolage Grotesque',sans-serif;}
+  body[data-font="ja"] h1, body[data-font="ja"] h2{font-family:'Noto Sans JP','Bricolage Grotesque',sans-serif;}
+  body[data-font="hi"] h1, body[data-font="hi"] h2{font-family:'Noto Sans Devanagari','Bricolage Grotesque',sans-serif;}
+  a{color:inherit;}
+  img,svg{max-width:100%;display:block;}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px;}
+  :focus-visible{outline:2px solid var(--rust);outline-offset:3px;}
+
+  /* ---------- Language switcher ---------- */
+  .lang-bar{
+    position:absolute;top:20px;right:24px;z-index:5;
+  }
+  [dir="rtl"] .lang-bar{right:auto;left:24px;}
+  .lang-select{
+    appearance:none;-webkit-appearance:none;
+    background:rgba(247,239,218,.08);
+    border:1px solid var(--line);
+    color:var(--parchment);
+    font-family:'Inter',sans-serif;
+    font-size:.85rem;
+    font-weight:500;
+    padding:9px 34px 9px 14px;
+    border-radius:999px;
+    cursor:pointer;
+  }
+  [dir="rtl"] .lang-select{padding:9px 14px 9px 34px;}
+  .lang-wrap{position:relative;display:inline-block;}
+  .lang-wrap::after{
+    content:"";
+    position:absolute;right:14px;top:50%;
+    width:7px;height:7px;
+    border-right:1.5px solid var(--parchment);
+    border-bottom:1.5px solid var(--parchment);
+    transform:translateY(-70%) rotate(45deg);
+    pointer-events:none;
+  }
+  [dir="rtl"] .lang-wrap::after{right:auto;left:14px;}
+  .lang-select option{color:#111;background:#fff;}
+
+  /* footer language links */
+  .footer-langs{display:flex;flex-wrap:wrap;gap:6px 12px;margin-top:14px;}
+  .footer-langs button{
+    background:none;border:none;color:var(--parchment-dim);
+    font-family:'Inter',sans-serif;font-size:.8rem;cursor:pointer;padding:2px 0;
+    opacity:.75;
+  }
+  .footer-langs button:hover{opacity:1;text-decoration:underline;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    background:
+      radial-gradient(ellipse 620px 460px at 82% 18%, rgba(232,163,61,.16), transparent 65%),
+      linear-gradient(175deg, var(--espresso) 0%, var(--espresso-2) 100%);
+    color:var(--parchment);
+    padding:88px 0 64px;
+    overflow:hidden;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:48px;
+    align-items:center;
+  }
+  .badge{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:.85rem;color:var(--yolk-soft);
+    margin-bottom:22px;font-weight:600;
+  }
+  .badge::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--yolk);flex:none;}
+  h1{font-size:clamp(2.3rem,5.4vw,3.9rem);line-height:1.04;}
+  .subhead{
+    margin-top:20px;max-width:46ch;
+    font-size:1.08rem;color:var(--parchment-dim);
+  }
+  .cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px;}
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;
+    padding:14px 24px;border-radius:var(--radius);
+    font-weight:600;font-size:.98rem;
+    text-decoration:none;border:1px solid transparent;
+    transition:transform .15s ease, background .15s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--rust);color:var(--parchment);}
+  .btn-primary:hover{background:#c65b34;}
+  .btn-ghost{background:transparent;color:var(--parchment);border-color:var(--line);}
+  .btn-ghost:hover{background:rgba(247,239,218,.08);}
+
+  .stats{
+    display:flex;gap:0;margin-top:52px;
+    border-top:1px solid var(--line);
+    padding-top:22px;
+  }
+  .stat{padding-right:32px;margin-right:32px;border-right:1px solid var(--line);}
+  .stat:last-child{border-right:none;margin-right:0;padding-right:0;}
+  [dir="rtl"] .stat{padding-right:0;margin-right:0;border-right:none;padding-left:32px;margin-left:32px;border-left:1px solid var(--line);}
+  [dir="rtl"] .stat:last-child{padding-left:0;margin-left:0;border-left:none;}
+  .stat-num{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.5rem;display:flex;align-items:center;gap:6px;}
+  .stat-label{font-size:.82rem;color:var(--parchment-dim);margin-top:2px;}
+  .star{width:16px;height:16px;flex:none;}
+
+  /* hero illustration */
+  .illustration{position:relative;}
+  .plate{
+    width:100%;max-width:400px;margin:0 auto;
+    animation:float 6s ease-in-out infinite;
+  }
+  @keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
+  .steam{transform-origin:center;animation:rise 3.4s ease-in-out infinite;}
+  .steam.s2{animation-delay:.6s;}
+  .steam.s3{animation-delay:1.2s;}
+  @keyframes rise{
+    0%{opacity:0;transform:translateY(4px) scaleY(.9);}
+    35%{opacity:.85;}
+    100%{opacity:0;transform:translateY(-22px) scaleY(1.05);}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .plate{animation:none;}
+    .steam{animation:none;opacity:.5;}
+  }
+
+  /* ---------- Sections ---------- */
+  section{padding:76px 0;}
+  .section-head{max-width:52ch;margin-bottom:44px;}
+  .eyebrow-note{font-size:.85rem;color:#6b5a44;margin-top:10px;}
+  h2{font-size:clamp(1.7rem,3.4vw,2.4rem);}
+
+  .find-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
+  .info-row{display:flex;gap:16px;padding:18px 0;border-top:1px solid var(--line-dark);}
+  .info-row:last-child{border-bottom:1px solid var(--line-dark);}
+  .info-icon{flex:none;width:22px;height:22px;margin-top:2px;color:var(--rust);}
+  .info-label{font-size:.8rem;color:#6b5a44;margin-bottom:3px;}
+  .info-value{font-weight:600;font-size:1.02rem;}
+  .info-value a{text-decoration:none;border-bottom:1px solid var(--line-dark);}
+  .map-frame{
+    border-radius:var(--radius);overflow:hidden;
+    border:1px solid var(--line-dark);
+    aspect-ratio:4/3.4;background:#e7ddc4;
+  }
+  .map-frame iframe{width:100%;height:100%;border:0;}
+
+  .order-band{
+    background:var(--avocado);color:var(--parchment);
+  }
+  .order-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:32px;}
+  .order-copy{max-width:44ch;}
+  .order-copy .subhead{color:rgba(247,239,218,.86);}
+  .tag-row{display:flex;gap:10px;margin-top:18px;}
+  .tag{
+    font-size:.78rem;font-weight:600;padding:6px 13px;
+    border:1px solid rgba(247,239,218,.4);border-radius:999px;
+  }
+  .order-band .btn-primary{background:var(--espresso);}
+  .order-band .btn-primary:hover{background:#100a04;}
+
+  footer{background:var(--espresso);color:var(--parchment-dim);padding:52px 0 34px;}
+  .footer-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:28px;}
+  .footer-name{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;color:var(--parchment);font-size:1.15rem;}
+  .footer-addr{margin-top:10px;font-size:.92rem;}
+  .footer-credit{font-size:.78rem;margin-top:26px;opacity:.6;}
+  .footer-right{text-align:right;}
+  [dir="rtl"] .footer-right{text-align:left;}
+
+  @media (max-width:880px){
+    .hero{padding:104px 0 48px;}
+    .hero-grid{grid-template-columns:1fr;gap:40px;}
+    .illustration{order:-1;}
+    .plate{max-width:260px;}
+    .stats{flex-wrap:wrap;row-gap:18px;}
+    .find-grid{grid-template-columns:1fr;gap:36px;}
+    .order-inner{flex-direction:column;align-items:flex-start;}
+    .footer-grid{flex-direction:column;}
+    .footer-right{text-align:left;}
+    section{padding:56px 0;}
+    .lang-bar{position:static;display:flex;justify-content:flex-end;margin-bottom:28px;}
+    .wrap{padding:0 20px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="lang-bar">
+      <span class="lang-wrap">
+        <select class="lang-select" id="langSelect" aria-label="Language">
+          <option value="en">English</option>
+          <option value="zh">中文</option>
+          <option value="vi">Tiếng Việt</option>
+          <option value="ar">العربية</option>
+          <option value="el">Ελληνικά</option>
+          <option value="it">Italiano</option>
+          <option value="ko">한국어</option>
+          <option value="hi">हिन्दी</option>
+          <option value="es">Español</option>
+          <option value="ja">日本語</option>
+          <option value="tl">Filipino</option>
+          <option value="id">Bahasa Indonesia</option>
+        </select>
+      </span>
+    </div>
+
+    <div class="hero-grid">
+      <div>
+        <div class="badge" data-i18n="badge">Surry Hills, Sydney</div>
+        <h1 data-i18n="headline">Open at 6:30, worth the detour.</h1>
+        <p class="subhead" data-i18n="subhead">Loaded breakfast wraps and real coffee on Wentworth Ave, five minutes from Museum Station.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="tel:+61432899823">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span data-i18n="ctaCall">Call to order</span>
+          </a>
+          <a class="btn btn-ghost" href="https://www.google.com/maps?q=73+Wentworth+Ave,+Sydney+NSW+2000,+Australia" target="_blank" rel="noopener">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span data-i18n="ctaDirections">Get directions</span>
+          </a>
+        </div>
+
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-num">
+              <svg class="star" viewBox="0 0 24 24" fill="#E8A33D"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.7 1.6 7-6.2-3.8-6.2 3.8 1.6-7-5.4-4.7 7.1-.7z"/></svg>
+              4.3
+            </div>
+            <div class="stat-label" data-i18n="statRatingLabel">rating</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num" data-i18n-num="statReviewsNum">36</div>
+            <div class="stat-label" data-i18n="statReviews">reviews</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">$1–20</div>
+            <div class="stat-label" data-i18n="statPrice">per person</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="illustration">
+        <svg class="plate" viewBox="0 0 400 400" role="img" aria-label="Illustration of a breakfast wrap and a cup of coffee">
+          <ellipse cx="190" cy="330" rx="160" ry="26" fill="#1a0f06" opacity=".35"/>
+          <ellipse cx="190" cy="320" rx="168" ry="34" fill="#F7EFDA"/>
+          <ellipse cx="190" cy="320" rx="152" ry="27" fill="none" stroke="#E0D3AE" stroke-width="2"/>
+          <!-- wrap body -->
+          <path d="M70 250 Q60 190 130 175 L250 165 Q320 168 322 235 Q324 300 250 305 L120 300 Q75 296 70 250 Z" fill="#E9BE7A"/>
+          <path d="M70 250 Q60 190 130 175 L250 165 Q320 168 322 235 Q324 300 250 305 L120 300 Q75 296 70 250 Z" fill="none" stroke="#C99A56" stroke-width="3"/>
+          <!-- cross-section cut -->
+          <path d="M230 168 Q260 230 232 302" fill="#fff6e4" stroke="#C99A56" stroke-width="3"/>
+          <circle cx="243" cy="215" r="17" fill="#E8A33D"/>
+          <circle cx="243" cy="215" r="17" fill="none" stroke="#c9861f" stroke-width="2"/>
+          <ellipse cx="238" cy="252" rx="16" ry="9" fill="#8FA65C"/>
+          <ellipse cx="250" cy="266" rx="14" ry="8" fill="#6E7F44"/>
+          <path d="M228 190 q10 6 4 16" stroke="#6E7F44" stroke-width="5" fill="none" stroke-linecap="round"/>
+          <path d="M226 280 q12 4 8 14" stroke="#6E7F44" stroke-width="5" fill="none" stroke-linecap="round"/>
+          <!-- coffee cup -->
+          <g transform="translate(46,150)">
+            <path d="M0 30 h72 l-7 66a12 12 0 0 1-12 11H19a12 12 0 0 1-12-11z" fill="#F7EFDA" stroke="#241509" stroke-width="3"/>
+            <path d="M6 42 h60" stroke="#241509" stroke-width="2" opacity=".25"/>
+            <ellipse cx="36" cy="30" rx="36" ry="9" fill="#5C3A22"/>
+            <path d="M72 40 q22 -4 20 18 q-2 20 -24 18" fill="none" stroke="#241509" stroke-width="4" stroke-linecap="round"/>
+            <path class="steam s1" d="M18 20 q-6 -12 2 -22" stroke="#F7EFDA" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+            <path class="steam s2" d="M36 20 q-6 -12 2 -22" stroke="#F7EFDA" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+            <path class="steam s3" d="M54 20 q-6 -12 2 -22" stroke="#F7EFDA" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="find">
+  <div class="wrap find-grid">
+    <div>
+      <div class="section-head">
+        <h2 data-i18n="hoursHeading">Find us</h2>
+        <p class="eyebrow-note" data-i18n="hoursText">Confirmed open at 6:30am Thursdays — call ahead to check the rest of the week.</p>
+      </div>
+
+      <div class="info-row">
+        <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div>
+          <div class="info-label" data-i18n="addressLabel">Address</div>
+          <div class="info-value">73 Wentworth Ave, Sydney NSW 2000</div>
+        </div>
+      </div>
+      <div class="info-row">
+        <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <div>
+          <div class="info-label" data-i18n="phoneLabel">Phone</div>
+          <div class="info-value"><a href="tel:+61432899823">+61 432 899 823</a></div>
+        </div>
+      </div>
+      <div class="info-row">
+        <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <div>
+          <div class="info-label" data-i18n="hoursLabel">Hours</div>
+          <div class="info-value" data-i18n="hoursShort">From 6:30am Thu — other days by call</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="map-frame">
+      <iframe src="https://www.google.com/maps?q=73+Wentworth+Ave,+Sydney+NSW+2000,+Australia&output=embed" loading="lazy" title="Map to STC Cafe"></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="order-band">
+  <div class="wrap order-inner">
+    <div class="order-copy">
+      <h2 data-i18n="orderHeading">Order ahead</h2>
+      <p class="subhead" data-i18n="orderText">Pickup and delivery are both on — call in your order and skip the line.</p>
+      <div class="tag-row">
+        <span class="tag" data-i18n="orderTagPickup">Pickup</span>
+        <span class="tag" data-i18n="orderTagDelivery">Delivery</span>
+      </div>
+    </div>
+    <a class="btn btn-primary" href="tel:+61432899823">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <span data-i18n="ctaCall">Call to order</span>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-grid">
+    <div>
+      <div class="footer-name">STC Cafe</div>
+      <div class="footer-addr">73 Wentworth Ave, Sydney NSW 2000<br>+61 432 899 823</div>
+      <p class="eyebrow-note" style="color:var(--parchment-dim)" data-i18n="footerNote">Prices and hours are approximate — always good to call and check.</p>
+    </div>
+    <div class="footer-right">
+      <div class="footer-langs" id="footerLangs"></div>
+      <div class="footer-credit" data-i18n="footerCredit">Site concept by HowDoYouWant</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const translations = {
+  en:{badge:"Surry Hills, Sydney",headline:"Open at 6:30, worth the detour.",subhead:"Loaded breakfast wraps and real coffee on Wentworth Ave, five minutes from Museum Station.",ctaCall:"Call to order",ctaDirections:"Get directions",statRatingLabel:"rating",statReviews:"reviews",statPrice:"per person",hoursHeading:"Find us",hoursText:"Confirmed open at 6:30am Thursdays — call ahead to check the rest of the week.",addressLabel:"Address",phoneLabel:"Phone",hoursLabel:"Hours",hoursShort:"From 6:30am Thu — other days by call",orderHeading:"Order ahead",orderText:"Pickup and delivery are both on — call in your order and skip the line.",orderTagPickup:"Pickup",orderTagDelivery:"Delivery",footerNote:"Prices and hours are approximate — always good to call and check.",footerCredit:"Site concept by HowDoYouWant"},
+  zh:{badge:"萨里山，悉尼",headline:"清晨6:30开门，值得绕道来。",subhead:"温特沃斯大道上的满料早餐卷饼和现磨咖啡，距博物馆站步行五分钟。",ctaCall:"致电订餐",ctaDirections:"查看路线",statRatingLabel:"评分",statReviews:"条评价",statPrice:"人均消费",hoursHeading:"店铺信息",hoursText:"周四确认6:30开门，其他日期请致电确认。",addressLabel:"地址",phoneLabel:"电话",hoursLabel:"营业时间",hoursShort:"周四6:30起营业，其他日期请致电",orderHeading:"提前下单",orderText:"支持自取和外送，致电下单即可免排队。",orderTagPickup:"自取",orderTagDelivery:"外送",footerNote:"价格与营业时间仅供参考，建议致电确认。",footerCredit:"网站设计由 HowDoYouWant 提供"},
+  vi:{badge:"Surry Hills, Sydney",headline:"Mở cửa từ 6:30, đáng để ghé qua.",subhead:"Bánh cuốn bữa sáng đầy đặn và cà phê thật trên đường Wentworth, cách ga Museum năm phút đi bộ.",ctaCall:"Gọi để đặt món",ctaDirections:"Chỉ đường",statRatingLabel:"đánh giá",statReviews:"lượt đánh giá",statPrice:"mỗi người",hoursHeading:"Tìm chúng tôi",hoursText:"Xác nhận mở cửa 6:30 sáng thứ Năm — gọi trước để kiểm tra các ngày khác.",addressLabel:"Địa chỉ",phoneLabel:"Điện thoại",hoursLabel:"Giờ mở cửa",hoursShort:"Từ 6:30 sáng thứ Năm — ngày khác gọi trước",orderHeading:"Đặt trước",orderText:"Có cả nhận tại chỗ và giao hàng — gọi đặt món để khỏi xếp hàng.",orderTagPickup:"Tự lấy",orderTagDelivery:"Giao hàng",footerNote:"Giá và giờ mở cửa chỉ mang tính tham khảo — nên gọi điện xác nhận.",footerCredit:"Thiết kế trang web bởi HowDoYouWant"},
+  ar:{badge:"سَري هيلز، سيدني",headline:"يفتح الساعة 6:30، يستحق الزيارة.",subhead:"لفائف فطور شهية وقهوة حقيقية في شارع وينتوورث، على بعد خمس دقائق من محطة المتحف.",ctaCall:"اتصل للطلب",ctaDirections:"احصل على الاتجاهات",statRatingLabel:"تقييم",statReviews:"تقييمًا",statPrice:"للشخص الواحد",hoursHeading:"موقعنا",hoursText:"مؤكد أنه يفتح الساعة 6:30 صباحًا أيام الخميس — يُرجى الاتصال للتأكد من باقي الأيام.",addressLabel:"العنوان",phoneLabel:"الهاتف",hoursLabel:"ساعات العمل",hoursShort:"من 6:30 صباحًا الخميس — الأيام الأخرى بالاتصال",orderHeading:"اطلب مسبقًا",orderText:"الاستلام والتوصيل متاحان — اتصل بطلبك وتجنب الانتظار.",orderTagPickup:"استلام",orderTagDelivery:"توصيل",footerNote:"الأسعار وساعات العمل تقريبية — من الأفضل الاتصال للتأكد.",footerCredit:"تصميم الموقع من HowDoYouWant"},
+  el:{badge:"Surry Hills, Σίδνεϊ",headline:"Ανοίγει στις 6:30, αξίζει τον κόπο.",subhead:"Πλούσιες τορτίγιες πρωινού και αληθινός καφές στη Wentworth Ave, πέντε λεπτά από τον σταθμό Museum.",ctaCall:"Καλέστε για παραγγελία",ctaDirections:"Λήψη οδηγιών",statRatingLabel:"βαθμολογία",statReviews:"κριτικές",statPrice:"ανά άτομο",hoursHeading:"Βρείτε μας",hoursText:"Επιβεβαιωμένο άνοιγμα στις 6:30 π.μ. Πέμπτη — καλέστε για τις υπόλοιπες ημέρες.",addressLabel:"Διεύθυνση",phoneLabel:"Τηλέφωνο",hoursLabel:"Ωράριο",hoursShort:"Από τις 6:30 π.μ. Πέμπτη — αλλιώς με τηλεφώνημα",orderHeading:"Παραγγείλτε νωρίτερα",orderText:"Διαθέσιμα παραλαβή και delivery — καλέστε και αποφύγετε την ουρά.",orderTagPickup:"Παραλαβή",orderTagDelivery:"Delivery",footerNote:"Οι τιμές και το ωράριο είναι ενδεικτικά — καλό είναι να επιβεβαιώνετε τηλεφωνικά.",footerCredit:"Σχεδιασμός ιστοσελίδας από HowDoYouWant"},
+  it:{badge:"Surry Hills, Sydney",headline:"Aperto dalle 6:30, vale la deviazione.",subhead:"Wrap da colazione ricchi e caffè vero su Wentworth Ave, a cinque minuti dalla stazione Museum.",ctaCall:"Chiama per ordinare",ctaDirections:"Ottieni indicazioni",statRatingLabel:"valutazione",statReviews:"recensioni",statPrice:"a persona",hoursHeading:"Dove siamo",hoursText:"Apertura confermata alle 6:30 il giovedì — chiama per gli altri giorni.",addressLabel:"Indirizzo",phoneLabel:"Telefono",hoursLabel:"Orari",hoursShort:"Dalle 6:30 il giovedì — altri giorni su chiamata",orderHeading:"Ordina in anticipo",orderText:"Ritiro e consegna disponibili — chiama e salta la fila.",orderTagPickup:"Ritiro",orderTagDelivery:"Consegna",footerNote:"Prezzi e orari sono indicativi — meglio chiamare per conferma.",footerCredit:"Concept del sito di HowDoYouWant"},
+  ko:{badge:"시드니 서리힐스",headline:"오전 6시 30분 오픈, 들를 가치가 있어요.",subhead:"웬트워스 애비뉴에서 즐기는 든든한 아침 랩과 진짜 커피, 뮤지엄역에서 도보 5분.",ctaCall:"전화로 주문",ctaDirections:"길찾기",statRatingLabel:"평점",statReviews:"리뷰",statPrice:"1인당",hoursHeading:"오시는 길",hoursText:"목요일 오전 6시 30분 오픈이 확인되었습니다 — 다른 요일은 전화로 문의해 주세요.",addressLabel:"주소",phoneLabel:"전화번호",hoursLabel:"영업시간",hoursShort:"목요일 6:30부터 — 다른 요일은 전화 확인",orderHeading:"미리 주문하기",orderText:"픽업과 배달 모두 가능합니다 — 전화 주문으로 줄서지 마세요.",orderTagPickup:"픽업",orderTagDelivery:"배달",footerNote:"가격과 영업시간은 참고용입니다 — 전화로 확인하는 것이 좋습니다.",footerCredit:"웹사이트 콘셉트 by HowDoYouWant"},
+  hi:{badge:"सरी हिल्स, सिडनी",headline:"सुबह 6:30 बजे खुलता है, आना सार्थक है।",subhead:"वेंटवर्थ एवेन्यू पर भरपूर ब्रेकफास्ट रैप और असली कॉफ़ी, म्यूज़ियम स्टेशन से पांच मिनट दूर।",ctaCall:"ऑर्डर के लिए कॉल करें",ctaDirections:"दिशा-निर्देश पाएं",statRatingLabel:"रेटिंग",statReviews:"समीक्षाएं",statPrice:"प्रति व्यक्ति",hoursHeading:"हमें खोजें",hoursText:"गुरुवार सुबह 6:30 बजे खुलने की पुष्टि है — बाकी दिनों के लिए कॉल करें।",addressLabel:"पता",phoneLabel:"फ़ोन",hoursLabel:"समय",hoursShort:"गुरुवार 6:30 से — अन्य दिन कॉल पर",orderHeading:"पहले से ऑर्डर करें",orderText:"पिकअप और डिलीवरी दोनों उपलब्ध हैं — कॉल करें और कतार से बचें।",orderTagPickup:"पिकअप",orderTagDelivery:"डिलीवरी",footerNote:"कीमतें और समय अनुमानित हैं — कॉल करके पुष्टि करना बेहतर है।",footerCredit:"वेबसाइट कॉन्सेप्ट: HowDoYouWant"},
+  es:{badge:"Surry Hills, Sídney",headline:"Abre a las 6:30, vale la pena el desvío.",subhead:"Wraps de desayuno bien cargados y café de verdad en Wentworth Ave, a cinco minutos de la estación Museum.",ctaCall:"Llamar para pedir",ctaDirections:"Cómo llegar",statRatingLabel:"valoración",statReviews:"reseñas",statPrice:"por persona",hoursHeading:"Encuéntranos",hoursText:"Apertura confirmada a las 6:30 los jueves — llama para confirmar el resto de la semana.",addressLabel:"Dirección",phoneLabel:"Teléfono",hoursLabel:"Horario",hoursShort:"Desde las 6:30 el jueves — otros días por llamada",orderHeading:"Pide con antelación",orderText:"Retiro y delivery disponibles — llama y evita la fila.",orderTagPickup:"Retiro",orderTagDelivery:"Delivery",footerNote:"Precios y horarios son aproximados — mejor confirmar por teléfono.",footerCredit:"Concepto del sitio por HowDoYouWant"},
+  ja:{badge:"シドニー サリーヒルズ",headline:"朝6時30分オープン、寄り道する価値あり。",subhead:"ウェントワース通りでボリューム満点の朝食ラップと本格コーヒーを。ミュージアム駅から徒歩5分。",ctaCall:"電話で注文",ctaDirections:"道順を見る",statRatingLabel:"評価",statReviews:"件のレビュー",statPrice:"一人あたり",hoursHeading:"アクセス",hoursText:"木曜日は朝6時30分オープンを確認済み — その他の曜日はお電話でご確認ください。",addressLabel:"住所",phoneLabel:"電話番号",hoursLabel:"営業時間",hoursShort:"木曜6:30から — その他の曜日は要電話確認",orderHeading:"事前注文",orderText:"テイクアウトもデリバリーも対応 — お電話で注文して行列をスキップ。",orderTagPickup:"テイクアウト",orderTagDelivery:"デリバリー",footerNote:"価格と営業時間は目安です。お電話でのご確認をおすすめします。",footerCredit:"サイトコンセプト by HowDoYouWant"},
+  tl:{badge:"Surry Hills, Sydney",headline:"Bukas mula 6:30, sulit puntahan.",subhead:"Masaganang breakfast wrap at tunay na kape sa Wentworth Ave, limang minuto lang mula sa Museum Station.",ctaCall:"Tumawag para mag-order",ctaDirections:"Kumuha ng direksyon",statRatingLabel:"rating",statReviews:"review",statPrice:"bawat tao",hoursHeading:"Hanapin kami",hoursText:"Kumpirmadong bukas nang 6:30am tuwing Huwebes — tumawag para sa ibang araw.",addressLabel:"Address",phoneLabel:"Telepono",hoursLabel:"Oras",hoursShort:"Mula 6:30am Huwebes — ibang araw sa tawag",orderHeading:"Mag-order nang maaga",orderText:"May pickup at delivery — tumawag at iwas pila.",orderTagPickup:"Pickup",orderTagDelivery:"Delivery",footerNote:"Tinatayang presyo at oras lamang — mainam pa ring tumawag para kumpirmahin.",footerCredit:"Konsepto ng site mula sa HowDoYouWant"},
+  id:{badge:"Surry Hills, Sydney",headline:"Buka jam 6:30, layak untuk mampir.",subhead:"Wrap sarapan yang penuh isi dan kopi asli di Wentworth Ave, lima menit dari Stasiun Museum.",ctaCall:"Telepon untuk pesan",ctaDirections:"Lihat rute",statRatingLabel:"rating",statReviews:"ulasan",statPrice:"per orang",hoursHeading:"Temukan kami",hoursText:"Dikonfirmasi buka jam 6:30 pagi setiap Kamis — telepon dulu untuk hari lainnya.",addressLabel:"Alamat",phoneLabel:"Telepon",hoursLabel:"Jam buka",hoursShort:"Mulai 6:30 Kamis — hari lain via telepon",orderHeading:"Pesan lebih dulu",orderText:"Tersedia pickup dan delivery — telepon dan hindari antre.",orderTagPickup:"Pickup",orderTagDelivery:"Delivery",footerNote:"Harga dan jam buka bersifat perkiraan — sebaiknya konfirmasi lewat telepon.",footerCredit:"Konsep situs oleh HowDoYouWant"}
+};
+
+const langNames = {en:"English",zh:"中文",vi:"Tiếng Việt",ar:"العربية",el:"Ελληνικά",it:"Italiano",ko:"한국어",hi:"हिन्दी",es:"Español",ja:"日本語",tl:"Filipino",id:"Bahasa Indonesia"};
+
+function applyLang(code){
+  const t = translations[code] || translations.en;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const key = el.getAttribute('data-i18n');
+    if(t[key]) el.textContent = t[key];
+  });
+  document.documentElement.lang = code;
+  document.documentElement.dir = code === 'ar' ? 'rtl' : 'ltr';
+  document.body.dataset.font = code;
+  document.getElementById('langSelect').value = code;
+  try{ localStorage.setItem('stc_lang', code); }catch(e){}
+}
+
+const footerLangs = document.getElementById('footerLangs');
+Object.keys(langNames).forEach(code=>{
+  const b = document.createElement('button');
+  b.type = 'button';
+  b.textContent = langNames[code];
+  b.addEventListener('click', ()=>applyLang(code));
+  footerLangs.appendChild(b);
+});
+
+document.getElementById('langSelect').addEventListener('change', e=>applyLang(e.target.value));
+
+let initial = 'en';
+try{
+  const saved = localStorage.getItem('stc_lang');
+  if(saved && translations[saved]) initial = saved;
+  else{
+    const nav = (navigator.language||'en').slice(0,2);
+    if(translations[nav]) initial = nav;
+  }
+}catch(e){}
+applyLang(initial);
+</script>
+</body>
+</html>
