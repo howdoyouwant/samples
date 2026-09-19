@@ -1,0 +1,669 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clínica Dental &amp; Estètica Soler | Google profile potential</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Young+Serif&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0d3b3f; --ink-2:#4a6466; --teal:#1d7a76; --teal-d:#155e5b;
+  --mint:#dff1ed; --mint-2:#eef7f5; --pearl:#f4f8f7; --card:#fff; --line:#d5e3e0;
+  --rose:#b8476f; --rose-d:#8f2f55; --rose-t:#f8e6ed;
+  --amber:#93530a; --amber-t:#fbecd3; --star:#c98a00;
+  --font-d:'Young Serif',Georgia,'Times New Roman',serif;
+  --font-b:'Figtree',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--pearl);color:var(--ink);font-family:var(--font-b);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--font-d);font-weight:400;line-height:1.15;margin:0 0 .5em;color:var(--ink)}
+h1{font-size:clamp(2rem,4.6vw,3.3rem);max-width:21ch;letter-spacing:-.01em}
+h2{font-size:clamp(1.6rem,3vw,2.2rem)}
+h3{font-size:1.2rem}
+p{margin:0 0 1em;max-width:68ch}
+a{color:var(--teal-d)}
+:focus-visible{outline:3px solid var(--rose);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.lead{font-size:1.15rem;color:var(--ink-2);max-width:60ch}
+.muted{color:var(--ink-2)}
+.small{font-size:.88rem}
+
+/* header */
+.site{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.site .wrap{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:8px 20px;padding-top:10px;padding-bottom:10px}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--font-d);font-size:1.05rem;text-decoration:none;color:var(--ink)}
+.tabs{display:flex;gap:2px;justify-content:flex-start;overflow-x:auto;scrollbar-width:none;min-width:0}
+.tabs::-webkit-scrollbar{display:none}
+.tab{white-space:nowrap;padding:8px 12px;border-radius:999px;font-weight:600;font-size:.94rem;color:var(--ink-2);text-decoration:none}
+.tab:hover{background:var(--mint-2);color:var(--ink)}
+.tab[aria-current="page"]{background:var(--ink);color:#fff}
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.lang button{font:inherit;font-weight:700;font-size:.85rem;border:0;background:#fff;color:var(--ink-2);padding:6px 12px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--teal);color:#fff}
+@media (max-width:1060px){
+  .site .wrap{grid-template-columns:1fr auto}
+  .tabs{grid-column:1/-1;order:3;justify-content:flex-start}
+}
+
+/* layout */
+main:focus,main:focus-visible{outline:none}
+.page{padding:36px 0 72px}
+.hero{padding:44px 0 10px}
+.hero .lead{margin-top:14px}
+section.block{margin-top:56px}
+.grid{display:grid;gap:18px}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+@media (max-width:860px){.g2,.g3{grid-template-columns:1fr}}
+
+/* Google-style profile cards */
+.cmp-toggle{display:none;gap:6px;margin:18px 0 12px}
+.cmp-toggle button{font:inherit;font-weight:700;border:1px solid var(--line);background:#fff;color:var(--ink-2);padding:8px 16px;border-radius:999px;cursor:pointer}
+.cmp-toggle button[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:26px;align-items:start}
+.gcard{background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden}
+.gcard.peak{border-color:#9fd1c9;box-shadow:0 0 0 4px var(--mint-2)}
+.gc-top{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;font-weight:700}
+.pill{display:inline-block;padding:3px 12px;border-radius:999px;font-size:.82rem;font-weight:700;background:var(--pearl);border:1px solid var(--line);color:var(--ink-2)}
+.pill.solid{background:var(--teal);border-color:var(--teal);color:#fff}
+.gc-photos{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;padding:0 18px}
+.tile{height:78px;border-radius:12px;display:flex;align-items:flex-end;padding:6px 8px;font-size:.72rem;font-weight:600;line-height:1.2;color:var(--ink)}
+.tile.t1{background:linear-gradient(160deg,#cfe9e4,#a9d6cf)}
+.tile.t2{background:linear-gradient(160deg,#e3f1ee,#c3e3dd)}
+.tile.t3{background:linear-gradient(160deg,#f6dbe5,#efbfd1)}
+.tile.t4{background:linear-gradient(160deg,#f8e6ed,#f1cbda)}
+.tile.blank{grid-column:1/-1;height:78px;background:transparent;border:1.5px dashed #9db3b0;color:var(--ink-2);align-items:center;justify-content:center;text-align:center}
+.gc-body{padding:14px 18px 20px}
+.gc-name{font-family:var(--font-d);font-size:1.3rem;line-height:1.2;margin:0 0 4px}
+.rating{display:flex;align-items:center;gap:8px;font-weight:700;margin-bottom:8px}
+.stars{color:var(--star);letter-spacing:2px}
+.row{display:flex;gap:12px;padding:11px 10px;margin:0 -10px;border-top:1px solid var(--line);align-items:flex-start;transition:background .6s}
+.row .k{width:84px;flex:none;font-weight:700;font-size:.82rem;color:var(--ink-2);padding-top:2px}
+.row .v{flex:1;font-size:.94rem;min-width:0}
+.peak .row.up.lit{background:var(--mint-2);box-shadow:inset 3px 0 0 var(--teal)}
+.chip{display:inline-block;padding:2px 10px;margin:2px 4px 2px 0;border-radius:999px;font-size:.8rem;border:1px solid var(--line);background:var(--pearl)}
+.chip.odd{background:var(--amber-t);border-color:#e2b36a;color:var(--amber);font-weight:600}
+.chip.dental{background:var(--mint);border-color:#b8ddd6;color:var(--teal-d)}
+.chip.aes{background:var(--rose-t);border-color:#efc3d3;color:var(--rose-d)}
+.tbc{display:inline-block;padding:1px 9px;border:1px dashed #8ca5a2;border-radius:999px;font-size:.76rem;color:var(--ink-2);background:#fff;font-weight:600}
+.acts{display:flex;gap:7px;flex-wrap:wrap}
+.act{padding:6px 12px;border-radius:999px;border:1px solid var(--line);font-size:.84rem;font-weight:700;background:#fff;color:var(--ink)}
+.act.new{background:var(--teal);border-color:var(--teal);color:#fff}
+.act.ghost{border-style:dashed;border-color:#8ca5a2;color:var(--ink-2);font-weight:600}
+.cap{margin-top:14px;color:var(--ink-2);font-size:.9rem;max-width:none}
+@media (max-width:860px){
+  .cmp{grid-template-columns:1fr;margin-top:0}
+  .cmp-toggle{display:flex}
+  .cmp .gcard:not(.show){display:none}
+}
+
+/* fact strip and cards */
+.fact{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px 22px}
+.fact .big{font-family:var(--font-d);font-size:2rem;line-height:1.1;margin-bottom:6px}
+.fact p{margin:0;color:var(--ink-2);font-size:.98rem}
+.lever{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+.lever h3{margin-bottom:.35em}
+.lever p{color:var(--ink-2)}
+.lever.rep{border-top:5px solid var(--teal)}
+.lever.set{border-top:5px solid var(--rose)}
+.lever.avl{border-top:5px solid var(--ink)}
+.btn{display:inline-block;font-weight:700;padding:9px 18px;border-radius:999px;background:var(--ink);color:#fff;text-decoration:none}
+.btn.line{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.btn:hover{filter:brightness(1.15)}
+
+/* strengths */
+.good{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px 16px 52px;position:relative}
+.good::before{content:"";position:absolute;left:18px;top:19px;width:20px;height:20px;border-radius:50%;background:var(--teal)}
+.good::after{content:"";position:absolute;left:25px;top:23px;width:5px;height:10px;border:solid #fff;border-width:0 2.5px 2.5px 0;transform:rotate(45deg)}
+.good p{margin:0;font-size:.98rem}
+.good b{font-weight:700}
+
+/* charts */
+.panel{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:24px}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:.86rem;color:var(--ink-2);margin:6px 0 14px}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-1px;margin-right:6px}
+.br{display:grid;grid-template-columns:230px 58px 1fr;gap:12px;align-items:center;padding:7px 8px;border-radius:10px;font-size:.92rem}
+.br.me{background:var(--mint-2);box-shadow:inset 3px 0 0 var(--teal);font-weight:700}
+.br .nm{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.br .rt{font-weight:700;font-variant-numeric:tabular-nums}
+.br .rt.hi{color:var(--amber)}
+.br .bar{display:flex;align-items:center;gap:8px}
+.br .bar span.b{display:block;height:14px;border-radius:7px;background:#b9dcd6}
+.br.me .bar span.b{background:var(--ink)}
+.br .bar em{font-style:normal;font-size:.82rem;color:var(--ink-2);font-variant-numeric:tabular-nums}
+@media (max-width:640px){.br{grid-template-columns:118px 46px 1fr;gap:8px;font-size:.84rem}}
+.sat{display:grid;grid-template-columns:repeat(22,1fr);gap:2px;align-items:end;height:120px;margin-top:10px;border-top:1px dashed #b7cbc8;position:relative}
+.sat .col{display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%;font-size:.66rem;color:var(--ink-2)}
+.sat .col span{display:block;width:100%;background:#b9dcd6;border-radius:4px 4px 0 0;min-height:0}
+.sat .col.zero span{background:transparent}
+.hours-x{display:grid;grid-template-columns:repeat(11,1fr);font-size:.72rem;color:var(--ink-2);margin-top:4px}
+.mine{display:grid;grid-template-columns:repeat(22,1fr);gap:2px;margin-top:8px}
+.mine i{height:14px;border-radius:3px;background:#e8efee}
+.mine i.on{background:var(--ink)}
+.callouts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
+@media (max-width:760px){.callouts{grid-template-columns:1fr}}
+.callouts div{background:var(--amber-t);border-radius:12px;padding:12px 14px;font-size:.92rem;color:#5c3506}
+.callouts b{display:block;font-family:var(--font-d);font-weight:400;font-size:1.5rem;line-height:1.2}
+
+/* gaps */
+details.gap{background:var(--card);border:1px solid var(--line);border-radius:16px;margin-bottom:12px}
+details.gap[open]{border-color:#9fd1c9}
+details.gap summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:1fr auto;gap:6px 16px;padding:16px 20px;align-items:start}
+details.gap summary::-webkit-details-marker{display:none}
+details.gap summary h3{margin:0 0 2px}
+details.gap summary p{margin:0;color:var(--ink-2);font-size:.96rem}
+.tags{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.tag{font-size:.76rem;font-weight:700;padding:2px 10px;border-radius:999px;white-space:nowrap}
+.tag.hi{background:var(--amber-t);color:var(--amber)}
+.tag.md{background:#e9eeee;color:var(--ink-2)}
+.tag.seen{border:1px solid var(--teal);color:var(--teal-d)}
+.tag.tc{border:1px dashed #8ca5a2;color:var(--ink-2)}
+.gap-body{padding:0 20px 18px;display:grid;grid-template-columns:1fr 1fr;gap:18px;border-top:1px solid var(--line);padding-top:16px;margin:0 20px 0;padding-left:0;padding-right:0}
+.gap-body h4{margin:0 0 4px;font-size:.9rem;color:var(--ink-2)}
+.gap-body p{margin:0;font-size:.96rem}
+.plus{font-size:1.5rem;line-height:1;color:var(--teal-d);font-weight:700;padding-left:4px}
+details.gap[open] .plus{transform:rotate(45deg)}
+@media (max-width:760px){details.gap summary{grid-template-columns:1fr}.tags{justify-content:flex-start}.gap-body{grid-template-columns:1fr}}
+
+/* journey + table */
+.journey{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:20px}
+@media (max-width:980px){.journey{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.journey{grid-template-columns:1fr}}
+.step{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:12px}
+.step h3{margin:0}
+.step .n{width:30px;height:30px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-weight:700;font-size:.95rem}
+.step .now,.step .then{border-radius:12px;padding:10px 12px;font-size:.9rem}
+.step .now{background:var(--amber-t);color:#5c3506}
+.step .then{background:var(--mint);color:#0b3f3c}
+.step b{display:block;font-size:.76rem;margin-bottom:2px}
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:18px;background:var(--card)}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:.95rem}
+th,td{text-align:left;padding:12px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--mint-2);font-size:.88rem;color:var(--ink-2)}
+tr:last-child td{border-bottom:0}
+td:first-child{font-weight:700;width:22%}
+td.now{color:#5c3506}
+td.then{color:#0b3f3c;background:rgba(223,241,237,.45)}
+.note{background:var(--ink);color:#fff;border-radius:18px;padding:22px 24px;margin-top:28px}
+.note p{margin:0;max-width:70ch}
+
+/* plan */
+.wk{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+.wk h3{margin-bottom:.4em}
+.wk ul{margin:0;padding-left:1.15em}
+.wk li{margin:.3em 0;color:var(--ink-2)}
+.wk.a{border-top:5px solid var(--teal)}
+.wk.b{border-top:5px solid var(--rose)}
+.wk.c{border-top:5px solid var(--ink)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media (max-width:760px){.two{grid-template-columns:1fr}}
+.box{border-radius:18px;padding:22px}
+.box.need{background:var(--mint)}
+.box.rules{background:var(--rose-t)}
+.box ul{margin:0;padding-left:1.15em}
+.box li{margin:.35em 0}
+
+/* footer */
+footer{border-top:1px solid var(--line);background:#fff;padding:28px 0;color:var(--ink-2);font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer p{margin:0;max-width:64ch}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#overview" aria-label="Clínica Dental &amp; Estètica Soler">
+      <svg width="34" height="24" viewBox="0 0 34 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#1d7a76"/><circle cx="22" cy="12" r="10" fill="#b8476f" fill-opacity=".85"/></svg>
+      <span>Dental &amp; Estètica Soler</span>
+    </a>
+    <nav class="tabs" aria-label="Pages">
+      <a class="tab" href="#overview" data-es="Resumen">Overview</a>
+      <a class="tab" href="#today" data-es="Dónde estás">Where you stand</a>
+      <a class="tab" href="#gaps" data-es="Carencias">Gaps</a>
+      <a class="tab" href="#peak" data-es="Potencial">Peak potential</a>
+      <a class="tab" href="#plan" data-es="Qué haremos">What we’ll do</a>
+      <a class="tab" href="#facts" data-es="Datos">Facts</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang-btn="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang-btn="es" aria-pressed="false">ES</button>
+    </div>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+<!-- ============ OVERVIEW ============ -->
+<section class="page" id="page-overview" hidden>
+  <div class="wrap">
+    <div class="hero">
+      <h1 data-es="Tus pacientes ya te valoran con un 4,8. Hagamos que más personas te encuentren.">Patients already rate you 4.8. Let’s make sure more of them find you.</h1>
+      <p class="lead" data-es="Una mirada clara a tu perfil de Google: dónde está hoy, qué lo frena y cómo se ve cuando está al máximo.">A plain look at your Google Business Profile: where it stands today, what holds it back, and what it looks like at its best.</p>
+    </div>
+
+    <div class="cmp-toggle" role="group" aria-label="Choose a profile view">
+      <button type="button" data-show="today" aria-pressed="true" data-es="Hoy">Today</button>
+      <button type="button" data-show="peak" aria-pressed="false" data-es="En su máximo">At its best</button>
+    </div>
+
+    <div class="cmp">
+      <!-- TODAY -->
+      <article class="gcard today show" aria-label="Your profile today">
+        <div class="gc-top"><span data-es="Lo que Google muestra hoy">What Google shows today</span><span class="pill" data-es="Hoy">Today</span></div>
+        <div class="gc-photos"><div class="tile blank"><span data-es="Fotos y vídeos: por confirmar con acceso al perfil">Photos and videos: to confirm once we have access</span></div></div>
+        <div class="gc-body">
+          <h2 class="gc-name" style="font-size:1.3rem">Clinica Dental &amp; Estetica Soler</h2>
+          <div class="rating"><span>4.8</span><span class="stars" aria-hidden="true">★★★★★</span><span class="muted" style="font-weight:500">(306)</span></div>
+          <div class="row"><div class="k" data-es="Categorías">Categories</div><div class="v">
+            <span class="chip">Dentist</span><span class="chip">Dental clinic</span><span class="chip odd">Physiotherapist</span><span class="chip odd">Massage</span><span class="chip odd">Spa</span><span class="chip odd">Beauty salon</span><span class="chip">Medical clinic</span>
+            <div class="small muted" style="margin-top:4px" data-es="Las de color ámbar no describen una clínica dental.">Amber ones don’t describe a dental clinic.</div></div></div>
+          <div class="row"><div class="k" data-es="Horario">Hours</div><div class="v" data-es="Lun–vie 10–14 y 15–20. Sáb 10–14. Dom cerrado.">Mon–Fri 10–14 and 15–20. Sat 10–14. Sun closed.</div></div>
+          <div class="row"><div class="k" data-es="Servicios">Treatments</div><div class="v"><span class="tbc" data-es="por confirmar">to confirm</span> <span class="small muted" data-es="Tu web lista 25 tratamientos.">Your website lists 25.</span></div></div>
+          <div class="row"><div class="k" data-es="Reservar">Book</div><div class="v"><div class="acts"><span class="act">Call</span><span class="act">Directions</span><span class="act">Website</span><span class="act ghost" data-es="Reserva online: por confirmar">Online booking: to confirm</span></div></div></div>
+          <div class="row"><div class="k" data-es="Novedades">Updates</div><div class="v"><span class="tbc" data-es="por confirmar">to confirm</span></div></div>
+        </div>
+      </article>
+
+      <!-- PEAK -->
+      <article class="gcard peak" aria-label="Your profile at its best (illustrative)">
+        <div class="gc-top"><span data-es="Perfil completo (ejemplo ilustrativo)">A fully built profile (illustrative)</span><span class="pill solid" data-es="En su máximo">At its best</span></div>
+        <div class="gc-photos">
+          <div class="tile t1" data-es="Tu nueva clínica en Plaça Espanyola">Your new clinic on Plaça Espanyola</div>
+          <div class="tile t2" data-es="Gabinetes">Treatment rooms</div>
+          <div class="tile t3" data-es="El equipo">The team</div>
+          <div class="tile t4" data-es="Estética facial">Facial aesthetics</div>
+        </div>
+        <div class="gc-body">
+          <h2 class="gc-name" style="font-size:1.3rem">Clínica Dental &amp; Estètica Soler</h2>
+          <div class="row up" style="border-top:0"><div class="k" data-es="Valoración">Rating</div><div class="v"><b>4.9+</b> <span class="stars" aria-hidden="true">★★★★★</span> <span data-es="con reseñas que siguen creciendo, todas respondidas">with reviews still growing, every one answered</span></div></div>
+          <div class="row up"><div class="k" data-es="Categorías">Categories</div><div class="v">
+            <span class="chip dental">Dentist</span><span class="chip dental">Orthodontist</span><span class="chip dental">Dental implants provider</span><span class="chip dental">Cosmetic dentist</span><span class="chip dental">Pediatric dentist</span></div></div>
+          <div class="row up"><div class="k" data-es="Horario">Hours</div><div class="v" data-es="Lun–vie 10–14 y 15–20. Sábado ampliado (lo decide la clínica).">Mon–Fri 10–14 and 15–20. Saturday extended (the clinic decides).</div></div>
+          <div class="row up"><div class="k" data-es="Servicios">Treatments</div><div class="v">
+            <span class="chip dental">Implants</span><span class="chip dental">Orthodontics</span><span class="chip dental">Veneers</span><span class="chip dental">Sedation</span><span class="chip aes">Botox</span><span class="chip aes">Fillers</span><span class="chip aes">PRP</span><span class="chip aes">Facial harmonisation</span>
+            <div class="small muted" style="margin-top:4px" data-es="Cada uno con una breve descripción.">Each with a short description.</div></div></div>
+          <div class="row up"><div class="k" data-es="Reservar">Book</div><div class="v"><div class="acts"><span class="act new">Call</span><span class="act new">WhatsApp</span><span class="act new">Book online</span><span class="act">Directions</span></div></div></div>
+          <div class="row up"><div class="k" data-es="Novedades">Updates</div><div class="v" data-es="Publicación semanal: “Implantes explicados en 60 segundos”.">Weekly post: “Implants explained in 60 seconds”.</div></div>
+        </div>
+      </article>
+    </div>
+    <p class="cap" data-es="Izquierda: lo que se ve hoy en Google Maps. Derecha: ejemplo ilustrativo de un perfil completo. Las filas resaltadas son lo que cambia.">Left: what is visible on Google Maps today. Right: an illustrative example of a fully built profile. The highlighted rows are what changes.</p>
+
+    <section class="block" aria-labelledby="h-facts">
+      <h2 id="h-facts" data-es="Tres datos que lo resumen">Three facts that sum it up</h2>
+      <div class="grid g3">
+        <div class="fact"><div class="big">4.8 <span class="muted" style="font-size:1.1rem">vs</span> 4.9–5.0</div><p data-es="Seis clínicas cercanas con más de 100 reseñas tienen mejor nota que tú.">Six nearby clinics with 100+ reviews rate higher than you.</p></div>
+        <div class="fact"><div class="big">1 <span class="muted" style="font-size:1.1rem" data-es="de">of</span> 14</div><p data-es="Solo una clínica cercana sigue abierta después de las 15:00 los sábados. Ninguna abre el domingo.">Only one nearby clinic is open after 3 pm on Saturday. None open on Sunday.</p></div>
+        <div class="fact"><div class="big">≈ 9 <span class="muted" style="font-size:1.1rem" data-es="al mes">a month</span></div><p data-es="Reseñas nuevas desde finales de 2025 (de 213 a 306). Una base sólida sobre la que crecer.">New Google reviews since late 2025 (213 to 306). A strong base to grow from.</p></div>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="h-lev">
+      <h2 id="h-lev" data-es="Tres palancas mueven casi todo">Three levers move almost everything</h2>
+      <div class="grid g3">
+        <div class="lever rep"><h3 data-es="Reputación">Reputation</h3><p data-es="Acercar la nota a la de los líderes, mantener un flujo constante de reseñas y responderlas todas.">Move the rating toward the leaders, keep reviews flowing, and answer every one.</p><a class="btn line" href="#gaps" data-es="Ver los detalles">See the details</a></div>
+        <div class="lever set"><h3 data-es="Configuración del perfil">Profile setup</h3><p data-es="Un solo nombre, categorías claras, cada tratamiento listado y reserva en un toque.">One name, clear categories, every treatment listed, and booking in one tap.</p><a class="btn line" href="#peak" data-es="Ver cómo quedaría">See how it would look</a></div>
+        <div class="lever avl"><h3 data-es="Disponibilidad">Availability</h3><p data-es="Los sábados por la tarde y los domingos casi nadie abre. Es terreno libre.">Almost nobody opens Saturday afternoon or Sunday. It is open ground.</p><a class="btn line" href="#today" data-es="Ver la comparativa">See the comparison</a></div>
+      </div>
+    </section>
+  </div>
+</section>
+
+<!-- ============ TODAY ============ -->
+<section class="page" id="page-today" hidden>
+  <div class="wrap">
+    <h2 data-es="Dónde estás hoy">Where you stand today</h2>
+    <p class="lead" data-es="La clínica parte de una posición fuerte. Esto es lo que ya funciona y cómo te comparas con otras 11 clínicas con más de 100 reseñas.">The clinic starts from a strong position. Here is what already works, and how you compare with 11 other clinics that have 100+ reviews.</p>
+
+    <section class="block" style="margin-top:32px" aria-labelledby="h-good">
+      <h3 id="h-good" data-es="Lo que ya funciona">What already works</h3>
+      <div class="grid g2">
+        <div class="good"><p data-es="4,8 estrellas con 306 reseñas en Google: la 3.ª mayor cantidad de reseñas entre las 15 clínicas que comparamos.">4.8 stars from 306 Google reviews: the 3rd highest review count of the 15 clinics we compared.</p></div>
+        <div class="good"><p data-es="Más de 16 años en el barrio, ahora en un espacio nuevo y moderno en Plaça Espanyola.">16+ years in the neighbourhood, now in a new modern space on Plaça Espanyola.</p></div>
+        <div class="good"><p data-es="Odontología y estética facial bajo el mismo techo: una diferencia real que contar.">Dental care and facial aesthetics under one roof: a real point of difference to tell people about.</p></div>
+        <div class="good"><p data-es="Los pacientes nombran a tu equipo en las reseñas (María, Carmen, el Dr. Álex). Se sienten cuidados.">Patients name your team in reviews (Maria, Carmen, Dr. Álex). They feel looked after.</p></div>
+        <div class="good"><p data-es="Ya respondes a las reseñas de tus pacientes.">You already reply to your patients’ reviews.</p></div>
+        <div class="good"><p data-es="Abres el sábado por la mañana. 10 de las 14 clínicas cercanas cierran los sábados.">You open Saturday morning. 10 of the 14 nearby clinics are closed on Saturdays.</p></div>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="h-bench">
+      <h3 id="h-bench" data-es="Nota y número de reseñas">Rating and review count</h3>
+      <div class="panel">
+        <p class="muted small" style="margin-bottom:0" data-es="Clínicas cercanas con más de 100 reseñas en Google, ordenadas por nota.">Nearby clinics with 100+ Google reviews, sorted by rating.</p>
+        <div class="legend">
+          <span><i style="background:var(--ink)"></i><span data-es="Tu clínica">Your clinic</span></span>
+          <span><i style="background:#b9dcd6"></i><span data-es="Número de reseñas">Number of reviews</span></span>
+          <span><i style="background:var(--amber-t);border:1px solid #e2b36a"></i><span data-es="Ámbar: mejor nota que la tuya">Amber: rated higher than you</span></span>
+        </div>
+        <div id="bench"></div>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="h-sat">
+      <h3 id="h-sat" data-es="Sábado: cuántas de las 14 clínicas cercanas están abiertas">Saturday: how many of the 14 nearby clinics are open</h3>
+      <div class="panel">
+        <div class="legend"><span><i style="background:#b9dcd6"></i><span data-es="Clínicas abiertas (de 14)">Clinics open (of 14)</span></span><span><i style="background:var(--ink)"></i><span data-es="Tu horario actual">Your current hours</span></span><span><i style="background:transparent;border-top:2px dashed #7f9a97;height:0;width:16px;border-radius:0;vertical-align:3px"></i><span data-es="Línea de puntos: las 14 abiertas">Dashed line: all 14 open</span></span></div>
+        <div id="sat" aria-hidden="true"></div>
+        <p class="small muted" style="margin:10px 0 0" data-es="Hora del día (formato 24 h). Entre semana, la mayoría de estas clínicas sí está abierta.">Time of day (24 h). On weekdays, most of these clinics are open.</p>
+        <div class="callouts">
+          <div><b>1</b><span data-es="clínica abierta después de las 15:00 el sábado">clinic open after 3 pm on Saturday</span></div>
+          <div><b>0</b><span data-es="clínicas abiertas después de las 18:00 el sábado">clinics open after 6 pm on Saturday</span></div>
+          <div><b>0</b><span data-es="clínicas abiertas el domingo">clinics open on Sunday</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="h-nb">
+      <h3 id="h-nb" data-es="Tu vecina en la misma plaza">Your neighbour on the same square</h3>
+      <div class="tw"><table>
+        <thead><tr><th></th><th>Clínica Dental &amp; Estètica Soler</th><th>Centro Dental La Torrassa</th></tr></thead>
+        <tbody>
+          <tr><td data-es="Dirección">Address</td><td>Plaça Espanyola 17</td><td>Plaça Espanyola 3</td></tr>
+          <tr><td data-es="Nota">Rating</td><td data-es="4,8 (306)">4.8 (306)</td><td data-es="4,6 (107)">4.6 (107)</td></tr>
+          <tr><td data-es="Entre semana">Weekdays</td><td data-es="10–14 y 15–20 (pausa al mediodía)">10–14 and 15–20 (midday break)</td><td data-es="10–20 sin pausa">10–20 without a break</td></tr>
+          <tr><td data-es="Sábado">Saturday</td><td>10–14</td><td>10–15</td></tr>
+        </tbody></table></div>
+      <p class="small muted" style="margin-top:10px" data-es="Datos de Google Maps del 19 de septiembre de 2026.">Google Maps data, 19 September 2026.</p>
+    </section>
+  </div>
+</section>
+
+<!-- ============ GAPS ============ -->
+<section class="page" id="page-gaps" hidden>
+  <div class="wrap">
+    <h2 data-es="Carencias y problemas">Gaps and issues</h2>
+    <p class="lead" data-es="Ocho cosas que frenan al perfil. Cada una indica si la vemos públicamente o si hay que confirmarla con acceso al perfil.">Eight things holding the profile back. Each one says whether we can see it publicly or need to confirm it with access to the profile.</p>
+    <p><button type="button" class="btn line" id="toggleAll" style="font:inherit;font-weight:700;cursor:pointer" data-es="Abrir todos los detalles">Open all details</button></p>
+    <div id="gaplist"></div>
+  </div>
+</section>
+
+<!-- ============ PEAK ============ -->
+<section class="page" id="page-peak" hidden>
+  <div class="wrap">
+    <h2 data-es="Cómo se ve el potencial máximo">What peak potential looks like</h2>
+    <p class="lead" data-es="El máximo no es una cifra única. Es un perfil que cumple su función en cada paso de la decisión de un paciente.">Peak is not one number. It is a profile that does its job at every step of a patient’s decision.</p>
+
+    <div class="journey">
+      <div class="step"><span class="n">1</span><h3 data-es="Buscan">They search</h3>
+        <div class="now"><b data-es="Hoy">Today</b><span data-es="Categorías mezcladas y tratamientos sin listar: Google duda de qué búsquedas encajan contigo.">Mixed categories and unlisted treatments leave Google unsure which searches suit you.</span></div>
+        <div class="then"><b data-es="En su máximo">At its best</b><span data-es="Categorías claras y cada tratamiento listado: apareces en las búsquedas correctas cerca de Collblanc y La Torrassa.">Clear categories and every treatment listed: you appear for the right searches around Collblanc and La Torrassa.</span></div></div>
+      <div class="step"><span class="n">2</span><h3 data-es="Comparan">They compare</h3>
+        <div class="now"><b data-es="Hoy">Today</b><span data-es="Un 4,8 junto a clínicas con 4,9 o 5,0.">A 4.8 sitting next to clinics showing 4.9 or 5.0.</span></div>
+        <div class="then"><b data-es="En su máximo">At its best</b><span data-es="Nota igual o superior a la de los líderes, un nombre claro y fotos recientes.">A rating at or above the leaders, one clear name, and fresh photos.</span></div></div>
+      <div class="step"><span class="n">3</span><h3 data-es="Confían">They trust</h3>
+        <div class="now"><b data-es="Hoy">Today</b><span data-es="Buenas reseñas, pero una parece ser de otro negocio y la clínica nueva no se muestra del todo.">Strong reviews, but one seems to be about another business, and the new clinic is not fully shown.</span></div>
+        <div class="then"><b data-es="En su máximo">At its best</b><span data-es="Todas las reseñas respondidas, fotos del espacio y del equipo, y la reseña dudosa gestionada.">Every review answered, photos of the space and team, and the doubtful review dealt with.</span></div></div>
+      <div class="step"><span class="n">4</span><h3 data-es="Reservan">They book</h3>
+        <div class="now"><b data-es="Hoy">Today</b><span data-es="Llamada por teléfono; reserva online por confirmar. Sábado solo hasta las 14:00.">A phone call; online booking to confirm. Saturday only until 2 pm.</span></div>
+        <div class="then"><b data-es="En su máximo">At its best</b><span data-es="Llamada, WhatsApp y reserva online en un toque, con un horario que encaja con quien trabaja.">Call, WhatsApp and online booking in one tap, with hours that fit people who work.</span></div></div>
+    </div>
+
+    <section class="block" aria-labelledby="h-score">
+      <h3 id="h-score" data-es="Hoy frente al máximo, área por área">Today versus peak, area by area</h3>
+      <div class="tw"><table>
+        <thead><tr><th data-es="Área">Area</th><th data-es="Hoy">Today</th><th data-es="En su máximo">At its best</th></tr></thead>
+        <tbody>
+          <tr><td data-es="Nota">Rating</td><td class="now">4.8</td><td class="then" data-es="4,9 o más">4.9 or higher</td></tr>
+          <tr><td data-es="Reseñas">Reviews</td><td class="now" data-es="306, unas 9 nuevas al mes">306, about 9 new a month</td><td class="then" data-es="Flujo constante, todas respondidas">A steady flow, every one answered</td></tr>
+          <tr><td data-es="Categorías">Categories</td><td class="now" data-es="Mezcla de dentista con fisioterapia, masaje, spa y belleza">Dentist mixed with physio, massage, spa and beauty</td><td class="then" data-es="Centradas en odontología y sus especialidades">Focused on dentistry and its specialities</td></tr>
+          <tr><td data-es="Tratamientos">Treatments</td><td class="now" data-es="25 en la web; en Google, por confirmar">25 on the website; on Google, to confirm</td><td class="then" data-es="Cada uno listado con una breve descripción">Each one listed with a short description</td></tr>
+          <tr><td data-es="Nombre y dirección">Name and address</td><td class="now" data-es="Tres versiones distintas">Three different versions</td><td class="then" data-es="Un solo nombre en todas partes">One name everywhere</td></tr>
+          <tr><td data-es="Horario">Hours</td><td class="now" data-es="Sábado hasta las 14:00, domingo cerrado">Saturday until 2 pm, Sunday closed</td><td class="then" data-es="Horario ajustado a cuándo pueden venir los pacientes (sábado por la tarde como opción)">Hours matched to when patients can come (Saturday afternoon as an option)</td></tr>
+          <tr><td data-es="Reserva">Booking</td><td class="now" data-es="Teléfono; el resto por confirmar">Phone; the rest to confirm</td><td class="then" data-es="Llamada, WhatsApp y reserva online">Call, WhatsApp and online booking</td></tr>
+          <tr><td data-es="Fotos y novedades">Photos and updates</td><td class="now" data-es="Por confirmar">To confirm</td><td class="then" data-es="Espacio nuevo, equipo y publicaciones regulares">New space, team, and regular posts</td></tr>
+          <tr><td data-es="Visibilidad">Visibility</td><td class="now" data-es="Sin medir">Not measured</td><td class="then" data-es="Medida por calles frente a tus vecinos">Measured street by street against your neighbours</td></tr>
+        </tbody></table></div>
+    </section>
+
+    <div class="note"><p data-es="Nadie puede prometer una posición fija: la decide Google. Nuestro trabajo es quitar todo lo que te frena y mostrar todo lo que haces bien.">Nobody can promise a fixed position, because Google decides it. Our job is to remove everything that holds you back and show everything you do well.</p></div>
+  </div>
+</section>
+
+<!-- ============ PLAN ============ -->
+<section class="page" id="page-plan" hidden>
+  <div class="wrap">
+    <h2 data-es="Qué haremos">What we’ll do</h2>
+    <p class="lead" data-es="Somos Howdoyouwant.com. Trabajamos en seis frentes para que tu perfil de Google muestre lo mejor de la clínica.">We are Howdoyouwant.com. We work on six fronts so your Google profile shows the clinic at its best.</p>
+
+    <div class="grid g3" style="margin-top:28px">
+      <div class="wk a"><h3 data-es="Arreglar la base">Fix the foundation</h3><ul>
+        <li data-es="Un solo nombre, dirección y teléfono en todas partes">One name, address and phone number everywhere</li>
+        <li data-es="Categorías centradas en odontología">Categories focused on dentistry</li>
+        <li data-es="Horario, idiomas y datos del perfil correctos">Correct hours, languages and profile details</li>
+        <li data-es="Limpiar fichas antiguas o duplicadas tras el cambio de local">Clean up old or duplicate listings after the move</li></ul></div>
+      <div class="wk b"><h3 data-es="Hacer crecer y proteger las reseñas">Grow and protect reviews</h3><ul>
+        <li data-es="Una forma sencilla para que el paciente contento deje su reseña (QR y enlace por WhatsApp)">A simple way for happy patients to leave a review (QR code and WhatsApp link)</li>
+        <li data-es="Responder a todas, en el idioma del paciente">Reply to every one, in the patient’s language</li>
+        <li data-es="Gestionar con Google la reseña que parece de otro negocio">Handle the review that seems to be about another business, through Google</li></ul></div>
+      <div class="wk c"><h3 data-es="Mostrar la clínica en su mejor versión">Show the clinic at its best</h3><ul>
+        <li data-es="Plan de fotos y vídeo cortos del espacio nuevo, el equipo y la estética facial">A plan for photos and short videos of the new space, the team and facial aesthetics</li>
+        <li data-es="Publicaciones y novedades regulares">Regular posts and updates</li>
+        <li data-es="Respuestas a las preguntas frecuentes">Answers to the most common questions</li></ul></div>
+      <div class="wk a"><h3 data-es="Hacer la reserva fácil">Make booking easy</h3><ul>
+        <li data-es="Llamada, WhatsApp y reserva online en un toque">Call, WhatsApp and online booking in one tap</li>
+        <li data-es="Cada tratamiento listado con su descripción">Every treatment listed with its description</li>
+        <li data-es="Mensajes y consultas bien atendidos">Messages and enquiries handled well</li></ul></div>
+      <div class="wk b"><h3 data-es="Reforzar la web y la presencia local">Strengthen the website and local presence</h3><ul>
+        <li data-es="Páginas para los tratamientos principales y la estética facial">Pages for the main treatments and facial aesthetics</li>
+        <li data-es="Datos técnicos que ayudan a Google a ubicar la clínica">Technical markup that helps Google place the clinic</li>
+        <li data-es="Fichas coherentes en Doctoralia, QDQ y Páginas Amarillas">Consistent listings on Doctoralia, QDQ and Páginas Amarillas</li></ul></div>
+      <div class="wk c"><h3 data-es="Medir e informar">Measure and report</h3><ul>
+        <li data-es="Búsquedas, llamadas, rutas y visitas a la web desde tu perfil">Searches, calls, directions and website visits from your profile</li>
+        <li data-es="Posición en el mapa calle por calle frente a tus vecinos">Map position street by street against your neighbours</li>
+        <li data-es="Informes claros, sin jerga">Clear reports, no jargon</li></ul></div>
+    </div>
+
+    <div class="two" style="margin-top:28px">
+      <div class="box need"><h3 data-es="Qué necesitamos de ti">What we need from you</h3><ul>
+        <li data-es="Acceso como administrador al perfil de Google (tú sigues siendo la propietaria)">Manager access to the Google profile (you always stay the owner)</li>
+        <li data-es="Tu decisión sobre el horario">Your decision on opening hours</li>
+        <li data-es="Permiso para fotografiar el espacio y al equipo">Permission to photograph the space and the team</li>
+        <li data-es="Consentimiento del paciente para cualquier foto de antes y después">Patient consent for any before-and-after photos</li></ul></div>
+      <div class="box rules"><h3 data-es="Cómo trabajamos">How we work</h3><ul>
+        <li data-es="Solo métodos que Google permite">Only methods Google allows</li>
+        <li data-es="Nada de reseñas falsas ni pagadas">No fake or paid-for reviews</li>
+        <li data-es="Nada de palabras clave forzadas en el nombre de la clínica">No keywords forced into the clinic’s name</li>
+        <li data-es="Tú ves y controlas todo lo que hacemos">You see and control everything we do</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FACTS ============ -->
+<section class="page" id="page-facts" hidden>
+  <div class="wrap">
+    <h2 data-es="Datos y fuentes">Facts and sources</h2>
+    <p class="lead" data-es="Todo lo de esta página sale de información pública. Estos son los datos y de dónde vienen.">Everything here comes from public information. These are the facts and where they come from.</p>
+    <div class="tw" style="margin-top:24px"><table>
+      <thead><tr><th data-es="Dato">Fact</th><th data-es="Valor">Value</th><th data-es="Fuente">Source</th></tr></thead>
+      <tbody>
+        <tr><td data-es="Nota y reseñas">Rating and reviews</td><td data-es="4,8 / 306">4.8 / 306</td><td data-es="Ficha de Google Maps, 19 sep 2026">Google Maps listing, 19 Sep 2026</td></tr>
+        <tr><td data-es="Clínicas comparadas">Clinics compared</td><td data-es="14 clínicas cercanas (12 con más de 100 reseñas, contando la tuya)">14 nearby clinics (12 with 100+ reviews, counting yours)</td><td data-es="Fichas de Google Maps, 19 sep 2026">Google Maps listings, 19 Sep 2026</td></tr>
+        <tr><td data-es="Horarios">Hours</td><td data-es="Tuyo y de las 14 clínicas">Yours and the 14 clinics’</td><td data-es="Fichas de Google Maps, 19 sep 2026">Google Maps listings, 19 Sep 2026</td></tr>
+        <tr><td data-es="Categorías">Categories</td><td data-es="Dentista, clínica dental, fisioterapeuta, masaje, spa, salón de belleza, clínica médica">Dentist, dental clinic, physiotherapist, massage, spa, beauty salon, medical clinic</td><td data-es="Ficha de Google Maps, 19 sep 2026">Google Maps listing, 19 Sep 2026</td></tr>
+        <tr><td data-es="Reseñas a finales de 2025">Reviews in late 2025</td><td>213</td><td data-es="Reseñas de Google mostradas en la web de la clínica (nov 2025)">Google reviews shown on the clinic’s website (Nov 2025)</td></tr>
+        <tr><td data-es="25 tratamientos">25 treatments</td><td data-es="Ortodoncia, implantes, carillas, botox, PRP, armonización facial y más">Orthodontics, implants, veneers, Botox, PRP, facial harmonisation and more</td><td><a href="https://dentalesteticasoler.com/" target="_blank" rel="noopener" data-es="Web de la clínica">Clinic website</a></td></tr>
+        <tr><td data-es="Más de 16 años y nuevo local">16+ years and new location</td><td data-es="Nueva sede en Plaça Espanyola">New site on Plaça Espanyola</td><td><a href="https://diaricatalunya.cat/en/baix-llobregat/hospitalet/clinica-dental-estetica-soler-a-benchmark-recognized-by-its-clients" target="_blank" rel="noopener">Diari de Catalunya, 17 Jun 2026</a></td></tr>
+        <tr><td data-es="Reserva online de la competencia">Competitor online booking</td><td data-es="Orthodontic Dental Centers permite reservar a cualquier hora">Orthodontic Dental Centers lets patients book at any hour</td><td><a href="https://orthodontic.es/clinicas/hospitalet-llobregat/" target="_blank" rel="noopener" data-es="Web de Orthodontic Dental Centers">Orthodontic Dental Centers website</a></td></tr>
+        <tr><td data-es="Nombre legal">Legal name</td><td>Clinica Dental Dra. Elisabeth Soler S.L.</td><td data-es="Registro mercantil (eInforma, Empresite)">Company registry (eInforma, Empresite)</td></tr>
+      </tbody></table></div>
+
+    <div class="two" style="margin-top:28px">
+      <div class="box need"><h3 data-es="Lo que aún no hemos visto">What we have not seen yet</h3><ul>
+        <li data-es="El informe de rendimiento (búsquedas, llamadas, rutas)">The Performance report (searches, calls, directions)</li>
+        <li data-es="Los términos con los que te buscan">The terms people use to find you</li>
+        <li data-es="Número de fotos, publicaciones y preguntas">Number of photos, posts and questions</li>
+        <li data-es="Servicios y ajustes de reserva en Google">Treatments and booking settings on Google</li>
+        <li data-es="Tu posición real en el mapa">Your real map position</li></ul></div>
+      <div class="box rules"><h3 data-es="Cómo leer esta página">How to read this page</h3><p data-es="Los datos son una foto del 19 de septiembre de 2026 y pueden cambiar. Donde pone “por confirmar”, lo comprobaremos con acceso al perfil. El perfil “en su máximo” es ilustrativo, no una promesa de resultados.">The data is a snapshot from 19 September 2026 and can change. Where it says “to confirm”, we will check it with access to the profile. The “at its best” profile is illustrative, not a promise of results.</p></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p data-es="Preparado por Howdoyouwant.com para Clínica Dental & Estètica Soler. Basado en información pública.">Prepared by Howdoyouwant.com for Clínica Dental &amp; Estètica Soler. Based on public information.</p>
+    <p><strong>Howdoyouwant.com</strong></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>Array.from(r.querySelectorAll(s));
+  let lang=/^(es|ca)/i.test(navigator.language||'')?'es':'en';
+  const t=(en,es)=>lang==='es'?es:en;
+  const pages=['overview','today','gaps','peak','plan','facts'];
+
+  /* ---------- data ---------- */
+  const bench=[
+    {n:'DentiPro',r:5.0,c:291},{n:'Mimaden',r:5.0,c:106},
+    {n:'Natural Dent',r:4.9,c:354},{n:'Santa Eulàlia',r:4.9,c:325},{n:'Alphaclinic',r:4.9,c:269},{n:'Dental Concept',r:4.9,c:150},
+    {n:'Soler',r:4.8,c:306,me:true},{n:'Orthodontic Dental Centers',r:4.8,c:239},{n:'Dental Studio',r:4.8,c:172},
+    {n:'Centro Dental La Torrassa',r:4.6,c:107},
+    {n:'Ampuero',r:4.4,c:281},{n:'Bucalia',r:4.4,c:159}
+  ];
+  const satOpen=[[9,18],[10,15],[10,14],[11.5,15]]; // Frescdental, La Torrassa, Ampuero, Collblanc
+  const solerSat=[10,14];
+
+  const gaps=[
+    {hi:true,seen:true,
+     ti:['Your rating trails the leaders','Tu nota va por detrás de los líderes'],
+     su:['A 4.8 next to rivals showing 4.9 or 5.0.','Un 4,8 junto a rivales con 4,9 o 5,0.'],
+     why:['People compare stars side by side in the map list. A gap of 0.1 to 0.2 is easy to notice and can decide who gets the call.','En la lista del mapa la gente compara estrellas. Una diferencia de 0,1 a 0,2 se nota y puede decidir a quién llaman.'],
+     ev:['Six clinics with 100+ reviews rate higher: DentiPro 5.0, Mimaden 5.0, Natural Dent 4.9, Santa Eulàlia 4.9, Alphaclinic 4.9, Dental Concept 4.9.','Seis clínicas con más de 100 reseñas tienen mejor nota: DentiPro 5,0, Mimaden 5,0, Natural Dent 4,9, Santa Eulàlia 4,9, Alphaclinic 4,9, Dental Concept 4,9.']},
+    {hi:true,seen:true,
+     ti:['Categories send mixed signals','Las categorías envían señales mezcladas'],
+     su:['Google lists physiotherapist, massage, spa and beauty salon next to dentist.','Google lista fisioterapeuta, masaje, spa y salón de belleza junto a dentista.'],
+     why:['Categories are one of the main ways Google decides which searches you match. Unrelated ones blur what you are known for.','Las categorías son una de las formas principales en que Google decide con qué búsquedas encajas. Las que no vienen al caso desdibujan lo que te define.'],
+     ev:['Categories currently shown: dentist, dental clinic, physiotherapist, massage, spa, beauty salon, medical clinic.','Categorías que se muestran ahora: dentista, clínica dental, fisioterapeuta, masaje, spa, salón de belleza, clínica médica.']},
+    {hi:false,seen:true,
+     ti:['Your name appears three ways','Tu nombre aparece de tres maneras'],
+     su:['Maps, the website and the company registry use different names.','Maps, la web y el registro mercantil usan nombres distintos.'],
+     why:['Google trusts a business more when its name, address and phone match everywhere. This matters even more after moving to a new location.','Google confía más en un negocio cuando su nombre, dirección y teléfono coinciden en todas partes. Importa aún más tras un cambio de local.'],
+     ev:['Google Maps: Clinica Dental & Estetica Soler. Website: Centro Dental Hospitalet. Registry: Clinica Dental Dra. Elisabeth Soler S.L.','Google Maps: Clinica Dental & Estetica Soler. Web: Centro Dental Hospitalet. Registro: Clinica Dental Dra. Elisabeth Soler S.L.']},
+    {hi:false,seen:true,
+     ti:['Saturday afternoon and Sunday are open ground','El sábado por la tarde y el domingo son terreno libre'],
+     su:['Few nearby clinics offer them, and you close at 2 pm on Saturday.','Pocas clínicas cercanas los ofrecen, y tú cierras a las 14:00 el sábado.'],
+     why:['People who work weekdays often can only come at weekends. A clinic that is open when others are closed captures those searches.','Quien trabaja entre semana a menudo solo puede venir el fin de semana. Una clínica abierta cuando las demás cierran capta esas búsquedas.'],
+     ev:['Only 4 of 14 nearby clinics open on Saturday, only 1 stays open after 3 pm, and none open on Sunday.','Solo 4 de 14 clínicas cercanas abren el sábado, solo 1 sigue abierta después de las 15:00 y ninguna abre el domingo.']},
+    {hi:true,seen:false,
+     ti:['Treatments may not be listed one by one','Puede que los tratamientos no estén listados uno a uno'],
+     su:['Your website lists 25 treatments. Google needs each one too.','Tu web lista 25 tratamientos. Google también necesita cada uno.'],
+     why:['Someone searching for implants or Botox is matched to profiles that name those treatments. If they are missing, you can be skipped.','Quien busca implantes o botox ve perfiles que nombran esos tratamientos. Si faltan, pueden pasarte por alto.'],
+     ev:['The website shows orthodontics, implants, veneers, sedation, Botox, PRP, fillers, facial harmonisation and more. We need profile access to check what Google shows.','La web muestra ortodoncia, implantes, carillas, sedación, botox, PRP, rellenos, armonización facial y más. Necesitamos acceso al perfil para ver qué muestra Google.']},
+    {hi:true,seen:false,
+     ti:['Booking may take too many steps','Puede que reservar lleve demasiados pasos'],
+     su:['A competitor lets patients book online at any hour.','Una competidora deja reservar online a cualquier hora.'],
+     why:['Many people choose whoever is easiest to book, often outside opening hours. Every extra step loses some of them.','Muchas personas eligen a quien es más fácil de reservar, a menudo fuera de horario. Cada paso extra hace perder a algunas.'],
+     ev:['Orthodontic Dental Centers offers instant online booking, including weekends and holidays. Your listing shows a mobile number, which can become a one-tap WhatsApp button.','Orthodontic Dental Centers ofrece reserva online inmediata, también en fines de semana y festivos. Tu ficha muestra un móvil, que puede convertirse en un botón de WhatsApp de un toque.']},
+    {hi:false,seen:true,
+     ti:['A review that seems to be about another business','Una reseña que parece ser de otro negocio'],
+     su:['It names “Oral Studio” and makes serious claims.','Nombra a “Oral Studio” y hace acusaciones graves.'],
+     why:['A serious complaint among the reviews Google shows can put off new patients, especially if it is not about you.','Una queja grave entre las reseñas que muestra Google puede echar atrás a nuevos pacientes, sobre todo si no va sobre ti.'],
+     ev:['We cannot verify what it refers to. A calm public reply and a request to Google to review it are the right first steps.','No podemos verificar a qué se refiere. Una respuesta pública serena y pedir a Google que la revise son los primeros pasos correctos.']},
+    {hi:false,seen:false,
+     ti:['The new clinic may not be fully shown','Puede que la clínica nueva no se muestre del todo'],
+     su:['A modern new space deserves fresh photos and updates.','Un espacio nuevo y moderno merece fotos y novedades recientes.'],
+     why:['Patients judge cleanliness and trust from photos before they ever visit. Old or few photos undersell the new clinic.','Los pacientes juzgan la limpieza y la confianza por las fotos antes de visitarte. Fotos antiguas o escasas restan valor a la clínica nueva.'],
+     ev:['A June 2026 press article describes the new Plaça Espanyola clinic, and the website calls it larger and more advanced. We need profile access to see what photos and posts exist.','Un artículo de prensa de junio de 2026 describe la nueva clínica de Plaça Espanyola y la web la presenta como más amplia y avanzada. Necesitamos acceso al perfil para ver qué fotos y publicaciones hay.']}
+  ];
+
+  /* ---------- renderers ---------- */
+  function renderBench(){
+    const sorted=bench.slice().sort((a,b)=>b.r-a.r||b.c-a.c);
+    const max=354, mine=4.8;
+    $('#bench').innerHTML=sorted.map(x=>{
+      const hi=x.r>mine;
+      return '<div class="br'+(x.me?' me':'')+'"><span class="nm">'+(x.me?t('Your clinic (Soler)','Tu clínica (Soler)'):x.n)+'</span>'+
+        '<span class="rt'+(hi?' hi':'')+'">'+(lang==='es'?x.r.toFixed(1).replace('.',','):x.r.toFixed(1))+' ★</span>'+
+        '<span class="bar"><span class="b" style="width:'+Math.round(x.c/max*100*0.78)+'%"></span><em>'+x.c+'</em></span></div>';
+    }).join('');
+  }
+  function renderSat(){
+    let cols='',lab='',mine='';
+    for(let h=9;h<20;h+=0.5){
+      const n=satOpen.filter(([a,b])=>h>=a&&h<b).length;
+      const label=t(n+' of 14 clinics open at '+Math.floor(h)+':'+(h%1?'30':'00'), n+' de 14 clínicas abiertas a las '+Math.floor(h)+':'+(h%1?'30':'00'));
+      cols+='<div class="col'+(n?'':' zero')+'" title="'+label+'">'+(n?n:'')+'<span style="height:'+(n/14*100)+'%"></span></div>';
+      mine+='<i class="'+(h>=solerSat[0]&&h<solerSat[1]?'on':'')+'"></i>';
+    }
+    for(let h=9;h<20;h++)lab+='<span>'+h+'</span>';
+    $('#sat').innerHTML='<div class="sat">'+cols+'</div><div class="hours-x">'+lab+'</div><div class="mine">'+mine+'</div>';
+  }
+  function renderGaps(){
+    const wasOpen=$$('#gaplist details').map(d=>d.open);
+    $('#gaplist').innerHTML=gaps.map((g,i)=>{
+      const L=lang==='es'?1:0;
+      return '<details class="gap"'+(wasOpen[i]?' open':'')+'><summary><div><h3>'+g.ti[L]+'</h3><p>'+g.su[L]+'</p></div>'+
+        '<div class="tags"><span class="tag '+(g.hi?'hi':'md')+'">'+(g.hi?t('High impact','Impacto alto'):t('Medium impact','Impacto medio'))+'</span>'+
+        '<span class="tag '+(g.seen?'seen':'tc')+'">'+(g.seen?t('Seen publicly','Visible públicamente'):t('Confirm with access','Confirmar con acceso'))+'</span><span class="plus" aria-hidden="true">+</span></div></summary>'+
+        '<div class="gap-body"><div><h4>'+t('Why it matters','Por qué importa')+'</h4><p>'+g.why[L]+'</p></div><div><h4>'+t('What we saw','Lo que vimos')+'</h4><p>'+g.ev[L]+'</p></div></div></details>';
+    }).join('');
+    updateToggleAll();
+  }
+  function updateToggleAll(){
+    const b=$('#toggleAll'); const all=$$('#gaplist details').every(d=>d.open);
+    b.textContent=all?t('Close all details','Cerrar todos los detalles'):t('Open all details','Abrir todos los detalles');
+    b.dataset.open=all?'1':'';
+  }
+
+  /* ---------- language ---------- */
+  function applyLang(){
+    document.documentElement.lang=lang;
+    $$('[data-es]').forEach(el=>{
+      if(el.dataset.en===undefined) el.dataset.en=el.textContent;
+      el.textContent=lang==='es'?el.dataset.es:el.dataset.en;
+    });
+    $$('[data-lang-btn]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.langBtn===lang)));
+    document.title=t('Clínica Dental & Estètica Soler | Google profile potential','Clínica Dental & Estètica Soler | Potencial del perfil de Google');
+    renderBench(); renderSat(); renderGaps();
+  }
+
+  /* ---------- routing ---------- */
+  let first=true;
+  function route(){
+    let h=location.hash.replace('#','')||'overview'; if(!pages.includes(h)) h='overview';
+    pages.forEach(p=>{$('#page-'+p).hidden=(p!==h)});
+    $$('.tab').forEach(a=>{ if(a.getAttribute('href')==='#'+h) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current'); });
+    window.scrollTo(0,0);
+    if(!first) $('#main').focus({preventScroll:true});
+    first=false;
+    if(h==='overview') armPeak();
+  }
+  function armPeak(){
+    const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+    $$('#page-overview .peak .row.up').forEach((r,i)=>{
+      r.classList.remove('lit');
+      setTimeout(()=>r.classList.add('lit'),reduce?0:700+i*420);
+    });
+  }
+
+  /* ---------- events ---------- */
+  $$('[data-lang-btn]').forEach(b=>b.addEventListener('click',()=>{lang=b.dataset.langBtn;applyLang();}));
+  $$('[data-show]').forEach(b=>b.addEventListener('click',()=>{
+    const w=b.dataset.show;
+    $$('[data-show]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));
+    $('.gcard.today').classList.toggle('show',w==='today');
+    $('.gcard.peak').classList.toggle('show',w==='peak');
+  }));
+  $('#toggleAll').addEventListener('click',()=>{
+    const open=!$('#toggleAll').dataset.open;
+    $$('#gaplist details').forEach(d=>d.open=open); updateToggleAll();
+  });
+  $('#gaplist').addEventListener('toggle',updateToggleAll,true);
+  window.addEventListener('hashchange',route);
+
+  applyLang(); route();
+})();
+</script>
+</body>
+</html>
