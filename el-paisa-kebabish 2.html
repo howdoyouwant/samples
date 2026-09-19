@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="El Paisa Kebabish: kebab, döner y comida rápida de Oriente Medio, halal, en L'Hospitalet de Llobregat. Carta, pedido y envío a domicilio.">
+<title>El Paisa Kebabish · Kebab halal en L'Hospitalet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Figtree:wght@400;500;600;700&family=Cairo:wght@400;600;800&family=Noto+Nastaliq+Urdu:wght@400;700&family=Noto+Sans+Gurmukhi:wght@400;600;800&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "El Paisa Kebabish",
+  "servesCuisine": ["Kebab", "Döner", "Middle Eastern", "Halal"],
+  "telephone": "+34935667559",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Carrer de Llobregat, 10",
+    "postalCode": "08904",
+    "addressLocality": "L'Hospitalet de Llobregat",
+    "addressRegion": "Barcelona",
+    "addressCountry": "ES"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 41.375154, "longitude": 2.118286 },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "12:00", "closes": "23:59" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday","Sunday"], "opens": "12:00", "closes": "01:00" }
+  ],
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "8.2", "bestRating": "10", "ratingCount": "116" }
+}
+</script>
+
+<style>
+:root{
+  --navy:#17204D; --red:#D92D1A; --red2:#F0432F; --saffron:#FFC93C; --mint:#A5DE8F; --sky:#9CCBFF;
+  --pink:#FFB9CB; --peach:#FFC79A; --lilac:#D5C8FF;
+  --bg:#FFFFFF; --tint:#EEF6E4; --text:#17204D; --muted:#505A84; --line:#D3D9EE; --surface:#FFFFFF; --price:#C9271A;
+  --f-brand:"Bagel Fat One","Arial Rounded MT Bold","Trebuchet MS",system-ui,sans-serif;
+  --f-d:var(--f-brand);
+  --f-b:"Figtree","Segoe UI",system-ui,-apple-system,sans-serif;
+  --hdr:60px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0E1230; --tint:#141A40; --text:#F2F3FF; --muted:#AEB5DA; --line:#2B3468; --surface:#181E4A; --price:#FF9384;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0E1230; --tint:#141A40; --text:#F2F3FF; --muted:#AEB5DA; --line:#2B3468; --surface:#181E4A; --price:#FF9384;
+}
+html[lang="ar"]{ --f-d:"Cairo","Segoe UI",Tahoma,sans-serif; --f-b:"Cairo","Segoe UI",Tahoma,sans-serif; }
+html[lang="ur"]{ --f-d:"Noto Nastaliq Urdu","Jameel Noori Nastaleeq","Segoe UI",serif; --f-b:"Noto Nastaliq Urdu","Jameel Noori Nastaleeq","Segoe UI",serif; --lh:2.1; --lh-h:1.95; }
+html[lang="pa"]{ --f-d:"Noto Sans Gurmukhi","Raavi","Nirmala UI",sans-serif; --f-b:"Noto Sans Gurmukhi","Raavi","Nirmala UI",sans-serif; --lh:1.7; }
+
+*,*::before,*::after{ box-sizing:border-box; }
+[hidden]{ display:none !important; }
+html{ -webkit-text-size-adjust:100%; }
+@media (prefers-reduced-motion:no-preference){ html{ scroll-behavior:smooth; } }
+body{
+  margin:0; background:var(--bg); color:var(--text); font-family:var(--f-b); font-size:1rem; line-height:var(--lh,1.55);
+  padding-bottom:calc(84px + env(safe-area-inset-bottom));
+}
+h1,h2,h3,h4,p,ul,dl,dd,blockquote,fieldset,legend{ margin:0; padding:0; }
+fieldset{ border:0; min-width:0; }
+ul{ list-style:none; }
+a{ color:inherit; }
+button{ font:inherit; color:inherit; cursor:pointer; }
+h2,h3,h4{ font-family:var(--f-d); line-height:var(--lh-h,1.1); font-weight:400; }
+html[lang="ar"] h2, html[lang="ar"] h3{ font-weight:800; }
+html[lang="pa"] h2, html[lang="pa"] h3{ font-weight:800; }
+html[lang="ur"] h2, html[lang="ur"] h3{ font-weight:700; }
+:focus-visible{ outline:3px solid var(--saffron); outline-offset:3px; border-radius:8px; box-shadow:0 0 0 6px var(--navy); }
+.wrap{ max-width:1080px; margin-inline:auto; padding-inline:18px; }
+.sr{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+.skip{ position:absolute; inset-inline-start:8px; top:-70px; background:var(--navy); color:#fff; padding:10px 14px; border-radius:10px; z-index:200; }
+.skip:focus{ top:8px; }
+.ill{ display:block; width:100%; height:auto; aspect-ratio:1/1; overflow:visible; }
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:10px; min-height:54px; padding:0 22px;
+  border-radius:16px; border:3px solid var(--navy); background:#fff; color:var(--navy); font-weight:700; font-size:1.02rem;
+  text-decoration:none; box-shadow:0 4px 0 var(--navy); transition:transform .08s, box-shadow .08s;
+}
+.btn:active{ transform:translateY(3px); box-shadow:0 1px 0 var(--navy); }
+.btn.y{ background:var(--saffron); }
+.btn.r{ background:var(--red); color:#fff; }
+.btn.big{ width:100%; min-height:58px; font-size:1.1rem; }
+.btn svg{ flex:none; }
+
+/* ---------- header ---------- */
+.hdr{ position:sticky; top:0; z-index:40; background:var(--bg); border-bottom:3px solid var(--navy); }
+.hdr-in{ max-width:1080px; margin-inline:auto; height:var(--hdr); padding-inline:18px; display:flex; align-items:center; gap:12px; }
+.brand{ display:flex; align-items:center; gap:8px; text-decoration:none; font-family:var(--f-brand); font-size:1.3rem; line-height:1; color:var(--text); }
+.brand .ill{ width:38px; }
+.hdr-links{ display:none; }
+.hdr-call{ display:none; }
+.lang{ position:relative; display:inline-flex; align-items:center; margin-inline-start:auto; }
+.lang svg{ position:absolute; inset-inline-start:12px; pointer-events:none; color:var(--navy); }
+.lang select{
+  appearance:none; -webkit-appearance:none; font:inherit; font-size:.95rem; font-weight:600; color:var(--navy);
+  background:var(--saffron); border:3px solid var(--navy); border-radius:999px; min-height:44px; padding:0 16px; padding-inline-start:38px; cursor:pointer;
+}
+
+/* ---------- hero ---------- */
+.hero{ background:var(--red); color:#fff; padding:26px 0 40px; overflow:hidden; position:relative; }
+.hero-in{ display:grid; gap:26px; align-items:center; }
+.status{ display:inline-flex; align-items:center; gap:9px; background:var(--navy); color:#fff; padding:8px 15px; border-radius:999px; font-size:.92rem; font-weight:600; width:fit-content; }
+.dot{ width:10px; height:10px; border-radius:50%; background:#8a90b8; flex:none; }
+.status.open .dot{ background:#4BE38B; box-shadow:0 0 0 3px rgba(75,227,139,.3); }
+.status.closed .dot{ background:#FF8C7C; }
+h1{ margin-top:20px; }
+.wm{
+  display:block; font-family:var(--f-brand); font-weight:400; font-size:clamp(4.2rem,21vw,9rem); line-height:.86; letter-spacing:-.02em;
+  color:#fff; text-shadow:.045em .05em 0 var(--navy);
+}
+.kb{
+  display:block; width:fit-content; margin-top:16px; background:var(--saffron); color:var(--navy); border:3px solid var(--navy);
+  font-family:var(--f-brand); font-size:clamp(1.4rem,6.4vw,2.3rem); line-height:1; padding:.3em .75em .34em; border-radius:14px;
+  transform:rotate(-3deg); box-shadow:0 4px 0 var(--navy);
+}
+html[dir="rtl"] .kb{ transform:rotate(3deg); }
+.tagline{ margin-top:20px; font-size:1.18rem; max-width:34ch; font-weight:500; }
+.cta{ display:flex; flex-wrap:wrap; gap:12px; margin-top:24px; }
+.trust{ display:flex; flex-wrap:wrap; gap:8px; margin-top:22px; }
+.trust li{ display:inline-flex; align-items:center; gap:7px; background:#fff; color:var(--navy); border:2px solid var(--navy); border-radius:999px; padding:5px 13px; font-size:.86rem; font-weight:700; }
+
+.cluster{ position:relative; width:min(88vw,400px); aspect-ratio:1/1; justify-self:center; }
+.cl{ position:absolute; rotate:var(--r,0deg); animation:pop .65s cubic-bezier(.2,1.5,.4,1) both; animation-delay:var(--d,0s); filter:drop-shadow(0 6px 0 rgba(23,32,77,.9)); }
+@keyframes pop{ from{ scale:.4; opacity:0; } }
+.c-pizza{ width:44%; left:-4%; top:0; --r:-12deg; --d:.05s; }
+.c-doner{ width:70%; left:16%; top:12%; --d:.15s; z-index:2; }
+.c-leg{ width:38%; left:-2%; bottom:0; --r:-16deg; --d:.3s; z-index:3; }
+.c-fries{ width:40%; right:-2%; bottom:2%; --r:10deg; --d:.4s; z-index:3; }
+html[dir="rtl"] .c-pizza{ left:auto; right:-4%; --r:12deg; }
+html[dir="rtl"] .c-leg{ left:auto; right:-2%; --r:16deg; }
+html[dir="rtl"] .c-fries{ right:auto; left:-2%; --r:-10deg; }
+html[dir="rtl"] .c-doner{ left:auto; right:16%; }
+.halal{
+  position:absolute; right:2%; top:0; z-index:4; width:92px; height:92px; border-radius:50%; background:var(--mint); color:var(--navy);
+  border:3px solid var(--navy); display:grid; place-content:center; text-align:center; rotate:10deg; box-shadow:0 4px 0 var(--navy);
+  animation:pop .6s cubic-bezier(.2,1.5,.4,1) .55s both;
+}
+html[dir="rtl"] .halal{ right:auto; left:2%; rotate:-10deg; }
+.halal b{ font-family:"Cairo","Segoe UI",sans-serif; font-size:1.7rem; line-height:1; font-weight:800; }
+.halal span{ font-family:var(--f-brand); font-size:.85rem; line-height:1.1; }
+
+/* marquee */
+.marq{ overflow:hidden; background:var(--saffron); border-block:3px solid var(--navy); direction:ltr; }
+.marq-t{ display:flex; width:max-content; animation:marq 46s linear infinite; }
+.marq-g{ display:flex; align-items:center; gap:24px; padding:12px 24px 12px 0; font-family:var(--f-brand); font-size:1.5rem; color:var(--navy); white-space:nowrap; }
+html[lang="ur"] .marq-g, html[lang="ar"] .marq-g, html[lang="pa"] .marq-g{ font-family:var(--f-d); font-weight:800; }
+@keyframes marq{ to{ transform:translateX(-50%); } }
+
+/* ---------- sections ---------- */
+section{ scroll-margin-top:calc(var(--hdr) + 12px); }
+h2{ font-size:clamp(2rem,8vw,3.2rem); letter-spacing:-.01em; }
+.sub{ color:var(--muted); margin-top:8px; font-size:1.05rem; }
+
+.menu{ padding-top:46px; }
+.menu-head{ max-width:760px; margin-inline:auto; padding-inline:18px; }
+.cats{
+  position:sticky; top:var(--hdr); z-index:30; background:var(--bg); border-bottom:2px solid var(--line);
+  display:flex; gap:8px; overflow-x:auto; padding:10px 18px; margin-top:20px; scrollbar-width:none; scroll-snap-type:x proximity;
+}
+.cats::-webkit-scrollbar{ display:none; }
+.chip{
+  flex:none; scroll-snap-align:center; text-decoration:none; font-size:.95rem; font-weight:700; min-height:42px; display:inline-flex; align-items:center;
+  padding:0 16px; border-radius:999px; border:2px solid var(--navy); background:var(--surface); color:var(--text); white-space:nowrap;
+}
+.chip.on{ background:var(--navy); color:#fff; }
+:root[data-theme="dark"] .chip.on{ background:var(--saffron); color:var(--navy); }
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .chip.on{ background:var(--saffron); color:var(--navy); } }
+.menu-body{ max-width:760px; margin-inline:auto; padding:0 18px 36px; }
+.cat{ padding-top:56px; scroll-margin-top:calc(var(--hdr) + 66px); }
+.cat-h{
+  position:relative; background:var(--band,var(--saffron)); color:var(--navy); border:3px solid var(--navy); border-radius:22px;
+  padding:18px 112px 18px 18px; min-height:96px; display:flex; flex-direction:column; justify-content:center; box-shadow:0 5px 0 var(--navy);
+}
+html[dir="rtl"] .cat-h{ padding:18px 18px 18px 112px; }
+.cat-h h3{ font-size:1.75rem; }
+.cat-h .note{ font-weight:700; margin-top:4px; font-size:.95rem; }
+.cat-ill{ position:absolute; width:104px; inset-inline-end:8px; top:-26px; rotate:8deg; filter:drop-shadow(0 4px 0 rgba(23,32,77,.9)); }
+html[dir="rtl"] .cat-ill{ rotate:-8deg; }
+.items{ margin-top:8px; }
+.item{ display:grid; grid-template-columns:1fr auto; gap:6px 14px; align-items:start; padding:16px 0; border-bottom:2px dashed var(--line); }
+.item:last-child{ border-bottom:0; }
+.item h4{ font-size:1.15rem; font-family:var(--f-b); font-weight:700; line-height:var(--lh-h,1.3); }
+.desc{ color:var(--muted); margin-top:3px; font-size:.95rem; }
+.tags{ display:flex; flex-wrap:wrap; gap:6px; margin-top:9px; }
+.tags li{ font-size:.82rem; font-weight:600; padding:2px 11px; border:1.5px solid var(--line); border-radius:999px; background:var(--tint); }
+.buy{ display:flex; flex-direction:column; align-items:flex-end; gap:8px; }
+.price{ font-family:var(--f-brand); font-size:1.25rem; color:var(--price); white-space:nowrap; unicode-bidi:isolate; }
+.add{
+  position:relative; width:46px; height:46px; border-radius:50%; border:3px solid var(--navy); background:var(--saffron); color:var(--navy);
+  display:grid; place-items:center; box-shadow:0 3px 0 var(--navy); padding:0; transition:transform .08s, box-shadow .08s;
+}
+.add:active{ transform:translateY(2px); box-shadow:0 1px 0 var(--navy); }
+.cnt{ position:absolute; top:-9px; inset-inline-end:-9px; min-width:22px; height:22px; border-radius:99px; background:var(--red); color:#fff; border:2px solid var(--navy); font-style:normal; font-size:.75rem; font-weight:800; display:grid; place-items:center; padding:0 4px; }
+.sizes{ display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:20px; }
+.size{ background:var(--surface); border:3px solid var(--navy); border-radius:18px; padding:14px 6px; text-align:center; display:flex; flex-direction:column; align-items:center; gap:2px; box-shadow:0 4px 0 var(--navy); }
+.size .sz{ font-weight:700; }
+.size .cm{ color:var(--muted); font-size:.88rem; unicode-bidi:isolate; }
+.size .price{ font-size:1.4rem; margin-top:4px; }
+.pizza-add{ display:flex; margin-top:18px; }
+.flavors-l{ margin-top:22px; font-weight:700; }
+.tags.big li{ font-size:.9rem; padding:4px 12px; }
+
+/* delivery */
+.delivery{ background:var(--mint); color:var(--navy); padding:56px 0; border-block:3px solid var(--navy); margin-top:20px; }
+.delivery .sub{ color:var(--navy); font-size:1.15rem; font-weight:600; }
+.d-grid{ display:grid; gap:28px; }
+.d-block h3{ font-family:var(--f-b); font-size:1.05rem; font-weight:800; margin-bottom:12px; }
+.phones,.plat{ display:flex; flex-wrap:wrap; gap:10px; }
+.plat li{ padding:9px 18px; border-radius:999px; background:#fff; border:3px solid var(--navy); font-family:var(--f-brand); box-shadow:0 3px 0 var(--navy); }
+
+/* reviews */
+.reviews{ background:var(--navy); color:#fff; padding:60px 0 64px; }
+.reviews h2{ color:#fff; }
+.r-grid{ display:grid; gap:26px; margin-top:28px; }
+.score{ width:172px; height:172px; border-radius:50%; background:var(--saffron); color:var(--navy); border:4px solid #fff; display:grid; place-content:center; text-align:center; rotate:-6deg; box-shadow:0 6px 0 rgba(255,255,255,.28); }
+html[dir="rtl"] .score{ rotate:6deg; }
+.score .big{ font-family:var(--f-brand); font-size:3.8rem; line-height:1; unicode-bidi:isolate; }
+.score .big small{ font-size:1.4rem; }
+.score .g{ font-weight:800; font-size:.85rem; margin-top:2px; }
+.score-wrap{ display:flex; align-items:center; gap:18px; flex-wrap:wrap; }
+.score-wrap p{ font-size:1.1rem; font-weight:600; max-width:18ch; }
+.quote{ position:relative; background:#fff; color:var(--navy); border:3px solid #fff; border-radius:22px; padding:22px; }
+.quote::after{ content:""; position:absolute; bottom:-14px; inset-inline-start:34px; width:26px; height:26px; background:#fff; transform:rotate(45deg); border-radius:0 0 6px 0; }
+html[dir="rtl"] .quote::after{ transform:rotate(45deg); }
+.quote p{ font-size:1.08rem; font-weight:500; }
+.quote cite{ display:block; margin-top:12px; font-style:normal; font-weight:800; font-size:.9rem; color:#4B5588; }
+.quotes{ display:grid; gap:34px; }
+
+/* visit */
+.visit{ padding:60px 0 64px; }
+.v-grid{ display:grid; gap:34px; margin-top:26px; }
+.addr h3{ font-family:var(--f-b); font-weight:800; color:var(--muted); font-size:1rem; margin-bottom:8px; }
+.addr address{ font-style:normal; font-family:var(--f-brand); font-size:clamp(1.6rem,6.5vw,2.2rem); line-height:1.15; }
+html[lang="ar"] .addr address, html[lang="ur"] .addr address, html[lang="pa"] .addr address{ font-family:var(--f-brand); }
+.v-actions{ display:flex; flex-wrap:wrap; gap:12px; margin-top:22px; }
+.sign{ position:relative; background:var(--saffron); color:var(--navy); border:3px solid var(--navy); border-radius:24px; padding:38px 22px 24px; rotate:-1.5deg; box-shadow:0 7px 0 var(--navy); }
+html[dir="rtl"] .sign{ rotate:1.5deg; }
+.sign::before,.sign::after{ content:""; position:absolute; top:12px; width:14px; height:14px; border-radius:50%; background:var(--bg); border:3px solid var(--navy); }
+.sign::before{ left:26px; } .sign::after{ right:26px; }
+.sign h3{ font-size:1.5rem; margin-bottom:10px; }
+.hours{ display:grid; gap:10px; }
+.hours div{ display:flex; justify-content:space-between; gap:14px; border-bottom:2px dashed rgba(23,32,77,.35); padding-bottom:10px; }
+.hours div:last-child{ border-bottom:0; padding-bottom:0; }
+.hours dt{ font-weight:600; }
+.hours dd{ font-family:var(--f-brand); font-size:1.15rem; unicode-bidi:isolate; }
+.tel-row{ margin-top:22px; padding-top:16px; border-top:3px solid var(--navy); }
+.tel{ font-family:var(--f-brand); font-size:1.9rem; text-decoration:none; }
+
+footer{ background:var(--red); color:#fff; padding:40px 0 44px; border-top:3px solid var(--navy); }
+.f-wm{ font-family:var(--f-brand); font-size:clamp(2.4rem,11vw,4.6rem); line-height:.95; text-shadow:.05em .06em 0 var(--navy); }
+footer p{ margin-top:10px; font-weight:500; }
+
+/* dock & fab */
+.dock{
+  position:fixed; inset-inline:0; bottom:0; z-index:50; display:flex; gap:10px; padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+  background:var(--bg); border-top:3px solid var(--navy);
+}
+.dock .btn{ flex:1; min-width:0; min-height:54px; padding:0 12px; }
+.dock .btn > span{ overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.bag{ position:relative; display:inline-grid; }
+.bag i{ position:absolute; top:-9px; inset-inline-end:-11px; min-width:20px; height:20px; border-radius:99px; background:var(--red); color:#fff; border:2px solid var(--navy); font-style:normal; font-size:.72rem; font-weight:800; display:grid; place-items:center; padding:0 3px; }
+.cart-btn b{ font-family:var(--f-brand); font-weight:400; unicode-bidi:isolate; }
+.fab{ display:none; }
+.bump{ animation:bump .35s ease; }
+@keyframes bump{ 40%{ transform:scale(1.08); } }
+
+/* dialogs / sheets */
+dialog{ position:fixed; inset:auto 0 0 0; margin:0; padding:0; border:0; background:transparent; width:100%; max-width:none; max-height:none; color:var(--text); }
+dialog::backdrop{ background:rgba(14,18,48,.62); }
+.sheet{
+  background:var(--bg); border:3px solid var(--navy); border-bottom:0; border-radius:26px 26px 0 0; max-width:560px; margin-inline:auto;
+  max-height:88dvh; overflow-y:auto; padding:20px 18px calc(22px + env(safe-area-inset-bottom));
+}
+.sheet-h{ display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:12px; }
+.sheet-h h3{ font-size:1.6rem; }
+.x{ flex:none; width:44px; height:44px; border-radius:50%; border:3px solid var(--navy); background:var(--surface); font-size:1.4rem; line-height:1; display:grid; place-items:center; padding:0; }
+.grp{ margin-top:18px; }
+.grp legend{ font-weight:800; margin-bottom:10px; }
+.grp legend small{ font-weight:500; color:var(--muted); margin-inline-start:6px; }
+.choices{ display:flex; flex-wrap:wrap; gap:8px; }
+.choice{ min-height:46px; padding:0 16px; border-radius:14px; border:2.5px solid var(--navy); background:var(--surface); font-weight:600; }
+.choice.on{ background:var(--saffron); color:var(--navy); box-shadow:0 3px 0 var(--navy); }
+#optAdd{ margin-top:24px; }
+.lines{ display:grid; }
+.line{ display:grid; grid-template-columns:1fr auto auto; gap:6px 12px; align-items:center; padding:12px 0; border-bottom:2px dashed var(--line); }
+.l-main b{ display:block; font-weight:700; }
+.l-opt{ color:var(--muted); font-size:.88rem; }
+.qty{ display:inline-flex; align-items:center; gap:8px; }
+.qty button{ width:38px; height:38px; border-radius:50%; border:2.5px solid var(--navy); background:var(--surface); font-size:1.15rem; line-height:1; padding:0; display:grid; place-items:center; }
+.qty span{ min-width:18px; text-align:center; font-weight:700; }
+.meter{ height:14px; border-radius:99px; border:2.5px solid var(--navy); background:var(--surface); overflow:hidden; margin-top:8px; }
+.meter i{ display:block; height:100%; background:var(--mint); transition:width .3s; }
+.free{ margin-top:18px; font-weight:700; }
+.tot{ display:flex; justify-content:space-between; align-items:baseline; margin-top:16px; font-weight:700; font-size:1.1rem; }
+.tot .price{ font-size:1.7rem; }
+.acts{ display:grid; gap:12px; margin-top:18px; }
+.link{ background:none; border:0; text-decoration:underline; color:var(--muted); font-weight:600; padding:8px; justify-self:center; }
+.onote{ margin-top:14px; color:var(--muted); font-size:.86rem; }
+.empty{ padding:24px 0 10px; color:var(--muted); font-size:1.05rem; }
+
+@media (min-width:820px){
+  body{ padding-bottom:0; }
+  .dock{ display:none; }
+  .hdr-links{ display:flex; gap:24px; margin-inline-start:26px; }
+  .hdr-links a{ text-decoration:none; font-weight:700; padding:8px 0; border-bottom:3px solid transparent; }
+  .hdr-links a:hover{ border-color:var(--saffron); }
+  .hdr-call{ display:inline-flex; min-height:44px; padding:0 18px; }
+  .lang{ margin-inline-start:0; }
+  .hdr-links{ margin-inline-end:auto; }
+  .hero{ padding:64px 0 76px; }
+  .hero-in{ grid-template-columns:1.1fr .9fr; gap:40px; }
+  .cluster{ width:min(100%,460px); }
+  .halal{ width:110px; height:110px; }
+  .d-grid{ grid-template-columns:1.1fr 1fr; align-items:center; gap:56px; }
+  .r-grid{ grid-template-columns:auto 1fr; align-items:start; gap:44px; }
+  .quotes{ grid-template-columns:1fr 1fr; gap:26px; }
+  .v-grid{ grid-template-columns:1.1fr .9fr; align-items:center; gap:56px; }
+  .fab{
+    position:fixed; z-index:50; inset-inline-end:24px; bottom:24px; display:inline-flex; align-items:center; gap:12px; min-height:58px; padding:0 22px;
+  }
+}
+@media (prefers-reduced-motion:reduce){
+  .marq-t{ animation:none; } .cl,.halal{ animation:none; } .bump{ animation:none; }
+}
+@media (max-width:380px){ .sizes{ gap:6px; } .size .price{ font-size:1.2rem; } .cat-h{ padding-inline-end:96px; } .cat-ill{ width:88px; } }
+</style>
+</head>
+<body>
+
+<!-- illustration sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-doner" viewBox="0 0 240 240">
+      <g stroke="#17204D" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+        <path d="M42 104 C30 82 46 66 60 72 C58 50 84 42 96 58 C108 40 136 42 142 60 C158 46 184 56 180 76 C198 74 210 96 196 108 Z" fill="#7BCB5A"/>
+        <path d="M62 108 C56 86 80 70 104 76 C122 62 158 70 168 92 C176 100 172 110 168 114 Z" fill="#B45A2A"/>
+        <path d="M86 94 q12 -8 24 0 M120 88 q14 -6 26 4" fill="none" stroke="#7A3A18" stroke-width="4"/>
+        <circle cx="150" cy="74" r="14" fill="#F0432F"/>
+        <path d="M143 70 q7 -6 14 0" fill="none" stroke="#FFC0B6" stroke-width="3"/>
+        <path d="M68 82 q16 -22 36 -8" fill="none" stroke="#C55BB0" stroke-width="7"/>
+        <path d="M34 108 Q120 138 206 108 C214 194 176 228 120 228 C64 228 26 194 34 108 Z" fill="#F6CE84"/>
+        <path d="M96 122 C94 144 98 156 108 156 C118 156 118 142 116 126 Z" fill="#fff"/>
+        <path d="M150 122 C150 136 152 144 160 144 C168 144 168 132 166 120 Z" fill="#fff"/>
+        <path d="M40 176 Q120 202 200 176 Q196 208 168 220 Q120 234 72 220 Q44 208 40 176 Z" fill="#FFC93C"/>
+      </g>
+      <g fill="#C8964A"><ellipse cx="64" cy="138" rx="5" ry="3"/><ellipse cx="178" cy="138" rx="5" ry="3"/><ellipse cx="140" cy="156" rx="5" ry="3"/></g>
+    </symbol>
+
+    <symbol id="i-pizza" viewBox="0 0 200 200">
+      <g stroke="#17204D" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+        <circle cx="100" cy="100" r="88" fill="#E8A54B"/>
+        <circle cx="100" cy="100" r="72" fill="#FFD25E"/>
+        <path d="M100 28 V172 M37.6 64 L162.4 136 M37.6 136 L162.4 64" fill="none" stroke-width="3"/>
+        <circle cx="70" cy="72" r="13" fill="#E5432D"/><circle cx="130" cy="74" r="13" fill="#E5432D"/>
+        <circle cx="100" cy="112" r="13" fill="#E5432D"/><circle cx="62" cy="126" r="12" fill="#E5432D"/><circle cx="140" cy="130" r="12" fill="#E5432D"/>
+        <circle cx="100" cy="56" r="7" fill="#3E4A2C" stroke-width="3"/><circle cx="152" cy="102" r="7" fill="#3E4A2C" stroke-width="3"/><circle cx="84" cy="152" r="7" fill="#3E4A2C" stroke-width="3"/>
+        <path d="M118 150 q14 -18 28 -4 q-8 16 -28 4z" fill="#7BCB5A" stroke-width="4"/>
+      </g>
+    </symbol>
+
+    <symbol id="i-leg" viewBox="0 0 200 200">
+      <g transform="rotate(28 100 100)" stroke="#17204D" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+        <path d="M90 110 V166 H110 V110 Z" fill="#FFF3DF"/>
+        <circle cx="86" cy="176" r="12" fill="#FFF3DF"/><circle cx="114" cy="176" r="12" fill="#FFF3DF"/>
+        <path d="M100 16 C142 16 156 54 148 86 C142 110 118 124 100 124 C78 124 58 110 54 86 C48 54 60 16 100 16Z" fill="#E58A2B"/>
+        <path d="M74 46 q12 -14 30 -12" fill="none" stroke="#FFD08A" stroke-width="6"/>
+        <g fill="#B85F12" stroke="none"><circle cx="112" cy="70" r="4"/><circle cx="84" cy="88" r="4"/><circle cx="122" cy="98" r="3.5"/><circle cx="96" cy="60" r="3"/></g>
+      </g>
+    </symbol>
+
+    <symbol id="i-fries" viewBox="0 0 200 200">
+      <g stroke="#17204D" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+        <rect x="56" y="44" width="18" height="62" rx="7" fill="#FFD34D" transform="rotate(-14 65 75)"/>
+        <rect x="126" y="38" width="18" height="66" rx="7" fill="#FFD34D" transform="rotate(12 135 71)"/>
+        <rect x="80" y="26" width="18" height="76" rx="7" fill="#FFE27A" transform="rotate(-5 89 64)"/>
+        <rect x="103" y="24" width="18" height="78" rx="7" fill="#FFD34D" transform="rotate(4 112 63)"/>
+        <path d="M44 96 H156 L142 182 Q141 190 132 190 H68 Q59 190 58 182 Z" fill="#F0432F"/>
+        <rect x="40" y="88" width="120" height="14" rx="7" fill="#C9271A"/>
+        <circle cx="100" cy="142" r="20" fill="#FFC93C"/>
+        <circle cx="100" cy="142" r="9" fill="#F0432F" stroke-width="3"/>
+      </g>
+    </symbol>
+
+    <symbol id="i-taco" viewBox="0 0 200 200">
+      <g stroke="#17204D" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+        <rect x="30" y="56" width="132" height="92" rx="24" fill="#E7B76A"/>
+        <path d="M60 62 L52 144 M88 60 L80 146 M116 60 L108 146 M144 62 L136 144" fill="none" stroke="#A9752F"/>
+        <ellipse cx="164" cy="102" rx="18" ry="44" fill="#FFE9A8"/>
+        <circle cx="164" cy="82" r="8" fill="#B45A2A" stroke-width="3"/>
+        <circle cx="162" cy="112" r="9" fill="#7BCB5A" stroke-width="3"/>
+        <path d="M150 138 C170 138 190 128 192 146 C194 162 178 166 172 158 C168 174 150 172 152 156 Z" fill="#FFC93C"/>
+      </g>
+    </symbol>
+
+    <symbol id="i-plate" viewBox="0 0 200 200">
+      <g stroke="#17204D" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+        <circle cx="100" cy="100" r="86" fill="#fff"/>
+        <circle cx="100" cy="100" r="64" fill="none" stroke="#C9D2F2" stroke-width="3"/>
+        <g transform="rotate(-10 100 84)"><rect x="40" y="70" width="120" height="26" rx="13" fill="#B45A2A"/><path d="M62 76 v14 M82 76 v14 M102 76 v14 M122 76 v14 M142 76 v14" stroke="#7A3A18" stroke-width="3"/></g>
+        <g transform="rotate(6 100 120)"><rect x="42" y="108" width="120" height="26" rx="13" fill="#C46A34"/><path d="M64 114 v14 M84 114 v14 M104 114 v14 M124 114 v14 M144 114 v14" stroke="#7A3A18" stroke-width="3"/></g>
+        <circle cx="152" cy="150" r="15" fill="#FFE04D"/><path d="M152 136 V164 M138 150 H166" stroke-width="2.5"/>
+        <circle cx="50" cy="150" r="13" fill="#F0432F"/>
+        <path d="M92 152 q6 -12 14 0 q-2 12 -14 0z" fill="#7BCB5A" stroke-width="3"/>
+      </g>
+    </symbol>
+
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2l2.6 7.4L22 12l-7.4 2.6L12 22l-2.6-7.4L2 12l7.4-2.6z" fill="#17204D"/></symbol>
+  </defs>
+</svg>
+
+<a class="skip" href="#menu" data-i18n="skip"></a>
+<p class="sr" id="live" aria-live="polite"></p>
+
+<header class="hdr">
+  <div class="hdr-in">
+    <a class="brand" href="#top" aria-label="El Paisa Kebabish">
+      <svg class="ill" viewBox="0 0 100 100" aria-hidden="true"><use href="#i-doner" width="100" height="100"/></svg>
+      <span>El Paisa</span>
+    </a>
+    <nav class="hdr-links" data-i18n-aria="navL">
+      <a href="#menu" data-i18n="navMenu"></a>
+      <a href="#delivery" data-i18n="navDel"></a>
+      <a href="#reviews" data-i18n="navRev"></a>
+      <a href="#visit" data-i18n="navVisit"></a>
+    </nav>
+    <a class="btn r hdr-call" href="tel:+34935667559"><bdi>935 66 75 59</bdi></a>
+    <label class="lang">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg>
+      <select id="lang" data-i18n-aria="langL"></select>
+    </label>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="h1">
+    <div class="wrap hero-in">
+      <div>
+        <p class="status" id="status" role="status"><span class="dot" aria-hidden="true"></span><span id="statusTxt">…</span></p>
+        <h1 id="h1"><span class="wm">El Paisa</span><span class="kb">Kebabish</span></h1>
+        <p class="tagline" data-i18n="tagline"></p>
+        <div class="cta">
+          <a class="btn y" href="tel:+34935667559">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+            <span data-i18n="call"></span>
+          </a>
+          <a class="btn" href="#menu"><span data-i18n="seeMenu"></span></a>
+        </div>
+        <ul class="trust">
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+            <span>Halal</span>
+          </li>
+          <li><span data-i18n="trustDel"></span></li>
+          <li><span data-i18n="trustRate"></span></li>
+        </ul>
+      </div>
+
+      <div class="cluster" aria-hidden="true">
+        <svg class="ill cl c-pizza" viewBox="0 0 100 100"><use href="#i-pizza" width="100" height="100"/></svg>
+        <svg class="ill cl c-doner" viewBox="0 0 100 100"><use href="#i-doner" width="100" height="100"/></svg>
+        <svg class="ill cl c-leg" viewBox="0 0 100 100"><use href="#i-leg" width="100" height="100"/></svg>
+        <svg class="ill cl c-fries" viewBox="0 0 100 100"><use href="#i-fries" width="100" height="100"/></svg>
+        <div class="halal"><b>حلال</b><span>Halal</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marq" aria-hidden="true"><div class="marq-t" id="marq"></div></div>
+
+  <section class="menu" id="menu" aria-labelledby="menuTitle">
+    <div class="menu-head">
+      <h2 id="menuTitle" data-i18n="menuTitle"></h2>
+      <p class="sub" data-i18n="menuSub"></p>
+    </div>
+    <nav class="cats" id="cats" data-i18n-aria="menuTitle"></nav>
+    <div class="menu-body" id="menuRoot"></div>
+  </section>
+
+  <section class="delivery" id="delivery" aria-labelledby="delTitle">
+    <div class="wrap d-grid">
+      <div>
+        <h2 id="delTitle" data-i18n="delTitle"></h2>
+        <p class="sub" data-i18n="delSub"></p>
+      </div>
+      <div style="display:grid;gap:24px">
+        <div class="d-block">
+          <h3 data-i18n="delPhone"></h3>
+          <div class="phones">
+            <a class="btn y" href="tel:+34935667559"><bdi>935 66 75 59</bdi></a>
+            <a class="btn" href="tel:+34672876262"><bdi>672 87 62 62</bdi></a>
+          </div>
+        </div>
+        <div class="d-block">
+          <h3 data-i18n="delAlso"></h3>
+          <ul class="plat"><li>Just Eat</li><li>Glovo</li><li>Uber Eats</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reviews" id="reviews" aria-labelledby="revTitle">
+    <div class="wrap">
+      <h2 id="revTitle" data-i18n="revTitle"></h2>
+      <div class="r-grid">
+        <div class="score-wrap">
+          <div class="score"><div class="big"><span id="score">8,2</span><small>/10</small></div><div class="g">Google</div></div>
+          <p data-i18n="revCount"></p>
+        </div>
+        <div class="quotes">
+          <blockquote class="quote"><p data-i18n="rev1"></p><cite data-i18n="revSrc"></cite></blockquote>
+          <blockquote class="quote"><p data-i18n="rev2"></p><cite data-i18n="revSrc"></cite></blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="visit" id="visit" aria-labelledby="visTitle">
+    <div class="wrap">
+      <h2 id="visTitle" data-i18n="visTitle"></h2>
+      <div class="v-grid">
+        <div class="addr">
+          <h3 data-i18n="addrL"></h3>
+          <address><bdi>Carrer de Llobregat, 10<br>08904 L'Hospitalet de Llobregat<br>Barcelona</bdi></address>
+          <div class="v-actions">
+            <a class="btn y" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=41.375154,2.118286"><span data-i18n="dirBtn"></span></a>
+            <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps?q=41.375154,2.118286"><span data-i18n="openMaps"></span></a>
+          </div>
+        </div>
+        <div class="sign">
+          <h3 data-i18n="hoursL"></h3>
+          <dl class="hours">
+            <div><dt data-i18n="weekdays"></dt><dd>12:00 – 24:00</dd></div>
+            <div><dt data-i18n="weekends"></dt><dd>12:00 – 01:00</dd></div>
+          </dl>
+          <div class="tel-row"><a class="tel" href="tel:+34935667559"><bdi>935 66 75 59</bdi></a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="f-wm">El Paisa<br>Kebabish</div>
+    <p data-i18n="footer"></p>
+    <p><bdi>Carrer de Llobregat, 10, 08904 L'Hospitalet de Llobregat, Barcelona</bdi></p>
+  </div>
+</footer>
+
+<!-- mobile dock -->
+<div class="dock">
+  <a class="btn" href="tel:+34935667559">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+    <span data-i18n="call"></span>
+  </a>
+  <a class="btn y" id="dockDir" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=41.375154,2.118286">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+    <span data-i18n="dirBtn"></span>
+  </a>
+  <button type="button" class="btn y cart-btn" id="dockCart" hidden data-open-cart>
+    <span class="bag"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1 12H6z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><i class="n"></i></span>
+    <span class="lbl"></span><b class="tt"></b>
+  </button>
+</div>
+
+<!-- desktop floating cart -->
+<button type="button" class="btn y fab cart-btn" id="fab" hidden data-open-cart>
+  <span class="bag"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1 12H6z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><i class="n"></i></span>
+  <span class="lbl"></span><b class="tt"></b>
+</button>
+
+<dialog id="dlgOpt" aria-labelledby="optTitle"><div class="sheet" id="optBody"></div></dialog>
+<dialog id="dlgCart" aria-labelledby="cartTitle"><div class="sheet" id="cartBody"></div></dialog>
+
+<script>
+(function(){
+  "use strict";
+  const L=(es,ca,en,ar,ur,pa)=>({es,ca,en,ar,ur,pa});
+  const LANGS=[["es","Español"],["ca","Català"],["en","English"],["ar","العربية"],["ur","اردو"],["pa","ਪੰਜਾਬੀ"]];
+  const RTL=["ar","ur"];
+  const PHONE="+34935667559";
+
+  /* ---------- UI strings ---------- */
+  const UI={
+    title:L("El Paisa Kebabish · Kebab halal en L'Hospitalet","El Paisa Kebabish · Kebab halal a L'Hospitalet","El Paisa Kebabish · Halal kebab in L'Hospitalet","إل بايسا كباب · كباب حلال في لوسبيتاليت","ایل پائسا کباب · لوسپیٹالیت میں حلال کباب","ਐਲ ਪਾਇਸਾ ਕਬਾਬ · ਲ'ਓਸਪਿਟਾਲੇਟ ਵਿੱਚ ਹਲਾਲ ਕਬਾਬ"),
+    skip:L("Ir a la carta","Anar a la carta","Skip to the menu","انتقل إلى القائمة","مینو پر جائیں","ਮੀਨੂ 'ਤੇ ਜਾਓ"),
+    langL:L("Idioma","Llengua","Language","اللغة","زبان","ਭਾਸ਼ਾ"),
+    navL:L("Secciones","Seccions","Sections","الأقسام","حصے","ਭਾਗ"),
+    navMenu:L("Carta","Carta","Menu","القائمة","مینو","ਮੀਨੂ"),
+    navDel:L("A domicilio","A domicili","Delivery","التوصيل","ڈیلیوری","ਡਿਲੀਵਰੀ"),
+    navRev:L("Opiniones","Opinions","Reviews","الآراء","ریویوز","ਸਮੀਖਿਆਵਾਂ"),
+    navVisit:L("Cómo llegar","Com arribar-hi","Find us","موقعنا","ہمیں ڈھونڈیں","ਸਾਨੂੰ ਲੱਭੋ"),
+    tagline:L("Kebab, döner y cocina rápida de Oriente Medio. Hecho al momento y bien cargado.","Kebab, döner i cuina ràpida de l'Orient Mitjà. Fet al moment i ben carregat.","Kebab, döner and Middle Eastern fast food. Made fresh and packed generously.","كباب ودونر وأكلات شرق أوسطية سريعة. تُحضَّر طازجة وبحشوة سخية.","کباب، ڈونر اور مشرقِ وسطیٰ کا فاسٹ فوڈ۔ تازہ تیار اور بھرپور مقدار میں۔","ਕਬਾਬ, ਡੋਨਰ ਅਤੇ ਮੱਧ ਪੂਰਬੀ ਫਾਸਟ ਫੂਡ। ਤਾਜ਼ਾ ਬਣਿਆ ਅਤੇ ਖੁੱਲ੍ਹਾ ਭਰਿਆ।"),
+    call:L("Llamar","Trucar","Call","اتصل","کال کریں","ਕਾਲ ਕਰੋ"),
+    seeMenu:L("Ver la carta","Veure la carta","See the menu","شاهد القائمة","مینو دیکھیں","ਮੀਨੂ ਵੇਖੋ"),
+    dirBtn:L("Cómo llegar","Com arribar-hi","Directions","الاتجاهات","راستہ دیکھیں","ਰਸਤਾ ਵੇਖੋ"),
+    openMaps:L("Abrir en Google Maps","Obrir a Google Maps","Open in Google Maps","افتح في خرائط Google","Google Maps میں کھولیں","Google Maps ਵਿੱਚ ਖੋਲ੍ਹੋ"),
+    trustDel:L("Envío gratis desde 10 €","Enviament gratuït des de 10 €","Free delivery over €10","توصيل مجاني من 10 يورو","10 یورو سے مفت ڈیلیوری","10 € ਤੋਂ ਮੁਫ਼ਤ ਡਿਲੀਵਰੀ"),
+    trustRate:L("8,2/10 en Google","8,2/10 a Google","8.2/10 on Google","8.2/10 على Google","Google پر 8.2/10","Google 'ਤੇ 8.2/10"),
+    stOpen:L("Abierto ahora, hasta las {t}","Obert ara, fins a les {t}","Open now, until {t}","مفتوح الآن، حتى {t}","ابھی کھلا ہے، {t} تک","ਹੁਣ ਖੁੱਲ੍ਹਾ ਹੈ, {t} ਤੱਕ"),
+    stClosed:L("Cerrado, abre a las {t}","Tancat, obre a les {t}","Closed, opens at {t}","مغلق، يفتح الساعة {t}","بند ہے، {t} بجے کھلے گا","ਬੰਦ ਹੈ, {t} ਵਜੇ ਖੁੱਲ੍ਹੇਗਾ"),
+    menuTitle:L("Carta","Carta","Menu","قائمة الطعام","مینو","ਮੀਨੂ"),
+    menuSub:L("Restaurante halal. Toca + para armar tu pedido.","Restaurant halal. Toca + per preparar la teva comanda.","Halal restaurant. Tap + to build your order.","مطعم حلال. اضغط + لتجهيز طلبك.","حلال ریسٹورنٹ۔ اپنا آرڈر بنانے کے لیے + دبائیں۔","ਹਲਾਲ ਰੈਸਟੋਰੈਂਟ। ਆਪਣਾ ਆਰਡਰ ਬਣਾਉਣ ਲਈ + ਦਬਾਓ।"),
+    from:L("Desde {p}","Des de {p}","From {p}","من {p}","{p} سے","{p} ਤੋਂ"),
+    flavors:L("Sabores","Sabors","Flavours","النكهات","ذائقے","ਸੁਆਦ"),
+    delTitle:L("Envío a domicilio gratis","Enviament a domicili gratuït","Free home delivery","توصيل مجاني إلى المنزل","گھر تک مفت ڈیلیوری","ਘਰ ਤੱਕ ਮੁਫ਼ਤ ਡਿਲੀਵਰੀ"),
+    delSub:L("Pedido mínimo de 10 €","Comanda mínima de 10 €","Minimum order €10","الحد الأدنى للطلب 10 يورو","کم از کم آرڈر 10 یورو","ਘੱਟੋ-ਘੱਟ ਆਰਡਰ 10 €"),
+    delPhone:L("Pide por teléfono","Demana per telèfon","Order by phone","اطلب بالهاتف","فون پر آرڈر کریں","ਫ਼ੋਨ 'ਤੇ ਆਰਡਰ ਕਰੋ"),
+    delAlso:L("También en","També a","Also on","متوفر أيضًا على","یہاں بھی دستیاب","ਇੱਥੇ ਵੀ ਉਪਲਬਧ"),
+    revTitle:L("Lo que dicen los clientes","El que diuen els clients","What customers say","ماذا يقول الزبائن","گاہک کیا کہتے ہیں","ਗਾਹਕ ਕੀ ਕਹਿੰਦੇ ਹਨ"),
+    revCount:L("116+ reseñas en Google","116+ ressenyes a Google","116+ reviews on Google","أكثر من 116 تقييمًا على Google","Google پر 116+ ریویوز","Google 'ਤੇ 116+ ਸਮੀਖਿਆਵਾਂ"),
+    revSrc:L("Reseña de un cliente","Ressenya d'un client","Customer review","رأي أحد الزبائن","ایک گاہک کا ریویو","ਇੱਕ ਗਾਹਕ ਦੀ ਸਮੀਖਿਆ"),
+    rev1:L("Un cliente celebra la reciente reforma del local. Dice que sigue el mismo personal simpático de siempre, que llena los kebabs a rebosar. Va desde hace años y les desea mucho éxito.",
+           "Un client celebra la reforma recent del local. Diu que hi continua el mateix personal simpàtic de sempre, que omple els kebabs a vessar. Hi va des de fa anys i els desitja molt d'èxit.",
+           "A customer praised the recent renovation. The same friendly staff are still there, packing the kebabs generously. They've been coming for years and wish the place every success.",
+           "أشاد أحد الزبائن بتجديد المحل مؤخرًا، وقال إن الطاقم اللطيف نفسه ما زال هناك ويحشو الكباب بسخاء. يزورهم منذ سنوات ويتمنى لهم النجاح.",
+           "ایک گاہک نے دکان کی حالیہ تزئین و آرائش کی تعریف کی۔ ان کے مطابق وہی خوش اخلاق عملہ آج بھی کباب بھر بھر کے دیتا ہے۔ وہ برسوں سے آ رہے ہیں اور ان کی کامیابی کے لیے دعاگو ہیں۔",
+           "ਇੱਕ ਗਾਹਕ ਨੇ ਦੁਕਾਨ ਦੀ ਨਵੀਂ ਮੁਰੰਮਤ ਦੀ ਤਾਰੀਫ਼ ਕੀਤੀ। ਉਨ੍ਹਾਂ ਮੁਤਾਬਕ ਉਹੀ ਮਿਲਣਸਾਰ ਸਟਾਫ਼ ਹੁਣ ਵੀ ਕਬਾਬ ਖੁੱਲ੍ਹੇ ਭਰ ਕੇ ਦਿੰਦਾ ਹੈ। ਉਹ ਕਈ ਸਾਲਾਂ ਤੋਂ ਆ ਰਹੇ ਹਨ ਅਤੇ ਉਨ੍ਹਾਂ ਦੀ ਕਾਮਯਾਬੀ ਦੀ ਕਾਮਨਾ ਕਰਦੇ ਹਨ।"),
+    rev2:L("Otro cliente lo llama el mejor kebab de la zona. Destaca el sabor de la carne y el queso de cabra, y cuenta que echó de menos el local mientras estuvo cerrado por reformas.",
+           "Un altre client el considera el millor kebab de la zona. Destaca el sabor de la carn i el formatge de cabra, i explica que va enyorar el local mentre va estar tancat per reformes.",
+           "Another reviewer calls it the best kebab around, singling out the flavour of the meat and the goat cheese. They missed the place while it was closed for renovation.",
+           "وصفه زبون آخر بأنه أفضل كباب في المنطقة، وأشاد بنكهة اللحم وجبنة الماعز، وقال إنه افتقد المكان أثناء إغلاقه للتجديد.",
+           "ایک اور گاہک اسے علاقے کا بہترین کباب قرار دیتا ہے۔ وہ گوشت کے ذائقے اور بکری کے پنیر کی خاص طور پر تعریف کرتا ہے، اور بتاتا ہے کہ تزئین و آرائش کے دوران دکان بند رہی تو اسے اس کی یاد آتی رہی۔",
+           "ਇੱਕ ਹੋਰ ਗਾਹਕ ਇਸਨੂੰ ਇਲਾਕੇ ਦਾ ਸਭ ਤੋਂ ਵਧੀਆ ਕਬਾਬ ਦੱਸਦਾ ਹੈ। ਉਹ ਮੀਟ ਦੇ ਸੁਆਦ ਅਤੇ ਬੱਕਰੀ ਦੇ ਪਨੀਰ ਦੀ ਖ਼ਾਸ ਤਾਰੀਫ਼ ਕਰਦਾ ਹੈ, ਅਤੇ ਦੱਸਦਾ ਹੈ ਕਿ ਮੁਰੰਮਤ ਲਈ ਦੁਕਾਨ ਬੰਦ ਰਹਿਣ ਦੌਰਾਨ ਉਸਨੂੰ ਇਸਦੀ ਯਾਦ ਆਉਂਦੀ ਰਹੀ।"),
+    visTitle:L("Visítanos","Vine a veure'ns","Come and see us","زورونا","ہم سے ملیں","ਸਾਨੂੰ ਮਿਲੋ"),
+    addrL:L("Dirección","Adreça","Address","العنوان","پتہ","ਪਤਾ"),
+    hoursL:L("Horario","Horari","Opening hours","ساعات العمل","اوقاتِ کار","ਸਮਾਂ"),
+    weekdays:L("Lunes a viernes","De dilluns a divendres","Monday to Friday","من الاثنين إلى الجمعة","پیر تا جمعہ","ਸੋਮਵਾਰ ਤੋਂ ਸ਼ੁੱਕਰਵਾਰ"),
+    weekends:L("Fines de semana","Caps de setmana","Weekends","عطلة نهاية الأسبوع","ہفتہ اور اتوار","ਸ਼ਨੀਵਾਰ ਅਤੇ ਐਤਵਾਰ"),
+    footer:L("Restaurante halal en L'Hospitalet de Llobregat.","Restaurant halal a L'Hospitalet de Llobregat.","Halal restaurant in L'Hospitalet de Llobregat.","مطعم حلال في لوسبيتاليت دي يوبريغات.","لوسپیٹالیت دے یوبریگات میں حلال ریسٹورنٹ۔","ਲ'ਓਸਪਿਟਾਲੇਟ ਦੇ ਯੋਬਰੇਗਾਤ ਵਿੱਚ ਹਲਾਲ ਰੈਸਟੋਰੈਂਟ।"),
+    /* order basket */
+    add:L("Añadir","Afegir","Add","أضف","شامل کریں","ਸ਼ਾਮਲ ਕਰੋ"),
+    added:L("Añadido al pedido","Afegit a la comanda","Added to your order","تمت الإضافة إلى الطلب","آرڈر میں شامل ہو گیا","ਆਰਡਰ ਵਿੱਚ ਜੋੜਿਆ ਗਿਆ"),
+    myOrder:L("Mi pedido","La meva comanda","My order","طلبي","میرا آرڈر","ਮੇਰਾ ਆਰਡਰ"),
+    empty:L("Todavía no has añadido nada. Toca + en cualquier plato.","Encara no has afegit res. Toca + en qualsevol plat.","Nothing here yet. Tap + on any dish.","لم تضف شيئًا بعد. اضغط + على أي طبق.","ابھی کچھ شامل نہیں کیا۔ کسی بھی ڈش پر + دبائیں۔","ਅਜੇ ਕੁਝ ਨਹੀਂ ਜੋੜਿਆ। ਕਿਸੇ ਵੀ ਪਕਵਾਨ 'ਤੇ + ਦਬਾਓ।"),
+    total:L("Total","Total","Total","المجموع","کل","ਕੁੱਲ"),
+    freeLeft:L("Te faltan {p} para el envío gratis","Et falten {p} per a l'enviament gratuït","{p} more for free delivery","تبقّى {p} للتوصيل المجاني","مفت ڈیلیوری کے لیے {p} مزید","ਮੁਫ਼ਤ ਡਿਲੀਵਰੀ ਲਈ {p} ਹੋਰ"),
+    freeDone:L("¡Envío gratis conseguido!","Enviament gratuït aconseguit!","Free delivery unlocked!","حصلت على التوصيل المجاني!","مفت ڈیلیوری مل گئی!","ਮੁਫ਼ਤ ਡਿਲੀਵਰੀ ਮਿਲ ਗਈ!"),
+    callOrder:L("Llamar para pedir","Trucar per demanar","Call to order","اتصل للطلب","آرڈر کے لیے کال کریں","ਆਰਡਰ ਲਈ ਕਾਲ ਕਰੋ"),
+    copyOrder:L("Copiar pedido","Copiar comanda","Copy order","انسخ الطلب","آرڈر کاپی کریں","ਆਰਡਰ ਕਾਪੀ ਕਰੋ"),
+    copied:L("¡Copiado!","Copiat!","Copied!","تم النسخ!","کاپی ہو گیا!","ਕਾਪੀ ਹੋ ਗਿਆ!"),
+    clear:L("Vaciar pedido","Buidar comanda","Clear order","إفراغ الطلب","آرڈر خالی کریں","ਆਰਡਰ ਖਾਲੀ ਕਰੋ"),
+    orderNote:L("Esto no envía el pedido: llámanos o pídelo en una plataforma de reparto. Se copia en español para el restaurante.","Això no envia la comanda: truca'ns o demana-la en una plataforma de repartiment. Es copia en castellà per al restaurant.","This doesn't place the order: call us or order on a delivery app. It copies in Spanish for the restaurant.","هذا لا يرسل الطلب: اتصل بنا أو اطلب عبر تطبيق توصيل. يُنسخ بالإسبانية للمطعم.","یہ آرڈر بھیجتا نہیں: ہمیں کال کریں یا ڈیلیوری ایپ سے آرڈر کریں۔ ریسٹورنٹ کے لیے ہسپانوی میں کاپی ہوتا ہے۔","ਇਹ ਆਰਡਰ ਨਹੀਂ ਭੇਜਦਾ: ਸਾਨੂੰ ਕਾਲ ਕਰੋ ਜਾਂ ਡਿਲੀਵਰੀ ਐਪ ਤੋਂ ਆਰਡਰ ਕਰੋ। ਰੈਸਟੋਰੈਂਟ ਲਈ ਸਪੇਨੀ ਵਿੱਚ ਕਾਪੀ ਹੁੰਦਾ ਹੈ।"),
+    close:L("Cerrar","Tancar","Close","إغلاق","بند کریں","ਬੰਦ ਕਰੋ"),
+    gFill:L("Relleno","Farciment","Filling","الحشوة","بھرائی","ਭਰਾਈ"),
+    gMeat:L("Carnes","Carns","Meats","اللحوم","گوشت","ਮੀਟ"),
+    gSize:L("Tamaño","Mida","Size","الحجم","سائز","ਆਕਾਰ"),
+    gFlavor:L("Sabor","Sabor","Flavour","النكهة","ذائقہ","ਸੁਆਦ"),
+    gType:L("Tipo","Tipus","Type","النوع","قسم","ਕਿਸਮ"),
+    upTo:L("Elige hasta 3","Tria fins a 3","Pick up to 3","اختر حتى 3","زیادہ سے زیادہ 3 چنیں","3 ਤੱਕ ਚੁਣੋ")
+  };
+
+  /* ---------- words ---------- */
+  const W={
+    chicken:L("Pollo","Pollastre","Chicken","دجاج","چکن","ਚਿਕਨ"),
+    beef:L("Ternera","Vedella","Beef","لحم بقري","بیف","ਬੀਫ"),
+    mixed:L("Mixto","Mixt","Mixed","مشكل","مکس","ਮਿਕਸ"),
+    falafel:L("Falafel","Falàfel","Falafel","فلافل","فلافل","ਫਲਾਫਲ"),
+    minced:L("Carne picada","Carn picada","Minced meat","لحم مفروم","قیمہ","ਕੀਮਾ"),
+    cordon:L("Cordon bleu","Cordon bleu","Cordon bleu","كوردون بلو","کورڈن بلو","ਕੋਰਡਨ ਬਲੂ"),
+    tenders:L("Tenders","Tenders","Tenders","تندرز","ٹینڈرز","ਟੈਂਡਰਜ਼"),
+    nuggets:L("Nuggets","Nuggets","Nuggets","ناغتس","نگٹس","ਨਗਟਸ"),
+    wings:L("Alitas","Ales","Wings","أجنحة","وِنگز","ਵਿੰਗਜ਼"),
+    merguez:L("Merguez","Merguez","Merguez","مرقاز","مرگیز","ਮਰਗੇਜ਼"),
+    fries:L("Fritas","Fregides","Fries","مقلية","فرائز","ਫ੍ਰਾਈਜ਼"),
+    bravas:L("Bravas","Braves","Bravas","برافاس","براوس","ਬ੍ਰਾਵਸ"),
+    deluxe:L("Deluxe","Deluxe","Deluxe","ديلوكس","ڈیلکس","ਡੀਲਕਸ"),
+    medium:L("Mediana","Mitjana","Medium","وسط","درمیانی","ਦਰਮਿਆਨਾ"),
+    large:L("Grande","Gran","Large","كبيرة","بڑی","ਵੱਡਾ"),
+    family:L("Familiar","Familiar","Family","عائلية","فیملی","ਫੈਮਿਲੀ")
+  };
+  const FLAVORS=[
+    L("Margarita","Margarita","Margherita","مارغريتا","مارگریٹا","ਮਾਰਗਰੀਟਾ"),
+    L("Frankfurt","Frankfurt","Frankfurter","فرانكفورت","فرینکفرٹ","ਫ੍ਰੈਂਕਫਰਟ"),
+    L("Pollo shawarma","Pollastre shawarma","Chicken shawarma","شاورما دجاج","چکن شوارما","ਚਿਕਨ ਸ਼ਵਰਮਾ"),
+    L("Ternera","Vedella","Beef","لحم بقري","بیف","ਬੀਫ"),
+    L("Mixta","Mixta","Mixed","مشكلة","مکس","ਮਿਕਸ"),
+    L("Cuatro quesos","Quatre formatges","Four cheese","أربعة أجبان","فور چیز","ਫੋਰ ਚੀਜ਼"),
+    L("Funghi","Funghi","Funghi","فطر","مشروم","ਮਸ਼ਰੂਮ"),
+    L("Atún","Tonyina","Tuna","تونة","ٹونا","ਟੂਨਾ"),
+    L("El Paisa","El Paisa","El Paisa","El Paisa","El Paisa","El Paisa"),
+    L("Carbonara","Carbonara","Carbonara","كاربونارا","کاربونارا","ਕਾਰਬੋਨਾਰਾ"),
+    L("Barbacoa","Barbacoa","Barbecue","باربكيو","باربی کیو","ਬਾਰਬੀਕਿਊ"),
+    L("Vegetal","Vegetal","Vegetable","خضار","سبزی","ਸਬਜ਼ੀ"),
+    L("Hawaiana","Hawaiana","Hawaiian","هاوايية","ہوائین","ਹਵਾਈਅਨ"),
+    L("Peperoni","Pepperoni","Pepperoni","بيبروني","پیپرونی","ਪੈਪਰੋਨੀ")
+  ];
+  FLAVORS.forEach((f,i)=>{ W["f"+i]=f; });
+  const SIZE_CM={medium:28,large:32,family:36};
+
+  /* option groups */
+  const G={
+    fill4:{k:"fill",lk:"gFill",t:"one",c:["chicken","beef","mixed","falafel"]},
+    fill2:{k:"fill",lk:"gFill",t:"one",c:["chicken","beef"]},
+    fill3:{k:"fill",lk:"gFill",t:"one",c:["chicken","beef","mixed"]},
+    tacoM:{k:"meat",lk:"gMeat",t:"multi",max:3,c:["chicken","minced","cordon","tenders","nuggets","merguez"]},
+    spuds:{k:"type",lk:"gType",t:"one",c:["fries","bravas","deluxe"]},
+    nug:{k:"type",lk:"gType",t:"one",c:["nuggets","wings"]},
+    size:{k:"size",lk:"gSize",t:"one",c:["medium","large","family"]},
+    flavor:{k:"flavor",lk:"gFlavor",t:"one",c:FLAVORS.map((f,i)=>"f"+i)}
+  };
+
+  /* ---------- menu ---------- */
+  const MENU=[
+    {id:"kebabs",band:"--saffron",ill:"i-doner",title:L("Kebabs y hamburguesas","Kebabs i hamburgueses","Kebabs & burgers","كباب وهمبرغر","کباب اور برگر","ਕਬਾਬ ਅਤੇ ਬਰਗਰ"),items:[
+      {id:"doner",n:L("Döner / Pita kebab","Döner / Kebab en pita","Döner / Pita kebab","دونر / كباب في خبز البيتا","ڈونر / پیٹا کباب","ਡੋਨਰ / ਪੀਟਾ ਕਬਾਬ"),tags:G.fill4.c,g:[G.fill4],p:5.5},
+      {id:"durum",n:L("Dürüm kebab","Dürüm kebab","Dürüm kebab","دوروم كباب","ڈورم کباب","ਡੂਰਮ ਕਬਾਬ"),tags:G.fill4.c,g:[G.fill4],p:5.5},
+      {id:"burger",n:L("Hamburguesa","Hamburguesa","Burger","همبرغر","برگر","ਬਰਗਰ"),tags:G.fill2.c,g:[G.fill2],p:4.5},
+      {id:"kapsalon",n:L("Kapsalon","Kapsalon","Kapsalon","كابسالون","کیپسالون","ਕੈਪਸਾਲੋਨ"),tags:G.fill3.c,g:[G.fill3],p:8},
+      {id:"durumoven",n:L("Dürüm al horno","Dürüm al forn","Baked dürüm","دوروم مخبوز","اوون میں بنا ڈورم","ਓਵਨ ਵਾਲਾ ਡੂਰਮ"),p:7.5}
+    ]},
+    {id:"chicken",band:"--peach",ill:"i-leg",title:L("Especialidades de pollo","Especialitats de pollastre","Chicken specialties","أطباق الدجاج","چکن کی خاص ڈشز","ਚਿਕਨ ਸਪੈਸ਼ਲ"),items:[
+      {id:"roast",n:L("Pollo asado entero","Pollastre rostit sencer","Whole roast chicken","دجاجة كاملة مشوية","پورا روسٹ چکن","ਪੂਰਾ ਰੋਸਟ ਚਿਕਨ"),d:L("Con patatas asadas y salsa","Amb patates rostides i salsa","With roast potatoes and sauce","مع بطاطس مشوية وصلصة","بھنے آلو اور چٹنی کے ساتھ","ਭੁੰਨੇ ਆਲੂ ਅਤੇ ਸਾਸ ਨਾਲ"),p:9.95},
+      {id:"brasa",n:L("Pollo a la brasa","Pollastre a la brasa","Charcoal-grilled chicken","دجاج مشوي على الفحم","کوئلے پر گرل چکن","ਕੋਲਿਆਂ 'ਤੇ ਗ੍ਰਿਲ ਚਿਕਨ"),d:L("Con naan y salsas","Amb naan i salses","With naan and sauces","مع خبز نان وصلصات","نان اور چٹنیوں کے ساتھ","ਨਾਨ ਅਤੇ ਸਾਸ ਨਾਲ"),p:7},
+      {id:"especial",n:L("El Paisa Especial","El Paisa Especial","El Paisa Special","إل بايسا سبيشل","ایل پائسا اسپیشل","ਐਲ ਪਾਇਸਾ ਸਪੈਸ਼ਲ"),d:L("Medio pollo, ensalada, arroz o patatas y bebida","Mig pollastre, amanida, arròs o patates i beguda","Half chicken, salad, rice or potatoes and a drink","نصف دجاجة وسلطة وأرز أو بطاطس ومشروب","آدھا چکن، سلاد، چاول یا آلو اور مشروب","ਅੱਧਾ ਚਿਕਨ, ਸਲਾਦ, ਚੌਲ ਜਾਂ ਆਲੂ ਅਤੇ ਡਰਿੰਕ"),p:9.95},
+      {id:"fried",n:L("Pollo frito","Pollastre fregit","Fried chicken","دجاج مقلي","فرائیڈ چکن","ਫ੍ਰਾਈਡ ਚਿਕਨ"),d:L("4 unidades con patatas","4 unitats amb patates","4 pieces with fries","4 قطع مع بطاطس مقلية","4 ٹکڑے، فرائز کے ساتھ","4 ਟੁਕੜੇ, ਫ੍ਰਾਈਜ਼ ਨਾਲ"),p:11},
+      {id:"broaster",n:L("Pollo broaster","Pollastre broaster","Broasted chicken","دجاج بروستد","بروسٹڈ چکن","ਬਰੌਸਟਡ ਚਿਕਨ"),d:L("2 unidades con patatas","2 unitats amb patates","2 pieces with fries","2 قطعتان مع بطاطس مقلية","2 ٹکڑے، فرائز کے ساتھ","2 ਟੁਕੜੇ, ਫ੍ਰਾਈਜ਼ ਨਾਲ"),p:6}
+    ]},
+    {id:"tacos",band:"--mint",ill:"i-taco",title:L("French tacos","French tacos","French tacos","فرينش تاكوس","فرنچ ٹیکوز","ਫ੍ਰੈਂਚ ਟੈਕੋ"),items:[
+      {id:"tacoc",n:L("Taco clásico","Taco clàssic","Classic taco","تاكوس كلاسيك","کلاسک ٹیکو","ਕਲਾਸਿਕ ਟੈਕੋ"),d:L("Con 1, 2 o 3 carnes a elegir","Amb 1, 2 o 3 carns a escollir","With 1, 2 or 3 meats of your choice","مع 1 أو 2 أو 3 أنواع من اللحوم من اختيارك","1، 2 یا 3 گوشت اپنی پسند کے","1, 2 ਜਾਂ 3 ਮੀਟ ਆਪਣੀ ਪਸੰਦ ਦੇ"),tags:G.tacoM.c,g:[G.tacoM],p:8,from:true},
+      {id:"tacog",n:L("Taco gratinado","Taco gratinat","Gratinated taco","تاكوس غراتان","گریٹن ٹیکو","ਗ੍ਰੈਟੀਨ ਟੈਕੋ"),p:16.95}
+    ]},
+    {id:"pizzas",band:"--pink",ill:"i-pizza",title:L("Pizzas y calzones","Pizzes i calzones","Pizzas & calzones","بيتزا وكالزوني","پیزا اور کیلزون","ਪੀਜ਼ਾ ਅਤੇ ਕੈਲਜ਼ੋਨ"),
+      note:L("Masa fresca","Massa fresca","Fresh dough","عجينة طازجة","تازہ آٹا","ਤਾਜ਼ਾ ਆਟਾ"),
+      pizza:{id:"pizza",n:L("Pizza","Pizza","Pizza","بيتزا","پیزا","ਪੀਜ਼ਾ"),g:[G.size,G.flavor],sp:{medium:6.95,large:9.95,family:11.95}},
+      items:[{id:"calzone",n:L("Calzone","Calzone","Calzone","كالزوني","کیلزون","ਕੈਲਜ਼ੋਨ"),p:11}]},
+    {id:"mains",band:"--sky",ill:"i-plate",title:L("Platos principales","Plats principals","Main dishes","الأطباق الرئيسية","مرکزی ڈشز","ਮੁੱਖ ਪਕਵਾਨ"),items:[
+      {id:"combo",n:L("Plato combinado","Plat combinat","Combo plate","طبق كومبو","کومبو پلیٹ","ਕੰਬੋ ਪਲੇਟ"),d:L("Con guarnición","Amb guarnició","With a side","مع طبق جانبي","سائیڈ کے ساتھ","ਸਾਈਡ ਨਾਲ"),tags:G.fill3.c,g:[G.fill3],p:9.5},
+      {id:"falafelp",n:L("Plato de falafel","Plat de falàfel","Falafel plate","طبق فلافل","فلافل پلیٹ","ਫਲਾਫਲ ਪਲੇਟ"),d:L("5 unidades","5 unitats","5 pieces","5 قطع","5 عدد","5 ਪੀਸ"),p:9.5},
+      {id:"seekh",n:L("Plato de seekh kebab","Plat de seekh kebab","Seekh kebab plate","طبق سيخ كباب","سیخ کباب پلیٹ","ਸੀਖ ਕਬਾਬ ਪਲੇਟ"),p:9.9},
+      {id:"dorada",n:L("Dorada a la brasa","Orada a la brasa","Grilled sea bream","سمك الدنيس المشوي","گرل کی ہوئی ڈوراڈا مچھلی","ਗ੍ਰਿਲ ਕੀਤੀ ਸੀ ਬ੍ਰੀਮ ਮੱਛੀ"),p:15.95}
+    ]},
+    {id:"sides",band:"--lilac",ill:"i-fries",title:L("Tapas y extras","Tapes i extres","Sides & extras","مقبلات وإضافات","سائیڈز اور اضافی","ਸਾਈਡ ਅਤੇ ਐਕਸਟਰਾ"),items:[
+      {id:"potatoes",n:L("Patatas","Patates","Potatoes","بطاطس","آلو","ਆਲੂ"),d:L("Fritas, bravas o deluxe","Fregides, braves o deluxe","Fries, bravas or deluxe","مقلية أو برافاس أو ديلوكس","فرائز، براوس یا ڈیلکس","ਫ੍ਰਾਈਜ਼, ਬ੍ਰਾਵਸ ਜਾਂ ਡੀਲਕਸ"),g:[G.spuds],p:3,from:true},
+      {id:"donerbox",n:L("Döner box","Döner box","Döner box","دونر بوكس","ڈونر باکس","ਡੋਨਰ ਬਾਕਸ"),p:4,from:true},
+      {id:"nuggets",n:L("Nuggets o alitas de pollo","Nuggets o ales de pollastre","Chicken nuggets or wings","ناغتس أو أجنحة دجاج","چکن نگٹس یا وِنگز","ਚਿਕਨ ਨਗਟਸ ਜਾਂ ਵਿੰਗਜ਼"),d:L("6 unidades","6 unitats","6 pieces","6 قطع","6 عدد","6 ਪੀਸ"),g:[G.nug],p:5},
+      {id:"calamares",n:L("Calamares","Calamars","Calamari","كالاماري","کیلامری","ਕੈਲਾਮਾਰੀ"),p:5}
+    ]}
+  ];
+  const ITEMS={};
+  MENU.forEach(c=>{ c.items.forEach(i=>{ ITEMS[i.id]=i; }); if(c.pizza) ITEMS[c.pizza.id]=c.pizza; });
+
+  /* ---------- helpers ---------- */
+  const $=(s,r)=>(r||document).querySelector(s);
+  const $$=(s,r)=>[...(r||document).querySelectorAll(s)];
+  let lang="es";
+  const commaLang=l=>(l==="es"||l==="ca");
+  const moneyL=(n,l)=>{ const s=n.toFixed(2); return commaLang(l)?s.replace(".",",")+"\u00A0€":"€"+s; };
+  const money=n=>moneyL(n,lang);
+  const dec=n=>commaLang(lang)?String(n).replace(".",","):String(n);
+  const priceOf=(it,sel)=>it.sp?it.sp[sel.size[0]]:it.p;
+  const priceC=(it,sel)=>Math.round(priceOf(it,sel)*100);
+  const selText=(it,sel,l)=>it.g?it.g.map(g=>sel[g.k].map(k=>W[k][l]).join(" + ")).join(", "):"";
+
+  /* ---------- menu rendering ---------- */
+  function addBtn(id,name){
+    return `<button type="button" class="add" data-add="${id}" aria-label="${UI.add[lang]}: ${name}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><i class="cnt" hidden></i></button>`;
+  }
+  function itemHtml(i){
+    const price=i.from?UI.from[lang].replace("{p}",money(i.p)):money(i.p);
+    const desc=i.d?`<p class="desc">${i.d[lang]}</p>`:"";
+    const tags=i.tags?`<ul class="tags">${i.tags.map(k=>`<li>${W[k][lang]}</li>`).join("")}</ul>`:"";
+    return `<article class="item"><div><h4>${i.n[lang]}</h4>${desc}${tags}</div><div class="buy"><span class="price">${price}</span>${addBtn(i.id,i.n[lang])}</div></article>`;
+  }
+  function renderMenu(){
+    $("#cats").innerHTML=MENU.map((c,idx)=>`<a class="chip${idx===0?" on":""}" href="#cat-${c.id}" data-cat="${c.id}">${c.title[lang]}</a>`).join("");
+    $("#menuRoot").innerHTML=MENU.map(c=>{
+      let body="";
+      if(c.pizza){
+        body=`<div class="sizes">${G.size.c.map(k=>`<div class="size"><span class="sz">${W[k][lang]}</span><span class="cm">${SIZE_CM[k]} cm</span><span class="price">${money(c.pizza.sp[k])}</span></div>`).join("")}</div>`
+            +`<div class="pizza-add"><button type="button" class="btn y big" data-add="pizza" aria-label="${UI.add[lang]}: ${c.pizza.n[lang]}"><span>${UI.add[lang]}: ${c.pizza.n[lang]}</span><i class="cnt" hidden style="position:static;margin-inline-start:4px"></i></button></div>`
+            +`<div class="items">${c.items.map(itemHtml).join("")}</div>`
+            +`<p class="flavors-l">${UI.flavors[lang]}</p><ul class="tags big">${FLAVORS.map(f=>`<li>${f[lang]}</li>`).join("")}</ul>`;
+      } else {
+        body=`<div class="items">${c.items.map(itemHtml).join("")}</div>`;
+      }
+      const note=c.note?`<p class="note">${c.note[lang]}</p>`:"";
+      return `<section class="cat" id="cat-${c.id}" aria-labelledby="h-${c.id}"><div class="cat-h" style="--band:var(${c.band})"><h3 id="h-${c.id}">${c.title[lang]}</h3>${note}<svg class="ill cat-ill" viewBox="0 0 100 100" aria-hidden="true"><use href="#${c.ill}" width="100" height="100"/></svg></div>${body}</section>`;
+    }).join("");
+    spy();
+    badges();
+  }
+
+  function renderMarquee(){
+    const star='<svg width="18" height="18" aria-hidden="true"><use href="#i-star" width="18" height="18"/></svg>';
+    const one=MENU.map(c=>`<span>${c.title[lang]}</span>${star}`).join("");
+    const group=`<div class="marq-g">${one}${one}</div>`;
+    $("#marq").innerHTML=group+group;
+  }
+
+  /* scroll spy */
+  let io=null;
+  function spy(){
+    if(io) io.disconnect();
+    if(typeof window.IntersectionObserver!=="function") return;
+    const chips=$$(".chip");
+    io=new IntersectionObserver(entries=>{
+      entries.forEach(e=>{
+        if(!e.isIntersecting) return;
+        const id=e.target.id.replace("cat-","");
+        chips.forEach(c=>{
+          const on=c.dataset.cat===id;
+          c.classList.toggle("on",on);
+          if(on){ c.setAttribute("aria-current","true"); c.scrollIntoView({block:"nearest",inline:"center"}); }
+          else c.removeAttribute("aria-current");
+        });
+      });
+    },{rootMargin:"-30% 0px -65% 0px"});
+    $$(".cat").forEach(s=>io.observe(s));
+  }
+
+  /* ---------- opening status (Madrid time) ---------- */
+  function madridNow(){
+    const parts=new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/Madrid",weekday:"short",hour:"2-digit",minute:"2-digit",hour12:false}).formatToParts(new Date());
+    const o={}; parts.forEach(p=>{ o[p.type]=p.value; });
+    const map={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6};
+    return {d:map[o.weekday], m:(parseInt(o.hour,10)%24)*60+parseInt(o.minute,10)};
+  }
+  const closeMin=d=>(d===0||d===6)?1500:1440;
+  const tt=u=>{ const h=Math.floor(u/60), m=u%60; return String(h===24?24:h%24).padStart(2,"0")+":"+String(m).padStart(2,"0"); };
+  function renderStatus(){
+    let s; try{ s=madridNow(); }catch(e){ return; }
+    let open=false, until=0;
+    if(s.m>=720 && s.m<closeMin(s.d)){ open=true; until=closeMin(s.d); }
+    else if(s.m<60 && closeMin((s.d+6)%7)>1440){ open=true; until=60; }
+    $("#status").className="status "+(open?"open":"closed");
+    $("#statusTxt").textContent=(open?UI.stOpen:UI.stClosed)[lang].replace("{t}",open?tt(until):"12:00");
+  }
+
+  /* ---------- order basket ---------- */
+  let cart=[];
+  const dlgO=$("#dlgOpt"), dlgC=$("#dlgCart");
+  const canDialog=typeof HTMLDialogElement==="function"&&typeof dlgO.showModal==="function";
+
+  function totals(){
+    let c=0,n=0,from=false;
+    cart.forEach(l=>{ const it=ITEMS[l.id]; c+=priceC(it,l.sel)*l.qty; n+=l.qty; if(it.from) from=true; });
+    return {c,n,from,t:c/100};
+  }
+  function say(msg){ const l=$("#live"); l.textContent=""; setTimeout(()=>{ l.textContent=msg; },30); }
+
+  function badges(){
+    $$("[data-add]").forEach(b=>{
+      const id=b.dataset.add;
+      const q=cart.filter(l=>l.id===id).reduce((s,l)=>s+l.qty,0);
+      const i=$(".cnt",b); if(!i) return;
+      i.textContent=q; i.hidden=!q;
+    });
+  }
+  function dockUpdate(bump){
+    const {n,t,from}=totals();
+    const label=from?UI.from[lang].replace("{p}",money(t)):money(t);
+    ["#dockCart","#fab"].forEach(sel=>{
+      const el=$(sel);
+      el.hidden=!n;
+      if(n){
+        $(".n",el).textContent=n;
+        $(".lbl",el).textContent=UI.myOrder[lang];
+        $(".tt",el).textContent=label;
+        el.setAttribute("aria-label",UI.myOrder[lang]+": "+n+", "+label);
+        if(bump){ el.classList.remove("bump"); void el.offsetWidth; el.classList.add("bump"); }
+      }
+    });
+    $("#dockDir").hidden=!!n;
+  }
+  function cartChanged(bump){
+    badges(); dockUpdate(bump);
+    if(dlgC.open) renderCart();
+  }
+  function addLine(id,sel){
+    const key=id+"|"+JSON.stringify(sel);
+    const ex=cart.find(x=>x.key===key);
+    if(ex) ex.qty++; else cart.push({key,id,sel,qty:1});
+    cartChanged(true);
+    say(UI.added[lang]+": "+ITEMS[id].n[lang]);
+  }
+
+  /* options sheet */
+  let pend=null;
+  function choiceLabel(it,g,k){
+    if(g.k==="size") return `${W[k][lang]} · ${SIZE_CM[k]} cm · ${money(it.sp[k])}`;
+    return W[k][lang];
+  }
+  function openOpts(id){
+    const it=ITEMS[id];
+    pend={id,sel:{}};
+    it.g.forEach(g=>{ pend.sel[g.k]=[g.c[0]]; });
+    const groups=it.g.map(g=>`<fieldset class="grp"><legend>${UI[g.lk][lang]}${g.max?`<small>${UI.upTo[lang]}</small>`:""}</legend><div class="choices">${g.c.map(k=>`<button type="button" class="choice" data-g="${g.k}" data-v="${k}" aria-pressed="false">${choiceLabel(it,g,k)}</button>`).join("")}</div></fieldset>`).join("");
+    $("#optBody").innerHTML=`<div class="sheet-h"><h3 id="optTitle">${it.n[lang]}</h3><button type="button" class="x" data-close aria-label="${UI.close[lang]}">×</button></div>${it.d?`<p class="desc">${it.d[lang]}</p>`:""}${groups}<button type="button" class="btn y big" id="optAdd"></button>`;
+    syncOpts();
+    if(canDialog) dlgO.showModal(); else dlgO.setAttribute("open","");
+  }
+  function syncOpts(){
+    const it=ITEMS[pend.id];
+    $$(".choice",dlgO).forEach(b=>{
+      const on=pend.sel[b.dataset.g].includes(b.dataset.v);
+      b.classList.toggle("on",on); b.setAttribute("aria-pressed",on?"true":"false");
+    });
+    const p=priceOf(it,pend.sel);
+    $("#optAdd").textContent=UI.add[lang]+" · "+(it.from?UI.from[lang].replace("{p}",money(p)):money(p));
+  }
+  dlgO.addEventListener("click",e=>{
+    if(e.target===dlgO){ closeDlg(dlgO); return; }
+    if(e.target.closest("[data-close]")){ closeDlg(dlgO); return; }
+    const ch=e.target.closest(".choice");
+    if(ch){
+      const it=ITEMS[pend.id], g=it.g.find(x=>x.k===ch.dataset.g), v=ch.dataset.v, cur=pend.sel[g.k];
+      if(g.t==="one") pend.sel[g.k]=[v];
+      else if(cur.includes(v)){ if(cur.length>1) pend.sel[g.k]=cur.filter(x=>x!==v); }
+      else if(cur.length<g.max) pend.sel[g.k]=cur.concat(v);
+      syncOpts(); return;
+    }
+    if(e.target.closest("#optAdd")){
+      addLine(pend.id,JSON.parse(JSON.stringify(pend.sel)));
+      closeDlg(dlgO);
+    }
+  });
+  function closeDlg(d){ if(d.close) d.close(); else d.removeAttribute("open"); }
+
+  /* cart sheet */
+  function renderCart(){
+    const {c,n,from,t}=totals();
+    let html=`<div class="sheet-h"><h3 id="cartTitle">${UI.myOrder[lang]}</h3><button type="button" class="x" data-close aria-label="${UI.close[lang]}">×</button></div>`;
+    if(!n){
+      html+=`<p class="empty">${UI.empty[lang]}</p>`;
+    } else {
+      html+=`<ul class="lines">${cart.map((l,idx)=>{
+        const it=ITEMS[l.id]; const lp=priceOf(it,l.sel)*l.qty;
+        const price=it.from?UI.from[lang].replace("{p}",money(lp)):money(lp);
+        const opt=selText(it,l.sel,lang);
+        return `<li class="line"><div class="l-main"><b>${it.n[lang]}</b>${opt?`<span class="l-opt">${opt}</span>`:""}</div><div class="qty"><button type="button" data-q="${idx}" data-d="-1" aria-label="−">−</button><span>${l.qty}</span><button type="button" data-q="${idx}" data-d="1" aria-label="+">+</button></div><span class="price">${price}</span></li>`;
+      }).join("")}</ul>`;
+      const left=1000-c;
+      const pct=Math.min(100,Math.round(c/10));
+      html+=`<p class="free">${left>0?UI.freeLeft[lang].replace("{p}",money(left/100)):UI.freeDone[lang]}</p><div class="meter" role="img" aria-label="${pct}%"><i style="width:${pct}%"></i></div>`;
+      html+=`<div class="tot"><span>${UI.total[lang]}</span><span class="price">${from?UI.from[lang].replace("{p}",money(t)):money(t)}</span></div>`;
+      html+=`<div class="acts"><a class="btn r big" href="tel:${PHONE}">${UI.callOrder[lang]}</a><button type="button" class="btn big" id="copyBtn">${UI.copyOrder[lang]}</button><button type="button" class="link" id="clearBtn">${UI.clear[lang]}</button></div>`;
+      html+=`<p class="onote">${UI.orderNote[lang]}</p>`;
+    }
+    $("#cartBody").innerHTML=html;
+  }
+  function openCart(){
+    renderCart();
+    if(canDialog) dlgC.showModal(); else dlgC.setAttribute("open","");
+  }
+  function orderText(){
+    const {t,from}=totals();
+    const lines=cart.map(l=>{
+      const it=ITEMS[l.id]; const opt=selText(it,l.sel,"es");
+      return `${l.qty}× ${it.n.es}${opt?` (${opt})`:""} – ${moneyL(priceOf(it,l.sel)*l.qty,"es")}`;
+    });
+    return "El Paisa Kebabish – Pedido\n"+lines.join("\n")+"\n"+(from?"Total desde: ":"Total: ")+moneyL(t,"es");
+  }
+  function copyText(txt){
+    const fallback=()=>{
+      const ta=document.createElement("textarea"); ta.value=txt; ta.setAttribute("readonly","");
+      ta.style.cssText="position:fixed;top:0;left:0;opacity:0"; document.body.appendChild(ta); ta.select();
+      let ok=false; try{ ok=document.execCommand("copy"); }catch(e){}
+      document.body.removeChild(ta); return ok;
+    };
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      return navigator.clipboard.writeText(txt).then(()=>true,()=>fallback());
+    }
+    return Promise.resolve(fallback());
+  }
+  dlgC.addEventListener("click",e=>{
+    if(e.target===dlgC){ closeDlg(dlgC); return; }
+    if(e.target.closest("[data-close]")){ closeDlg(dlgC); return; }
+    const q=e.target.closest("[data-q]");
+    if(q){
+      const idx=+q.dataset.q, d=+q.dataset.d;
+      cart[idx].qty+=d;
+      if(cart[idx].qty<=0) cart.splice(idx,1);
+      cartChanged(false); return;
+    }
+    if(e.target.closest("#clearBtn")){ cart=[]; cartChanged(false); return; }
+    const cb=e.target.closest("#copyBtn");
+    if(cb){
+      copyText(orderText()).then(ok=>{
+        if(ok){ cb.textContent=UI.copied[lang]; setTimeout(()=>{ if(cb.isConnected) cb.textContent=UI.copyOrder[lang]; },1800); }
+      });
+    }
+  });
+
+  document.addEventListener("click",e=>{
+    const a=e.target.closest("[data-add]");
+    if(a){
+      const id=a.dataset.add, it=ITEMS[id];
+      if(it.g) openOpts(id); else addLine(id,{});
+      return;
+    }
+    if(e.target.closest("[data-open-cart]")) openCart();
+  });
+
+  /* ---------- language ---------- */
+  function apply(){
+    const h=document.documentElement;
+    h.lang=lang; h.dir=RTL.includes(lang)?"rtl":"ltr";
+    document.title=UI.title[lang];
+    $$("[data-i18n]").forEach(el=>{ const k=el.dataset.i18n; if(UI[k]) el.textContent=UI[k][lang]; });
+    $$("[data-i18n-aria]").forEach(el=>{ const k=el.dataset.i18nAria; if(UI[k]) el.setAttribute("aria-label",UI[k][lang]); });
+    $("#score").textContent=dec(8.2);
+    $("#lang").value=lang;
+    renderMenu(); renderMarquee(); renderStatus(); dockUpdate(false);
+    if(dlgC.open) renderCart();
+    if(dlgO.open && pend){ const keep=JSON.parse(JSON.stringify(pend.sel)), id=pend.id; dlgO.close(); openOpts(id); pend.sel=keep; syncOpts(); }
+  }
+  function setLang(l){
+    if(!UI.tagline[l]) return;
+    lang=l;
+    try{ localStorage.setItem("elpaisa-lang",l); }catch(e){}
+    apply();
+  }
+
+  /* ---------- init ---------- */
+  const sel=$("#lang");
+  sel.innerHTML=LANGS.map(([c,n])=>`<option value="${c}" lang="${c}">${n}</option>`).join("");
+  sel.addEventListener("change",e=>setLang(e.target.value));
+  let start="es";
+  try{
+    const q=new URLSearchParams(location.search).get("lang");
+    const saved=localStorage.getItem("elpaisa-lang");
+    if(q && UI.tagline[q]) start=q; else if(saved && UI.tagline[saved]) start=saved;
+  }catch(e){}
+  lang=start;
+  apply();
+  setInterval(renderStatus,60000);
+})();
+</script>
+</body>
+</html>
