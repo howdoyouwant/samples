@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Propuesta para Fitness 360 · HowDoYouWant</title>
+<meta name="description" content="Propuesta a medida de HowDoYouWant para Fitness 360 (Jordi Iglesias) — Carrer de Còrsega 75, Eixample, Barcelona.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F6F5F1;
+    --paper-alt:#ECEAE1;
+    --ink:#16191C;
+    --steel:#5B6167;
+    --line:#DBD8CE;
+    --ember:#D9481F;
+    --ember-deep:#AC3814;
+    --pine:#1F6F5C;
+    --max:1120px;
+    --radius-soft:3px;
+  }
+
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px);}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+  h1,h2,h3{
+    font-family:'Oswald',"Arial Narrow",sans-serif;
+    font-weight:600;
+    line-height:1.08;
+    margin:0 0 .5em;
+    letter-spacing:.2px;
+  }
+  p{margin:0 0 1em;}
+  a{color:inherit;}
+  ul{margin:0;padding:0;list-style:none;}
+  img,svg{max-width:100%;display:block;}
+  .container{max-width:var(--max);margin-inline:auto;padding-inline:clamp(1.25rem,5vw,3rem);}
+  .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;}
+
+  .skip-link{
+    position:absolute;left:-999px;top:0;background:var(--ink);color:var(--paper);
+    padding:.75rem 1.25rem;z-index:200;border-radius:0 0 6px 0;
+  }
+  .skip-link:focus{left:0;}
+
+  a:focus-visible,button:focus-visible{
+    outline:3px solid var(--ember);
+    outline-offset:2px;
+  }
+
+  /* ---------- Header ---------- */
+  .site-header{
+    position:sticky;top:0;z-index:100;
+    background:rgba(246,245,241,.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+    padding-top:env(safe-area-inset-top,0px);
+  }
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;gap:1rem;
+    padding-block:.85rem;
+  }
+  .brand{
+    font-family:'Oswald',sans-serif;font-weight:700;font-size:1.15rem;letter-spacing:.5px;
+    display:flex;flex-direction:column;line-height:1;
+  }
+  .brand-sub{font-family:'Manrope',sans-serif;font-weight:500;font-size:.62rem;color:var(--steel);letter-spacing:.4px;margin-top:.3em;}
+  .header-actions{display:flex;align-items:center;gap:.6rem;}
+
+  .lang-switch{
+    display:flex;border:1px solid var(--line);border-radius:999px;padding:3px;gap:2px;background:var(--paper);
+  }
+  .lang-btn{
+    appearance:none;border:none;background:transparent;cursor:pointer;
+    font-family:'Manrope',sans-serif;font-weight:600;font-size:.78rem;
+    padding:.4rem .65rem;border-radius:999px;color:var(--steel);
+    transition:background-color .15s ease,color .15s ease;
+    min-width:2.4rem;
+  }
+  .lang-btn.is-active{background:var(--ink);color:var(--paper);}
+
+  .btn{
+    display:inline-flex;align-items:center;gap:.45rem;
+    font-family:'Manrope',sans-serif;font-weight:700;font-size:.92rem;
+    padding:.7rem 1.3rem;border-radius:999px;text-decoration:none;
+    border:1.5px solid transparent;cursor:pointer;white-space:nowrap;
+    transition:transform .12s ease,background-color .15s ease,color .15s ease,border-color .15s ease;
+  }
+  .btn:active{transform:scale(.97);}
+  .btn-primary{background:var(--ember);color:#FFFDF9;}
+  .btn-primary:hover{background:var(--ember-deep);}
+  .btn-ghost{background:transparent;color:var(--ink);border-color:var(--ink);}
+  .btn-ghost:hover{background:var(--ink);color:var(--paper);}
+  .btn-sm{padding:.55rem 1rem;font-size:.82rem;}
+
+  /* ---------- Hero ---------- */
+  .hero{padding-block:clamp(2.5rem,7vw,4.5rem) clamp(2.5rem,6vw,4rem);}
+  .hero-grid{
+    display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(2rem,6vw,4rem);align-items:center;
+  }
+  .hero-kicker{
+    font-family:'Manrope',sans-serif;font-weight:700;font-size:.92rem;color:var(--ember);
+    margin-bottom:.9rem;
+  }
+  .hero-title{font-size:clamp(2.35rem,5.4vw,4.3rem);max-width:14ch;}
+  .hero-subtitle{font-size:clamp(1.02rem,2vw,1.2rem);color:var(--steel);max-width:44ch;margin-bottom:1.6rem;}
+  .hero-address{
+    display:inline-flex;align-items:center;gap:.5rem;
+    font-size:.85rem;color:var(--ink);background:var(--paper-alt);
+    border:1px solid var(--line);border-radius:999px;padding:.5rem .9rem;margin-bottom:1.8rem;
+  }
+  .hero-address strong{font-weight:700;}
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:.75rem;}
+
+  .hero-visual{display:flex;justify-content:center;align-items:center;}
+  .ring-wrap{position:relative;width:min(320px,80vw);aspect-ratio:1/1;}
+  .ring-wrap svg{width:100%;height:100%;}
+  .ring-bg{fill:none;stroke:var(--line);stroke-width:11;}
+  .ring-progress{
+    fill:none;stroke:var(--ember);stroke-width:11;stroke-linecap:round;
+    stroke-dasharray:741.5;stroke-dashoffset:741.5;
+    transform:rotate(-90deg);transform-origin:150px 150px;
+    animation:draw-ring 1.6s .25s cubic-bezier(.2,.7,.2,1) forwards;
+  }
+  .ring-tick{stroke:var(--steel);stroke-width:2;opacity:.55;}
+  .ring-deg{font-family:'Manrope',sans-serif;font-size:11px;fill:var(--steel);}
+  .ring-number{
+    font-family:'Oswald',sans-serif;font-weight:700;font-size:64px;fill:var(--ink);
+  }
+  .ring-degsign{font-family:'Oswald',sans-serif;font-weight:600;font-size:26px;fill:var(--ember);}
+  @keyframes draw-ring{to{stroke-dashoffset:105;}}
+  @media (prefers-reduced-motion:reduce){
+    .ring-progress{animation:none;stroke-dashoffset:105;}
+  }
+
+  /* ---------- Sections ---------- */
+  section{padding-block:clamp(3rem,7vw,5.5rem);}
+  .section-alt{background:var(--paper-alt);}
+  .section-head{max-width:60ch;margin-bottom:clamp(2rem,5vw,3rem);}
+  .section-title{font-size:clamp(1.7rem,3.4vw,2.5rem);}
+  .section-sub{color:var(--steel);font-size:1.02rem;}
+
+  /* Diagnostic cards */
+  .diag-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line);}
+  .diag-card{
+    padding:1.8rem 1.6rem;border-right:1px solid var(--line);border-bottom:1px solid var(--line);
+  }
+  .diag-card:last-child{border-right:none;}
+  .diag-card h3{font-size:1.18rem;margin-bottom:.5rem;}
+  .diag-card p{color:var(--steel);font-size:.96rem;margin:0;}
+
+  /* Phases */
+  .phase-list{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
+  .phase-card{
+    background:var(--paper);border:1px solid var(--line);border-radius:var(--radius-soft);
+    padding:1.8rem 1.6rem;display:flex;flex-direction:column;gap:1rem;
+  }
+  .phase-card.is-primary{
+    background:var(--ink);border-color:var(--ink);color:var(--paper);
+  }
+  .phase-card.is-primary h3,.phase-card.is-primary .phase-tag{color:var(--paper);}
+  .phase-card.is-primary p{color:#C9CCCE;}
+  .phase-badge{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;flex-shrink:0;}
+  .phase-badge-inner{
+    width:40px;height:40px;border-radius:50%;background:var(--paper);display:grid;place-items:center;
+    font-family:'Oswald',sans-serif;font-weight:700;font-size:1.05rem;color:var(--ink);
+  }
+  .phase-badge-1{background:conic-gradient(var(--ember) 0deg 120deg, var(--line) 120deg 360deg);}
+  .phase-badge-2{background:conic-gradient(var(--line) 0deg 120deg, var(--pine) 120deg 240deg, var(--line) 240deg 360deg);}
+  .phase-badge-3{background:conic-gradient(var(--line) 0deg 240deg, var(--steel) 240deg 360deg);}
+  .phase-tag{
+    font-size:.74rem;font-weight:700;color:var(--ember);
+  }
+  .phase-card h3{font-size:1.2rem;margin-bottom:.15rem;}
+  .phase-card p{color:var(--steel);font-size:.95rem;margin:0;}
+
+  /* Why + dashboard */
+  .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,3.5rem);align-items:start;}
+  .why-list li{
+    display:flex;gap:.85rem;padding-block:.9rem;border-bottom:1px solid var(--line);font-size:.98rem;
+  }
+  .why-list li:first-child{padding-top:0;}
+  .why-list li::before{
+    content:"";flex-shrink:0;width:8px;height:8px;border-radius:50%;background:var(--ember);margin-top:.55rem;
+  }
+  .dash-box{
+    background:var(--ink);color:var(--paper);border-radius:var(--radius-soft);padding:2rem;
+  }
+  .dash-box h3{color:var(--paper);font-size:1.3rem;}
+  .dash-box p{color:#C9CCCE;margin:0;}
+  .dash-icon{margin-bottom:1rem;}
+
+  /* Proof */
+  .proof-note{color:var(--steel);font-size:.95rem;max-width:70ch;margin-bottom:2.2rem;padding:1rem 1.2rem;border-left:3px solid var(--ember);background:var(--paper-alt);}
+  .proof-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;}
+  .proof-card{border-top:3px solid var(--ember);padding-top:1rem;}
+  .proof-stat{font-family:'Oswald',sans-serif;font-weight:700;font-size:clamp(2rem,4vw,2.6rem);color:var(--ember);line-height:1;margin-bottom:.6rem;}
+  .proof-card p{font-size:.88rem;color:var(--steel);margin:0 0 .6rem;}
+  .proof-card a{font-size:.82rem;font-weight:700;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ink);}
+  .proof-card a:hover{color:var(--ember);border-color:var(--ember);}
+
+  /* Personal */
+  .personal-section{display:grid;grid-template-columns:.42fr .58fr;gap:clamp(2rem,5vw,3.5rem);align-items:center;}
+  .personal-mark{
+    width:96px;height:96px;border-radius:50%;background:var(--paper-alt);border:1px solid var(--line);
+    display:grid;place-items:center;
+  }
+  .personal-section h2{font-size:clamp(1.6rem,3vw,2.2rem);}
+  .personal-section p{color:var(--steel);font-size:1.02rem;max-width:56ch;}
+
+  /* Pricing */
+  .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;align-items:stretch;}
+  .plan-card{
+    background:var(--paper);border:1px solid var(--line);border-radius:var(--radius-soft);
+    padding:1.9rem 1.6rem;display:flex;flex-direction:column;
+  }
+  .plan-card.is-highlight{border-color:var(--ember);box-shadow:0 0 0 1px var(--ember);}
+  .plan-tag{
+    display:inline-block;font-size:.72rem;font-weight:700;color:var(--ember);
+    background:#F7E6DE;border-radius:999px;padding:.3rem .7rem;margin-bottom:.9rem;width:fit-content;
+  }
+  .plan-name{font-size:1.3rem;margin-bottom:.15rem;}
+  .plan-tagline{color:var(--steel);font-size:.92rem;margin-bottom:1.1rem;}
+  .plan-price{font-family:'Oswald',sans-serif;font-weight:700;font-size:1.9rem;margin-bottom:1.1rem;}
+  .plan-features{margin-bottom:1.4rem;flex-grow:1;}
+  .plan-features li{
+    font-size:.9rem;padding-block:.5rem;border-top:1px solid var(--line);display:flex;gap:.5rem;
+  }
+  .plan-features li:first-child{border-top:none;}
+  .plan-features li::before{content:"+";color:var(--ember);font-weight:700;}
+  .pricing-bonus{
+    margin-top:2rem;text-align:center;font-size:.95rem;color:var(--steel);
+    border-top:1px solid var(--line);padding-top:1.5rem;
+  }
+
+  /* FAQ */
+  .faq-list{max-width:70ch;}
+  .faq-item{border-bottom:1px solid var(--line);padding-block:1.3rem;}
+  .faq-item:first-child{border-top:1px solid var(--line);}
+  .faq-item h3{font-size:1.05rem;font-family:'Manrope',sans-serif;font-weight:700;margin-bottom:.4rem;}
+  .faq-item p{color:var(--steel);font-size:.96rem;margin:0;}
+
+  /* Final CTA */
+  .final-cta{
+    background:var(--ink);color:var(--paper);border-radius:var(--radius-soft);
+    padding:clamp(2.4rem,6vw,4rem);text-align:center;
+  }
+  .final-cta h2{color:var(--paper);font-size:clamp(1.7rem,3.6vw,2.6rem);max-width:20ch;margin-inline:auto 1.2rem;}
+  .final-ctas{display:flex;flex-wrap:wrap;justify-content:center;gap:.85rem;margin-top:1.6rem;}
+  .final-cta .btn-ghost{border-color:var(--paper);color:var(--paper);}
+  .final-cta .btn-ghost:hover{background:var(--paper);color:var(--ink);}
+
+  footer{padding-block:2.2rem;border-top:1px solid var(--line);}
+  .footer-inner{
+    display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;
+    font-size:.85rem;color:var(--steel);
+  }
+
+  @media (max-width:860px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-visual{order:2;margin-top:1rem;}
+    .diag-grid{grid-template-columns:1fr;}
+    .diag-card{border-right:none;}
+    .phase-list{grid-template-columns:1fr;}
+    .why-grid{grid-template-columns:1fr;}
+    .personal-section{grid-template-columns:1fr;text-align:left;}
+    .proof-grid{grid-template-columns:1fr 1fr;}
+    .pricing-grid{grid-template-columns:1fr;}
+    .brand-sub{display:none;}
+  }
+  @media (max-width:480px){
+    .proof-grid{grid-template-columns:1fr;}
+    .hero-address{white-space:normal;}
+  }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Saltar al contenido / Skip to content</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="brand">HDYW<span class="brand-sub">HowDoYouWant</span></div>
+    <div class="header-actions">
+      <div class="lang-switch" role="group" aria-label="Idioma / Idioma / Language">
+        <button type="button" class="lang-btn" data-lang-btn="es">ES</button>
+        <button type="button" class="lang-btn" data-lang-btn="ca">CA</button>
+        <button type="button" class="lang-btn" data-lang-btn="en">EN</button>
+      </div>
+      <a class="btn btn-ghost btn-sm" href="tel:+34687701709" data-i18n="nav_call">Llamar</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <p class="hero-kicker" data-i18n="hero_kicker">Propuesta para Fitness 360 — Jordi Iglesias</p>
+        <h1 class="hero-title" data-i18n="hero_title">360 grados. Cero excusas para no encontrarte.</h1>
+        <p class="hero-subtitle" data-i18n="hero_subtitle">Esta propuesta está pensada para tu gimnasio, en Carrer de Còrsega 75 — no es una plantilla con tu nombre pegado encima.</p>
+        <div class="hero-address">
+          <span aria-hidden="true">📍</span>
+          <span><strong>Fitness 360 · Jordi Iglesias</strong> — Carrer de Còrsega, 75, Eixample, 08029 Barcelona</span>
+        </div>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="tel:+34687701709" data-i18n="hero_cta_call">Llamar ahora</a>
+          <a class="btn btn-ghost" href="https://wa.me/34687701709" data-i18n="hero_cta_whatsapp">Escribir por WhatsApp</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="ring-wrap">
+          <svg viewBox="0 0 300 300">
+            <circle class="ring-bg" cx="150" cy="150" r="118"></circle>
+            <circle class="ring-progress" cx="150" cy="150" r="118"></circle>
+            <g>
+              <line class="ring-tick" x1="150" y1="18" x2="150" y2="32" transform="rotate(0 150 150)"></line>
+              <line class="ring-tick" x1="150" y1="18" x2="150" y2="32" transform="rotate(30 150 150)"></line>
+              <line class="ring-tick" x1="150" y1="18" x2="150" y2="32" transform="rotate(60 150 150)"></line>
+              <line class="ring-tick" x1="150" y1="18" x2="150" y2="32" transform="rotate(90 150 150)"></line>
+              <line class="ring-tick" x1="150" y1="18" x2="150" y2="32" transform="rotate(120 150 150)"></line>
+              <line class="ring-tick" x1="150" y1="18" x2="150" y2="32" transform="rotate(150 150 150)"></line>
+              <line class="ring-tick" x1="150" y1="18" x2="150" y2="32" transform="rotate(180 150 150)"></line>
+              <line class="ring-tick" x1="150" y1="18" x2="150" y2="32" transform="rotate(210 150 150)"></line>
+              <line class="ring-tick" x1="150" y1="18" x2="150" y2="32" transform="rotate(240 150 150)"></line>
+              <line class="ring-tick" x1="150" y1="18" x2="150" y2="32" transform="rotate(270 150 150)"></line>
+              <line class="ring-tick" x1="150" y1="18" x2="150" y2="32" transform="rotate(300 150 150)"></line>
+              <line class="ring-tick" x1="150" y1="18" x2="150" y2="32" transform="rotate(330 150 150)"></line>
+            </g>
+            <text class="ring-deg" x="150" y="46" text-anchor="middle">0°</text>
+            <text class="ring-deg" x="254" y="155" text-anchor="middle">90°</text>
+            <text class="ring-deg" x="150" y="268" text-anchor="middle">180°</text>
+            <text class="ring-deg" x="46" y="155" text-anchor="middle">270°</text>
+            <text class="ring-number" x="150" y="168" text-anchor="middle">360</text>
+            <text class="ring-degsign" x="150" y="196" text-anchor="middle">°</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIAGNOSTIC -->
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title" data-i18n="diag_title">Cómo te encuentra hoy alguien que busca gimnasio</h2>
+        <p class="section-sub" data-i18n="diag_subtitle">Antes de hablar de nosotros, hablemos de esto.</p>
+      </div>
+      <div class="diag-grid">
+        <div class="diag-card">
+          <h3 data-i18n="diag1_title">Antes de decidir, miran Google</h3>
+          <p data-i18n="diag1_text">Fotos, horario, reseñas: tu ficha es lo primero que ve alguien que busca «gimnasio» cerca del Eixample.</p>
+        </div>
+        <div class="diag-card">
+          <h3 data-i18n="diag2_title">Sin ficha cuidada, no sales primero</h3>
+          <p data-i18n="diag2_text">Google ordena los negocios por lo completo y activo que está su perfil — no por quién lleva más años abierto.</p>
+        </div>
+        <div class="diag-card">
+          <h3 data-i18n="diag3_title">Una web básica no cierra la decisión</h3>
+          <p data-i18n="diag3_text">Nos cuentas que ahora mismo vuestra web es muy sencilla; cuando alguien la visita para comparar, necesita un motivo para elegiros a vosotros.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHASES -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title" data-i18n="phases_title">El plan, en tres fases</h2>
+        <p class="section-sub" data-i18n="phases_subtitle">Así lo llevamos nosotros: empezamos por lo que antes se nota, y seguimos solo si tiene sentido para ti.</p>
+      </div>
+      <div class="phase-list">
+        <div class="phase-card is-primary">
+          <div class="phase-badge phase-badge-1"><span class="phase-badge-inner">1</span></div>
+          <div>
+            <p class="phase-tag" data-i18n="phase1_tag">Recomendado para empezar</p>
+            <h3 data-i18n="phase1_title">Fase 1 — Tu ficha de Google</h3>
+            <p data-i18n="phase1_text">Optimizamos tu perfil: fotos, horario, categoría y reseñas de 5 estrellas en segundos, con un solo toque. Es la forma más rápida de que veas cómo trabajamos, antes de pedirte algo más grande.</p>
+          </div>
+        </div>
+        <div class="phase-card">
+          <div class="phase-badge phase-badge-2"><span class="phase-badge-inner">2</span></div>
+          <div>
+            <h3 data-i18n="phase2_title">Fase 2 — Una web a tu altura</h3>
+            <p data-i18n="phase2_text">Si la fase 1 te convence, te construimos una web pensada para Fitness 360 — o la mejor de tu sector en el Eixample — no una plantilla genérica de gimnasio.</p>
+          </div>
+        </div>
+        <div class="phase-card">
+          <div class="phase-badge phase-badge-3"><span class="phase-badge-inner">3</span></div>
+          <div>
+            <h3 data-i18n="phase3_title">Fase 3 — Software a medida</h3>
+            <p data-i18n="phase3_text">Reservas, control de accesos, fichas de socios: lo que tu gimnasio necesite y todavía no exista. Se presupuesta aparte, en números claros — nunca «depende».</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY + DASHBOARD -->
+  <section>
+    <div class="container">
+      <div class="why-grid">
+        <div>
+          <h2 class="section-title" data-i18n="why_title" style="margin-bottom:1.2rem;">Por qué recomendamos empezar por aquí</h2>
+          <ul class="why-list">
+            <li data-i18n="why_item1">Es lo que menos tarda en notarse — cambios en tu ficha pueden verse en días, no meses.</li>
+            <li data-i18n="why_item2">Es la prueba antes del compromiso grande — ves cómo trabajamos con algo pequeño antes de encargarnos tu web.</li>
+            <li data-i18n="why_item3">Es donde ya te está buscando la gente — en Google Maps, pidiendo indicaciones hasta la puerta de Còrsega 75.</li>
+          </ul>
+        </div>
+        <div class="dash-box">
+          <svg class="dash-icon" width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <rect x="4" y="20" width="6" height="16" fill="#D9481F"></rect>
+            <rect x="17" y="10" width="6" height="26" fill="#F6F5F1"></rect>
+            <rect x="30" y="2" width="6" height="34" fill="#D9481F"></rect>
+          </svg>
+          <h3 data-i18n="dash_title">Tus resultados, sin tener que preguntarnos</h3>
+          <p data-i18n="dash_text">Verás en un panel, en tiempo real, cuánta gente te encuentra buscando, cuánta pide indicaciones hasta el gimnasio y cómo crece mes a mes. Nosotros hacemos el trabajo; tú ves los números.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROOF -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title" data-i18n="proof_title">Resultados reales — comprobables, aunque todavía no son nuestros</h2>
+      </div>
+      <p class="proof-note" data-i18n="proof_subtitle">Somos un estudio nuevo y preferimos decírtelo claro antes que inflar esta página: son las mismas tácticas que aplicaríamos contigo, documentadas en otras empresas, no todavía en la nuestra. Empezar ahora con nosotros significa más atención, no menos.</p>
+      <div class="proof-grid">
+        <div class="proof-card">
+          <div class="proof-stat">+64%</div>
+          <p data-i18n="proof1_text">Alguien acerca el móvil a una tarjeta y en segundos deja una reseña de 5 estrellas o ve el catálogo, sin escribir nada. A Air Canada Vacations le funcionó así con sus clientes.</p>
+          <a href="https://v1ce.co/blog/air-canada-v1ce-nfc-business-card-review-lead-capture" target="_blank" rel="noopener" data-i18n="proof_link_label">Ver el caso ↗</a>
+        </div>
+        <div class="proof-card">
+          <div class="proof-stat">+1.400%</div>
+          <p data-i18n="proof2_text">Publicar contenido de forma constante hace que más gente te siga y te tenga en mente. Así creció Duolingo su audiencia con una sola campaña en TikTok.</p>
+          <a href="https://ads.tiktok.com/business/es/inspiration/duolingo-509" target="_blank" rel="noopener" data-i18n="proof_link_label">Ver el caso ↗</a>
+        </div>
+        <div class="proof-card">
+          <div class="proof-stat">+1.170%</div>
+          <p data-i18n="proof3_text">Rehacer y ordenar bien una web puede multiplicar cuánta gente entra y cuánto tiempo se queda. Eso logró DocuSign en 90 días tras renovar la suya.</p>
+          <a href="https://webflow.com/customers/docusign" target="_blank" rel="noopener" data-i18n="proof_link_label">Ver el caso ↗</a>
+        </div>
+        <div class="proof-card">
+          <div class="proof-stat">+260%</div>
+          <p data-i18n="proof4_text">Mejorar lo que ya tienes, en lugar de empezar de cero, puede multiplicar cuánta gente te encuentra en Google. Así lo hizo Backlinko, solo actualizando un artículo antiguo.</p>
+          <a href="https://backlinko.com/content-relaunch" target="_blank" rel="noopener" data-i18n="proof_link_label">Ver el caso ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERSONAL -->
+  <section>
+    <div class="container personal-section">
+      <div class="personal-mark" aria-hidden="true">
+        <svg width="42" height="42" viewBox="0 0 42 42" fill="none">
+          <circle cx="21" cy="14" r="7" stroke="#16191C" stroke-width="2"></circle>
+          <path d="M6 36c0-8.28 6.72-14 15-14s15 5.72 15 14" stroke="#16191C" stroke-width="2" fill="none"></path>
+        </svg>
+      </div>
+      <div>
+        <h2 data-i18n="personal_title">Hablarás conmigo, no con un departamento de soporte</h2>
+        <p data-i18n="personal_text">Me ocupo yo, personalmente, de lo que necesites — sin tickets, sin esperar turno, sin explicar tu caso dos veces a dos personas distintas. Si en algún momento hace falta un especialista para algo muy concreto, lo traigo yo y sigo siendo tu único punto de contacto.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title" data-i18n="pricing_title">Planes y precio, sin sorpresas</h2>
+        <p class="section-sub" data-i18n="pricing_subtitle">El precio final depende de tu negocio y se confirma en una llamada de 15 minutos — estos son los números de partida.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="plan-card is-highlight">
+          <span class="plan-tag" data-i18n="plan_small_tag">Punto de partida recomendado</span>
+          <h3 class="plan-name" data-i18n="plan_small_name">Empezar</h3>
+          <p class="plan-tagline" data-i18n="plan_small_tagline">Que te encuentren. Que te valoren.</p>
+          <div class="plan-price" data-i18n="plan_small_price">99 €/mes</div>
+          <ul class="plan-features" data-i18n-list="plan_small_features"></ul>
+        </div>
+        <div class="plan-card">
+          <span class="plan-tag" style="visibility:hidden;">.</span>
+          <h3 class="plan-name" data-i18n="plan_medium_name">Crecer</h3>
+          <p class="plan-tagline" data-i18n="plan_medium_tagline">Todo lo anterior, más una web que vende.</p>
+          <div class="plan-price" data-i18n="plan_medium_price">199 €/mes</div>
+          <ul class="plan-features" data-i18n-list="plan_medium_features"></ul>
+        </div>
+        <div class="plan-card">
+          <span class="plan-tag" style="visibility:hidden;">.</span>
+          <h3 class="plan-name" data-i18n="plan_large_name">A medida</h3>
+          <p class="plan-tagline" data-i18n="plan_large_tagline">Construido alrededor de tu gimnasio.</p>
+          <div class="plan-price" data-i18n="plan_large_price">A medida</div>
+          <ul class="plan-features" data-i18n-list="plan_large_features"></ul>
+        </div>
+      </div>
+      <p class="pricing-bonus" data-i18n="pricing_bonus">Si empezáis de cero con nosotros, os lleváis 400 € en crédito publicitario, sin coste.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title" data-i18n="faq_title">Preguntas normales</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3 data-i18n="faq1_q">¿Necesitáis entender de tecnología?</h3>
+          <p data-i18n="faq1_a">No, nada. Nos contáis cómo queréis Fitness 360 y nosotros nos encargamos de todo lo técnico.</p>
+        </div>
+        <div class="faq-item">
+          <h3 data-i18n="faq2_q">¿Esto funciona para un gimnasio como el vuestro?</h3>
+          <p data-i18n="faq2_a">Sí. Restaurantes, tiendas, clínicas, salones, gimnasios… cada negocio es distinto, y adaptamos lo que hacemos a lo que Fitness 360 necesita de verdad.</p>
+        </div>
+        <div class="faq-item">
+          <h3 data-i18n="faq3_q">¿Cómo empezamos?</h3>
+          <p data-i18n="faq3_a">Me escribís por WhatsApp o me llamáis, hablamos 15 minutos sin compromiso, y decidís vosotros si seguimos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section>
+    <div class="container">
+      <div class="final-cta">
+        <h2 data-i18n="final_title">Sin powerpoints de 40 diapositivas. Solo decidnos cómo lo queréis.</h2>
+        <div class="final-ctas">
+          <a class="btn btn-primary" href="tel:+34687701709" data-i18n="final_cta_call">Llamar · +34 687 70 17 09</a>
+          <a class="btn btn-ghost" href="https://wa.me/34687701709" data-i18n="final_cta_whatsapp">Escribir por WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <span data-i18n="footer_text">HowDoYouWant — con base en Barcelona, escrito para Fitness 360 en el Eixample.</span>
+    <span>+34 687 70 17 09 · wa.me/34687701709</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var T = {
+    es:{
+      nav_call:`Llamar`,
+      hero_kicker:`Propuesta para Fitness 360 — Jordi Iglesias`,
+      hero_title:`360 grados. Cero excusas para no encontrarte.`,
+      hero_subtitle:`Esta propuesta está pensada para tu gimnasio, en Carrer de Còrsega 75 — no es una plantilla con tu nombre pegado encima.`,
+      hero_cta_call:`Llamar ahora`,
+      hero_cta_whatsapp:`Escribir por WhatsApp`,
+      diag_title:`Cómo te encuentra hoy alguien que busca gimnasio`,
+      diag_subtitle:`Antes de hablar de nosotros, hablemos de esto.`,
+      diag1_title:`Antes de decidir, miran Google`,
+      diag1_text:`Fotos, horario, reseñas: tu ficha es lo primero que ve alguien que busca «gimnasio» cerca del Eixample.`,
+      diag2_title:`Sin ficha cuidada, no sales primero`,
+      diag2_text:`Google ordena los negocios por lo completo y activo que está su perfil — no por quién lleva más años abierto.`,
+      diag3_title:`Una web básica no cierra la decisión`,
+      diag3_text:`Nos cuentas que ahora mismo vuestra web es muy sencilla; cuando alguien la visita para comparar, necesita un motivo para elegiros a vosotros.`,
+      phases_title:`El plan, en tres fases`,
+      phases_subtitle:`Así lo llevamos nosotros: empezamos por lo que antes se nota, y seguimos solo si tiene sentido para ti.`,
+      phase1_tag:`Recomendado para empezar`,
+      phase1_title:`Fase 1 — Tu ficha de Google`,
+      phase1_text:`Optimizamos tu perfil: fotos, horario, categoría y reseñas de 5 estrellas en segundos, con un solo toque. Es la forma más rápida de que veas cómo trabajamos, antes de pedirte algo más grande.`,
+      phase2_title:`Fase 2 — Una web a tu altura`,
+      phase2_text:`Si la fase 1 te convence, te construimos una web pensada para Fitness 360 — o la mejor de tu sector en el Eixample — no una plantilla genérica de gimnasio.`,
+      phase3_title:`Fase 3 — Software a medida`,
+      phase3_text:`Reservas, control de accesos, fichas de socios: lo que tu gimnasio necesite y todavía no exista. Se presupuesta aparte, en números claros — nunca «depende».`,
+      why_title:`Por qué recomendamos empezar por aquí`,
+      why_item1:`Es lo que menos tarda en notarse — cambios en tu ficha pueden verse en días, no meses.`,
+      why_item2:`Es la prueba antes del compromiso grande — ves cómo trabajamos con algo pequeño antes de encargarnos tu web.`,
+      why_item3:`Es donde ya te está buscando la gente — en Google Maps, pidiendo indicaciones hasta la puerta de Còrsega 75.`,
+      dash_title:`Tus resultados, sin tener que preguntarnos`,
+      dash_text:`Verás en un panel, en tiempo real, cuánta gente te encuentra buscando, cuánta pide indicaciones hasta el gimnasio y cómo crece mes a mes. Nosotros hacemos el trabajo; tú ves los números.`,
+      proof_title:`Resultados reales — comprobables, aunque todavía no son nuestros`,
+      proof_subtitle:`Somos un estudio nuevo y preferimos decírtelo claro antes que inflar esta página: son las mismas tácticas que aplicaríamos contigo, documentadas en otras empresas, no todavía en la nuestra. Empezar ahora con nosotros significa más atención, no menos.`,
+      proof1_text:`Alguien acerca el móvil a una tarjeta y en segundos deja una reseña de 5 estrellas o ve el catálogo, sin escribir nada. A Air Canada Vacations le funcionó así con sus clientes.`,
+      proof2_text:`Publicar contenido de forma constante hace que más gente te siga y te tenga en mente. Así creció Duolingo su audiencia con una sola campaña en TikTok.`,
+      proof3_text:`Rehacer y ordenar bien una web puede multiplicar cuánta gente entra y cuánto tiempo se queda. Eso logró DocuSign en 90 días tras renovar la suya.`,
+      proof4_text:`Mejorar lo que ya tienes, en lugar de empezar de cero, puede multiplicar cuánta gente te encuentra en Google. Así lo hizo Backlinko, solo actualizando un artículo antiguo.`,
+      proof_link_label:`Ver el caso ↗`,
+      personal_title:`Hablarás conmigo, no con un departamento de soporte`,
+      personal_text:`Me ocupo yo, personalmente, de lo que necesites — sin tickets, sin esperar turno, sin explicar tu caso dos veces a dos personas distintas. Si en algún momento hace falta un especialista para algo muy concreto, lo traigo yo y sigo siendo tu único punto de contacto.`,
+      pricing_title:`Planes y precio, sin sorpresas`,
+      pricing_subtitle:`El precio final depende de tu negocio y se confirma en una llamada de 15 minutos — estos son los números de partida.`,
+      plan_small_name:`Empezar`,plan_small_price:`99 €/mes`,plan_small_tagline:`Que te encuentren. Que te valoren.`,plan_small_tag:`Punto de partida recomendado`,
+      plan_small_features:[`Posicionamiento en Google`,`Reseñas de 5 estrellas en segundos`,`Revisión mensual y ajustes`],
+      plan_medium_name:`Crecer`,plan_medium_price:`199 €/mes`,plan_medium_tagline:`Todo lo anterior, más una web que vende.`,
+      plan_medium_features:[`Todo lo de Empezar`,`Catálogo de clases listo para móvil`,`Contenido nuevo cada semana`,`Una web pensada para Fitness 360`],
+      plan_large_name:`A medida`,plan_large_price:`A medida`,plan_large_tagline:`Construido alrededor de tu gimnasio.`,
+      plan_large_features:[`Todo lo de Crecer`,`Varias sedes`,`Gestión de anuncios`,`Software y reservas a medida`,`Soporte prioritario`],
+      pricing_bonus:`Si empezáis de cero con nosotros, os lleváis 400 € en crédito publicitario, sin coste.`,
+      faq_title:`Preguntas normales`,
+      faq1_q:`¿Necesitáis entender de tecnología?`,faq1_a:`No, nada. Nos contáis cómo queréis Fitness 360 y nosotros nos encargamos de todo lo técnico.`,
+      faq2_q:`¿Esto funciona para un gimnasio como el vuestro?`,faq2_a:`Sí. Restaurantes, tiendas, clínicas, salones, gimnasios… cada negocio es distinto, y adaptamos lo que hacemos a lo que Fitness 360 necesita de verdad.`,
+      faq3_q:`¿Cómo empezamos?`,faq3_a:`Me escribís por WhatsApp o me llamáis, hablamos 15 minutos sin compromiso, y decidís vosotros si seguimos.`,
+      final_title:`Sin powerpoints de 40 diapositivas. Solo decidnos cómo lo queréis.`,
+      final_cta_call:`Llamar · +34 687 70 17 09`,final_cta_whatsapp:`Escribir por WhatsApp`,
+      footer_text:`HowDoYouWant — con base en Barcelona, escrito para Fitness 360 en el Eixample.`
+    },
+    ca:{
+      nav_call:`Trucar`,
+      hero_kicker:`Proposta per a Fitness 360 — Jordi Iglesias`,
+      hero_title:`360 graus. Cap excusa per no trobar-te.`,
+      hero_subtitle:`Aquesta proposta està pensada per al teu gimnàs, al carrer de Còrsega 75 — no és una plantilla amb el teu nom enganxat a sobre.`,
+      hero_cta_call:`Trucar ara`,
+      hero_cta_whatsapp:`Escriure per WhatsApp`,
+      diag_title:`Com et troba avui algú que busca gimnàs`,
+      diag_subtitle:`Abans de parlar de nosaltres, parlem d'això.`,
+      diag1_title:`Abans de decidir, miren Google`,
+      diag1_text:`Fotos, horari, ressenyes: la teva fitxa és el primer que veu algú que busca «gimnàs» a prop de l'Eixample.`,
+      diag2_title:`Sense fitxa cuidada, no surts primer`,
+      diag2_text:`Google ordena els negocis segons com de completa i activa està la seva fitxa — no per qui porta més anys obert.`,
+      diag3_title:`Una web bàsica no tanca la decisió`,
+      diag3_text:`Ens dieu que ara mateix la vostra web és molt senzilla; quan algú la visita per comparar, necessita un motiu per triar-vos a vosaltres.`,
+      phases_title:`El pla, en tres fases`,
+      phases_subtitle:`Així ho fem: comencem pel que abans es nota, i seguim només si té sentit per a tu.`,
+      phase1_tag:`Recomanat per començar`,
+      phase1_title:`Fase 1 — La teva fitxa de Google`,
+      phase1_text:`Optimitzem el teu perfil: fotos, horari, categoria i ressenyes de 5 estrelles en segons, amb un sol toc. És la manera més ràpida de veure com treballem, abans de demanar-te res més gran.`,
+      phase2_title:`Fase 2 — Una web a la teva alçada`,
+      phase2_text:`Si la fase 1 et convenç, et construïm una web pensada per a Fitness 360 — o la millor del teu sector a l'Eixample — no una plantilla genèrica de gimnàs.`,
+      phase3_title:`Fase 3 — Software a mida`,
+      phase3_text:`Reserves, control d'accessos, fitxes de socis: el que el teu gimnàs necessiti i encara no existeixi. Es pressuposta a part, en números clars — mai «depèn».`,
+      why_title:`Per què recomanem començar per aquí`,
+      why_item1:`És el que menys triga a notar-se — els canvis a la fitxa es poden veure en dies, no en mesos.`,
+      why_item2:`És la prova abans del compromís gran — veus com treballem amb una cosa petita abans d'encarregar-nos la web.`,
+      why_item3:`És on ja et busca la gent — a Google Maps, demanant indicacions fins a la porta de Còrsega 75.`,
+      dash_title:`Els teus resultats, sense haver-nos de preguntar`,
+      dash_text:`Veuràs en un panell, en temps real, quanta gent et troba buscant, quanta demana indicacions fins al gimnàs i com creix cada mes. Nosaltres fem la feina; tu veus els números.`,
+      proof_title:`Resultats reals — comprovables, encara que encara no són nostres`,
+      proof_subtitle:`Som un estudi nou i preferim dir-t'ho clar abans d'inflar aquesta pàgina: són les mateixes tàctiques que aplicaríem amb tu, documentades en altres empreses, encara no en la nostra. Començar ara amb nosaltres vol dir més atenció, no menys.`,
+      proof1_text:`Algú acosta el mòbil a una targeta i en segons deixa una ressenya de 5 estrelles o veu el catàleg, sense escriure res. A Air Canada Vacations els va funcionar així amb els seus clients.`,
+      proof2_text:`Publicar contingut de manera constant fa que més gent et segueixi i et tingui present. Així va créixer Duolingo la seva audiència amb una sola campanya a TikTok.`,
+      proof3_text:`Refer i ordenar bé una web pot multiplicar quanta gent hi entra i quant temps s'hi queda. Això va aconseguir DocuSign en 90 dies després de renovar la seva.`,
+      proof4_text:`Millorar el que ja tens, en lloc de començar de zero, pot multiplicar quanta gent et troba a Google. Així ho va fer Backlinko, només actualitzant un article antic.`,
+      proof_link_label:`Veure el cas ↗`,
+      personal_title:`Parlaràs amb mi, no amb un departament de suport`,
+      personal_text:`Me n'ocupo jo, personalment, del que necessitis — sense tiquets, sense esperar torn, sense explicar el teu cas dues vegades a dues persones diferents. Si en algun moment cal un especialista per a alguna cosa molt concreta, el porto jo i continuo sent el teu únic punt de contacte.`,
+      pricing_title:`Plans i preu, sense sorpreses`,
+      pricing_subtitle:`El preu final depèn del teu negoci i es confirma en una trucada de 15 minuts — aquests són els números de partida.`,
+      plan_small_name:`Començar`,plan_small_price:`99 €/mes`,plan_small_tagline:`Que et trobin. Que et valorin.`,plan_small_tag:`Punt de partida recomanat`,
+      plan_small_features:[`Posicionament a Google`,`Ressenyes de 5 estrelles en segons`,`Revisió mensual i ajustos`],
+      plan_medium_name:`Créixer`,plan_medium_price:`199 €/mes`,plan_medium_tagline:`Tot l'anterior, més una web que ven.`,
+      plan_medium_features:[`Tot el d'Començar`,`Catàleg de classes llest per a mòbil`,`Contingut nou cada setmana`,`Una web pensada per a Fitness 360`],
+      plan_large_name:`A mida`,plan_large_price:`A mida`,plan_large_tagline:`Construït al voltant del teu gimnàs.`,
+      plan_large_features:[`Tot el de Créixer`,`Diverses seus`,`Gestió d'anuncis`,`Software i reserves a mida`,`Suport prioritari`],
+      pricing_bonus:`Si comenceu de zero amb nosaltres, us endueu 400 € en crèdit publicitari, sense cost.`,
+      faq_title:`Preguntes normals`,
+      faq1_q:`Cal que entengueu de tecnologia?`,faq1_a:`No, gens. Ens expliqueu com voleu Fitness 360 i nosaltres ens encarreguem de tot el tècnic.`,
+      faq2_q:`Això funciona per a un gimnàs com el vostre?`,faq2_a:`Sí. Restaurants, botigues, clíniques, salons, gimnasos… cada negoci és diferent, i adaptem el que fem al que Fitness 360 necessita de veritat.`,
+      faq3_q:`Com comencem?`,faq3_a:`M'escriviu per WhatsApp o em truqueu, parlem 15 minuts sense compromís, i decidiu vosaltres si seguim.`,
+      final_title:`Sense powerpoints de 40 diapositives. Només digueu-nos com ho voleu.`,
+      final_cta_call:`Trucar · +34 687 70 17 09`,final_cta_whatsapp:`Escriure per WhatsApp`,
+      footer_text:`HowDoYouWant — amb seu a Barcelona, escrit per a Fitness 360 a l'Eixample.`
+    },
+    en:{
+      nav_call:`Call`,
+      hero_kicker:`Proposal for Fitness 360 — Jordi Iglesias`,
+      hero_title:`360 degrees. Zero excuses for not being found.`,
+      hero_subtitle:`This proposal is built for your gym, at Carrer de Còrsega 75 — not a template with your name pasted on top.`,
+      hero_cta_call:`Call now`,
+      hero_cta_whatsapp:`Message on WhatsApp`,
+      diag_title:`How someone finds you today when they search for a gym`,
+      diag_subtitle:`Before we talk about us, let's talk about this.`,
+      diag1_title:`Before deciding, they check Google`,
+      diag1_text:`Photos, hours, reviews: your listing is the first thing someone sees when they search "gym" near the Eixample.`,
+      diag2_title:`Without a solid listing, you don't rank first`,
+      diag2_text:`Google ranks businesses by how complete and active their profile is — not by who's been open the longest.`,
+      diag3_title:`A basic website doesn't close the decision`,
+      diag3_text:`You've told us your website is very basic right now; when someone visits it to compare options, they need a reason to choose you.`,
+      phases_title:`The plan, in three phases`,
+      phases_subtitle:`Here's how we run it: we start with what shows results fastest, and continue only if it makes sense for you.`,
+      phase1_tag:`Recommended starting point`,
+      phase1_title:`Phase 1 — Your Google listing`,
+      phase1_text:`We optimize your profile: photos, hours, category, and 5-star reviews in seconds with a single tap. It's the fastest way to see how we work, before asking you to commit to anything bigger.`,
+      phase2_title:`Phase 2 — A website that matches you`,
+      phase2_text:`If phase 1 convinces you, we build a website designed for Fitness 360 — or the best one in your sector in the Eixample — not a generic gym template.`,
+      phase3_title:`Phase 3 — Custom software`,
+      phase3_text:`Bookings, access control, member records: whatever your gym needs that doesn't exist yet. Quoted separately, in plain numbers — never "it depends."`,
+      why_title:`Why we recommend starting here`,
+      why_item1:`It shows results the fastest — changes to your listing can show up in days, not months.`,
+      why_item2:`It's the trial run before the big commitment — you see how we work on something small before handing us your website.`,
+      why_item3:`It's where people are already looking for you — on Google Maps, asking for directions to your door on Còrsega 75.`,
+      dash_title:`Your results, without having to ask us`,
+      dash_text:`You'll see, on a live dashboard, how many people find you searching, how many ask for directions to the gym, and how it grows month over month. We do the work; you see the numbers.`,
+      proof_title:`Real results — verifiable, even though they're not ours yet`,
+      proof_subtitle:`We're a new studio, and we'd rather tell you that plainly than pad this page with vague claims: these are the same tactics we'd apply to your business, documented at other companies — not our own track record yet. Starting with us now means more attention, not less.`,
+      proof1_text:`Someone taps their phone on a card and in seconds leaves a 5-star review or sees the catalog, without typing a word. Air Canada Vacations got this same result with its customers.`,
+      proof2_text:`Posting content consistently gets more people to follow you and think of you when they need what you offer. Duolingo grew its following this way with a single TikTok campaign.`,
+      proof3_text:`Redesigning and organizing a website well can multiply how many people visit and how long they stay. That's what DocuSign achieved in 90 days after renewing its site.`,
+      proof4_text:`Improving what you already have, instead of starting from scratch, can multiply how many people find you on Google. That's how Backlinko did it, just by updating an old article.`,
+      proof_link_label:`See the real case ↗`,
+      personal_title:`You'll talk to me, not a support department`,
+      personal_text:`I handle what you need, personally — no tickets, no waiting in line, no explaining your case twice to two different people. If something very specific ever calls for a specialist, I bring them in and stay your one point of contact.`,
+      pricing_title:`Plans and pricing, no surprises`,
+      pricing_subtitle:`The final price depends on your business and gets confirmed on a 15-minute call — these are the starting numbers.`,
+      plan_small_name:`Start`,plan_small_price:`€99/month`,plan_small_tagline:`Get found. Get reviewed.`,plan_small_tag:`Recommended starting point`,
+      plan_small_features:[`Google ranking optimization`,`5-star reviews in seconds`,`Monthly check-in and adjustments`],
+      plan_medium_name:`Grow`,plan_medium_price:`€199/month`,plan_medium_tagline:`Everything above, plus a website that sells.`,
+      plan_medium_features:[`Everything in Start`,`Class catalog, ready for mobile`,`New content every week`,`A website built for Fitness 360`],
+      plan_large_name:`Custom`,plan_large_price:`Custom`,plan_large_tagline:`Built around your gym.`,
+      plan_large_features:[`Everything in Grow`,`Multiple locations`,`Paid ads management`,`Custom software and bookings`,`Priority support`],
+      pricing_bonus:`Starting from scratch with us gets you €400 in advertising credit, on the house.`,
+      faq_title:`Normal questions`,
+      faq1_q:`Do you need to understand technology?`,faq1_a:`No, not at all. You tell us how you want Fitness 360 to look and we handle everything technical.`,
+      faq2_q:`Does this work for a gym like yours?`,faq2_a:`Yes. Restaurants, shops, clinics, salons, gyms… every business is different, and we adapt what we do to what Fitness 360 actually needs.`,
+      faq3_q:`How do we start?`,faq3_a:`You message me on WhatsApp or call, we talk for 15 minutes with no commitment, and you decide whether we continue.`,
+      final_title:`No 40-slide deck. Just tell us how you want it.`,
+      final_cta_call:`Call · +34 687 70 17 09`,final_cta_whatsapp:`Message on WhatsApp`,
+      footer_text:`HowDoYouWant — based in Barcelona, written for Fitness 360 in the Eixample.`
+    }
+  };
+
+  function applyLang(lang){
+    if(!T[lang]) return;
+    document.documentElement.setAttribute('lang', lang);
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var key = el.getAttribute('data-i18n');
+      if(T[lang][key] !== undefined){ el.innerHTML = T[lang][key]; }
+    });
+    document.querySelectorAll('[data-i18n-list]').forEach(function(el){
+      var key = el.getAttribute('data-i18n-list');
+      var items = T[lang][key];
+      if(Array.isArray(items)){
+        el.innerHTML = items.map(function(i){ return '<li>' + i + '</li>'; }).join('');
+      }
+    });
+    document.querySelectorAll('.lang-btn').forEach(function(btn){
+      var active = btn.getAttribute('data-lang-btn') === lang;
+      btn.classList.toggle('is-active', active);
+      btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+    });
+  }
+
+  document.querySelectorAll('.lang-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){ applyLang(btn.getAttribute('data-lang-btn')); });
+  });
+
+  applyLang('es');
+})();
+</script>
+
+</body>
+</html>
