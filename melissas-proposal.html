@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A letter for Melissa's — HowDoYouWant</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.85em' font-size='90'%3E%F0%9F%90%9D%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500;1,9..144,600&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+  :root{
+    color-scheme: light;
+    --desk:#DCD3BE;
+    --paper:#FAF4E7;
+    --paper-2:#F3ECDC;
+    --ink:#2B2018;
+    --ink-soft:#5B4C3B;
+    --ink-faint:#8A7A66;
+    --oxblood:#8C3A2B;
+    --oxblood-deep:#6E2C20;
+    --olive:#57633E;
+    --honey:#B9862B;
+    --line:rgba(43,32,24,.16);
+    --rule:rgba(43,32,24,.4);
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:var(--desk);
+    background-image:
+      radial-gradient(circle at 15% 8%, rgba(255,255,255,.35), transparent 40%),
+      radial-gradient(circle at 90% 92%, rgba(0,0,0,.05), transparent 45%);
+    color:var(--ink);
+    font-family:'Lora',Georgia,serif;
+    line-height:1.7;
+    font-size:16.5px;
+    -webkit-font-smoothing:antialiased;
+    padding:0 16px;
+  }
+  h1,h2,h3{font-family:'Fraunces',Georgia,serif;line-height:1.15;margin:0 0 .4em;color:var(--ink);}
+  p{margin:0 0 1.15em;}
+  em{color:var(--oxblood-deep);}
+  .type{
+    font-family:'Special Elite',monospace;
+    letter-spacing:.04em;
+  }
+  .label{
+    font-family:'Special Elite',monospace;
+    font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--oxblood);
+  }
+
+  /* the stacked-paper sheet */
+  .sheet-wrap{position:relative;max-width:880px;margin:44px auto;}
+  .sheet-wrap::before,.sheet-wrap::after{
+    content:"";position:absolute;inset:0;background:var(--paper-2);
+    border:1px solid var(--line);
+  }
+  .sheet-wrap::before{transform:rotate(-1.1deg);}
+  .sheet-wrap::after{transform:rotate(.9deg);}
+  .sheet{
+    position:relative;z-index:1;background:var(--paper);
+    border:1px solid var(--line);
+    box-shadow:0 36px 70px -34px rgba(43,32,24,.45);
+    padding:64px 68px 56px;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  }
+
+  /* letterhead */
+  .letterhead{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;margin-bottom:6px;}
+  .wordmark{font-family:'Special Elite',monospace;font-size:14px;letter-spacing:.08em;color:var(--ink-soft);}
+  .wordmark b{color:var(--ink);}
+  .stamp{
+    flex:none;width:96px;height:96px;border-radius:50%;
+    border:1.5px dashed var(--oxblood);
+    display:flex;align-items:center;justify-content:center;text-align:center;
+    transform:rotate(-8deg);color:var(--oxblood);
+    font-family:'Special Elite',monospace;font-size:9.5px;letter-spacing:.06em;line-height:1.5;
+    padding:6px;
+  }
+  .langbar{display:flex;gap:10px;align-items:center;margin-top:4px;}
+  .langbar button{
+    font-family:'Special Elite',monospace;font-size:12px;background:none;border:none;
+    color:var(--ink-faint);cursor:pointer;text-decoration:underline;text-underline-offset:3px;padding:2px 0;
+  }
+  .langbar button[aria-pressed="true"]{color:var(--oxblood);font-weight:700;}
+  .langbar .sep{color:var(--ink-faint);}
+
+  .dateline{text-align:right;font-size:12.5px;color:var(--ink-faint);margin:26px 0 34px;}
+
+  .salutation{font-style:italic;font-weight:500;font-size:clamp(28px,3.6vw,38px);margin-bottom:26px;}
+
+  .lede{font-size:17.5px;max-width:62ch;}
+
+  hr.torn{
+    border:none;height:10px;margin:46px 0;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='10'%3E%3Cpath d='M0 5 Q7 0 14 5 T28 5 T42 5 T56 5' stroke='%238C3A2B' stroke-width='1.3' fill='none' opacity='0.55'/%3E%3C/svg%3E");
+    background-repeat:repeat-x;background-size:60px 10px;background-position:center;
+  }
+
+  /* letterblock with margin notes */
+  .letterblock{display:grid;grid-template-columns:1fr 220px;gap:34px;align-items:start;margin-bottom:8px;}
+  .letterblock p{max-width:58ch;}
+  .note{
+    font-family:'Special Elite',monospace;font-size:12.5px;line-height:1.6;color:var(--olive);
+    border-left:2px solid var(--line);padding-left:14px;padding-top:3px;
+  }
+  .note b{display:block;color:var(--oxblood);font-style:normal;}
+
+  /* menu */
+  .menu-title{text-align:center;margin:6px 0 2px;}
+  .menu-sub{text-align:center;font-style:italic;color:var(--ink-faint);font-size:15px;margin-bottom:36px;}
+  .menu-list{max-width:640px;margin:0 auto;}
+  .menu-item{margin-bottom:26px;}
+  .menu-item .row{display:flex;align-items:baseline;gap:8px;}
+  .menu-item h3{font-size:19px;font-weight:600;white-space:nowrap;margin:0;}
+  .menu-item .dots{flex:1;border-bottom:1.5px dotted var(--rule);height:1px;transform:translateY(-5px);}
+  .menu-item .no{font-family:'Special Elite',monospace;font-size:12px;color:var(--honey);white-space:nowrap;}
+  .menu-item p{margin:6px 0 0;font-size:14.5px;color:var(--ink-soft);font-style:italic;max-width:52ch;}
+
+  /* postcard / sample */
+  .postcard-wrap{display:flex;justify-content:center;margin:20px 0 10px;}
+  .postcard{
+    width:min(100%,460px);background:#fff;padding:14px 14px 46px;
+    box-shadow:0 20px 40px -20px rgba(43,32,24,.5);transform:rotate(-1.6deg);
+    position:relative;
+  }
+  .postcard::after{
+    content:"";position:absolute;top:-10px;left:38%;width:70px;height:22px;
+    background:rgba(185,134,43,.28);border:1px solid rgba(185,134,43,.4);transform:rotate(-3deg);
+  }
+  .postcard .scene{
+    background:
+      radial-gradient(circle at 25% 20%, rgba(255,255,255,.25), transparent 55%),
+      linear-gradient(155deg,var(--oxblood),var(--oxblood-deep));
+    color:#fff;padding:34px 20px;text-align:center;
+  }
+  .postcard .pnav{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;font-family:'Special Elite',monospace;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;opacity:.85;margin-bottom:22px;}
+  .postcard h3{color:#fff;font-style:italic;font-size:24px;margin-bottom:8px;}
+  .postcard .psub{font-size:13.5px;opacity:.92;max-width:34ch;margin:0 auto 18px;}
+  .postcard .pbtn{display:inline-block;border:1px solid rgba(255,255,255,.7);color:#fff;font-family:'Special Elite',monospace;font-size:11.5px;letter-spacing:.05em;padding:9px 18px;}
+  .postcard .cap{font-family:'Special Elite',monospace;font-size:11px;color:var(--ink-faint);text-align:center;margin-top:12px;}
+
+  /* ledger */
+  .ledger{max-width:560px;margin:0 auto;}
+  .ledger .row{display:flex;justify-content:space-between;gap:14px;padding:12px 0;border-bottom:1px dotted var(--line);}
+  .ledger .row span:first-child{font-size:14.5px;color:var(--ink-soft);max-width:70%;}
+  .ledger .row b{font-family:'Special Elite',monospace;font-size:17px;color:var(--oxblood);white-space:nowrap;}
+  .footnote{font-size:13px;color:var(--ink-faint);font-style:italic;max-width:560px;margin:18px auto 0;border-left:2px solid var(--honey);padding-left:14px;}
+
+  blockquote.pov{
+    margin:34px auto 0;max-width:64ch;padding-left:20px;border-left:2px solid var(--oxblood);
+    font-size:16.5px;color:var(--ink-soft);
+  }
+  blockquote.pov strong{color:var(--ink);}
+
+  /* checklist */
+  .checklist{max-width:560px;margin:30px auto 0;}
+  .cli{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--line);align-items:flex-start;}
+  .cli .box{font-family:'Special Elite',monospace;font-size:18px;color:var(--oxblood);line-height:1.3;}
+  .cli h3{font-size:16px;margin:0 0 4px;}
+  .cli p{font-size:14px;color:var(--ink-soft);margin:0;}
+
+  /* faq */
+  .faqwrap{max-width:600px;margin:30px auto 0;}
+  details{border-bottom:1px solid var(--line);padding:14px 0;}
+  details summary{cursor:pointer;font-weight:600;font-size:15.5px;list-style:none;display:flex;justify-content:space-between;gap:10px;font-family:'Lora',serif;}
+  details summary::-webkit-details-marker{display:none;}
+  details summary::after{content:"+";color:var(--oxblood);flex:none;font-family:'Special Elite',monospace;}
+  details[open] summary::after{content:"–";}
+  details p{margin:10px 0 0;color:var(--ink-soft);font-size:14.5px;}
+
+  .sign{margin-top:52px;}
+  .sign .warmly{font-style:italic;font-size:19px;margin-bottom:2px;}
+  .sign .from{font-family:'Fraunces',serif;font-weight:600;font-style:italic;font-size:24px;color:var(--oxblood-deep);}
+
+  .card-contact{
+    margin-top:22px;display:inline-block;border:1px solid var(--line);background:var(--paper-2);
+    padding:16px 20px;transform:rotate(.6deg);font-size:13.5px;color:var(--ink-soft);
+  }
+  .card-contact a{color:var(--oxblood);text-decoration:none;font-weight:600;}
+  .card-contact .biz{font-family:'Special Elite',monospace;font-size:11px;letter-spacing:.06em;color:var(--ink-faint);margin-bottom:6px;}
+
+  .ps{margin-top:30px;font-size:14px;color:var(--ink-soft);max-width:58ch;}
+  .ps b{font-family:'Special Elite',monospace;color:var(--oxblood);}
+
+  .foot{text-align:center;margin-top:52px;padding-top:20px;border-top:1px solid var(--line);}
+  .foot p{font-size:12px;color:var(--ink-faint);margin:0;}
+
+  section.block{margin:52px 0;}
+
+  @media (max-width:760px){
+    .sheet{padding:44px 24px 40px;}
+    .letterblock{grid-template-columns:1fr;gap:10px;}
+    .note{border-left:none;border-top:2px solid var(--line);padding:10px 0 0;margin-bottom:18px;}
+    .stamp{width:78px;height:78px;font-size:8.5px;}
+    .menu-item .row{flex-wrap:wrap;}
+    .menu-item .dots{display:none;}
+  }
+</style>
+</head>
+<body>
+<div class="sheet-wrap">
+  <div class="sheet">
+
+    <div class="letterhead">
+      <div>
+        <div class="wordmark"><b>HowDoYouWant</b> — studio notes</div>
+        <div class="langbar" role="group" aria-label="Language">
+          <button id="btn-en" data-lang="en" aria-pressed="true">EN</button>
+          <span class="sep">/</span>
+          <button id="btn-el" data-lang="el" aria-pressed="false">ΕΛ</button>
+        </div>
+      </div>
+      <div class="stamp">
+        <span class="t-en">PREPARED&nbsp;BY&nbsp;HAND<br>FOR&nbsp;MELISSA'S</span>
+        <span class="t-el" hidden>ΓΡΑΦΤΗΚΕ<br>ΓΙΑ ΤΟ MELISSA'S</span>
+      </div>
+    </div>
+
+    <div class="dateline type">
+      <span class="t-en">Barcelona — written with Melbourne in mind, September 2026</span>
+      <span class="t-el" hidden>Βαρκελώνη — γραμμένο με τη Μελβούρνη στο μυαλό, Σεπτέμβριος 2026</span>
+    </div>
+
+    <h1 class="salutation t-en">Dear George &amp; Angelo,</h1>
+    <h1 class="salutation t-el" hidden>Αγαπητοί George και Angelo,</h1>
+
+    <p class="lede t-en">We run a small studio that builds websites and handles the digital side of things for businesses we like — and we don't usually write letters like this. But we came across Melissa's, read into your story, and felt it deserved more than a form email. So here is our honest, unpaid, no-strings read of what we think you could gain online — and exactly what we'd build first, free, before you ever owe us anything.</p>
+    <p class="lede t-el" hidden>Έχουμε ένα μικρό στούντιο που φτιάχνει ιστοσελίδες και αναλαμβάνει το ψηφιακό κομμάτι για επιχειρήσεις που μας αρέσουν — και συνήθως δεν γράφουμε τέτοια γράμματα. Όμως βρήκαμε το Melissa's, διαβάσαμε την ιστορία σας, και νιώσαμε πως άξιζε κάτι παραπάνω από ένα τυποποιημένο email. Ορίστε λοιπόν η ειλικρινής, απλήρωτη, χωρίς δεσμεύσεις άποψή μας για το τι θα μπορούσατε να κερδίσετε online — και τι θα φτιάχναμε πρώτα, δωρεάν, πριν μας χρωστάτε οτιδήποτε.</p>
+
+    <hr class="torn">
+
+    <div class="label t-en">What we found</div>
+    <div class="label t-el" hidden>Τι βρήκαμε</div>
+
+    <div class="letterblock">
+      <p class="t-en">Fifty-seven years is not a small thing to build. Nick and Soula Katsakis opened Melissa's in Collingwood in 1969 — the name means <em>honey bee</em> in Greek — and today George and Angelo run what's grown into several Melbourne locations, from the long-standing Templestowe Lower café to the newer room in Oakleigh. That kind of reputation isn't manufactured. It's the sort people specifically drive across the city for a slice of galaktoboureko.</p>
+      <p class="t-el" hidden>Πενήντα εφτά χρόνια δεν είναι λίγα να τα χτίσεις. Ο Nick και η Soula Κατσάκη άνοιξαν το Melissa's στο Collingwood το 1969 — το όνομα σημαίνει <em>μέλισσα</em> στα ελληνικά — και σήμερα ο George και ο Angelo διευθύνουν πολλά καταστήματα στη Μελβούρνη, από το παλιό Templestowe Lower έως το πιο πρόσφατο στο Oakleigh. Τέτοια φήμη δεν κατασκευάζεται. Είναι το είδος για το οποίο ο κόσμος διασχίζει την πόλη για μια φέτα γαλακτομπούρεκο.</p>
+      <div class="note">
+        <b class="t-en">1969</b><b class="t-el" hidden>1969</b>
+        <span class="t-en">Founded in Collingwood by Nick &amp; Soula Katsakis</span>
+        <span class="t-el" hidden>Ιδρύθηκε στο Collingwood από τους Nick &amp; Soula Κατσάκη</span>
+        <br><br>
+        <span class="t-en">Now run by George &amp; Angelo — second generation</span>
+        <span class="t-el" hidden>Σήμερα το διευθύνουν ο George &amp; Angelo — δεύτερη γενιά</span>
+        <br><br>
+        <span class="t-en">Templestowe Lower open 7:30am–11:30pm, daily</span>
+        <span class="t-el" hidden>Templestowe Lower ανοιχτό 7:30πμ–11:30μμ, καθημερινά</span>
+      </div>
+    </div>
+
+    <div class="letterblock">
+      <p class="t-en">And yet — as far as we could find — almost none of that lives anywhere that's actually <em>yours</em>. What's online mostly sits on other people's platforms: directories, listing pages, places that show your hours but not your story, and that you can't really update yourselves. That's not a failing — most businesses your age earned their name before any of this existed. It's simply a gap, and it happens to be the cheapest, fastest kind to close.</p>
+      <p class="t-el" hidden>Κι όμως — απ' όσο μπορέσαμε να βρούμε — σχεδόν τίποτα από αυτά δεν βρίσκεται κάπου που να είναι πραγματικά <em>δικό σας</em>. Ό,τι υπάρχει online είναι κυρίως σε πλατφόρμες τρίτων — καταχωρίσεις που δείχνουν το ωράριο αλλά όχι την ιστορία σας, και που δεν μπορείτε εύκολα να ενημερώσετε μόνοι σας. Δεν είναι αποτυχία — οι περισσότερες επιχειρήσεις της ηλικίας σας έχτισαν το όνομά τους πριν υπάρξει τίποτα από όλα αυτά. Είναι απλώς ένα κενό, και τυχαίνει να είναι το πιο φτηνό και γρήγορο να κλείσει.</p>
+      <div class="note">
+        <b class="t-en">Checked</b><b class="t-el" hidden>Ελέγξαμε</b>
+        <span class="t-en">Google listings, directories, social pages.</span>
+        <span class="t-el" hidden>Καταχωρίσεις Google, οδηγούς, social.</span>
+        <br><br>
+        <span class="t-en">Found: mentions of you. Not a home for you.</span>
+        <span class="t-el" hidden>Βρήκαμε: αναφορές σε εσάς. Όχι έναν δικό σας χώρο.</span>
+      </div>
+    </div>
+
+    <hr class="torn">
+
+    <h2 class="menu-title t-en">The offer, at a glance</h2>
+    <h2 class="menu-title t-el" hidden>Η πρόταση, με μια ματιά</h2>
+    <p class="menu-sub t-en">Six things, sized to how Melissa's actually runs.</p>
+    <p class="menu-sub t-el" hidden>Έξι πράγματα, φτιαγμένα γύρω από το πώς λειτουργεί πραγματικά το Melissa's.</p>
+
+    <div class="menu-list">
+      <div class="menu-item">
+        <div class="row"><span class="no">01</span><h3 class="t-en">A Website, Finally Yours</h3><h3 class="t-el" hidden>Μια Ιστοσελίδα, Επιτέλους Δική Σας</h3><span class="dots"></span></div>
+        <p class="t-en">One home for every location — your story since 1969, hours, menu. Fast on a phone in a car park.</p>
+        <p class="t-el" hidden>Ένας χώρος για όλα τα καταστήματα — η ιστορία σας από το 1969, ωράρια, μενού. Γρήγορη σε κινητό.</p>
+      </div>
+      <div class="menu-item">
+        <div class="row"><span class="no">02</span><h3 class="t-en">Found on Google, Properly</h3><h3 class="t-el" hidden>Σωστή Παρουσία στο Google</h3><span class="dots"></span></div>
+        <p class="t-en">Each location's Google profile, optimised on its own — "best baklava Melbourne" starts finding you.</p>
+        <p class="t-el" hidden>Το προφίλ κάθε καταστήματος βελτιστοποιημένο ξεχωριστά στο Google.</p>
+      </div>
+      <div class="menu-item">
+        <div class="row"><span class="no">03</span><h3 class="t-en">Reviews, Made Effortless</h3><h3 class="t-el" hidden>Κριτικές, Χωρίς Κόπο</h3><span class="dots"></span></div>
+        <p class="t-en">Tap a card at the till — a 5-star Google review in about ten seconds, no typing.</p>
+        <p class="t-el" hidden>Μια κάρτα στο ταμείο — κριτική 5 αστέρων σε δέκα δευτερόλεπτα.</p>
+      </div>
+      <div class="menu-item">
+        <div class="row"><span class="no">04</span><h3 class="t-en">Cakes, Ordered Ahead</h3><h3 class="t-el" hidden>Γλυκά, με Προπαραγγελία</h3><span class="dots"></span></div>
+        <p class="t-en">A simple page for pre-ordering baklava &amp; galaktoboureko for events and celebrations.</p>
+        <p class="t-el" hidden>Μια απλή σελίδα για προπαραγγελία μπακλαβά &amp; γαλακτομπούρεκου για εκδηλώσεις.</p>
+      </div>
+      <div class="menu-item">
+        <div class="row"><span class="no">05</span><h3 class="t-en">Bilingual, Like Your Customers</h3><h3 class="t-el" hidden>Δίγλωσση, Όπως οι Πελάτες Σας</h3><span class="dots"></span></div>
+        <p class="t-en">English and Greek, side by side — three generations reading comfortably. Yes, like this letter.</p>
+        <p class="t-el" hidden>Αγγλικά και Ελληνικά, δίπλα-δίπλα. Ακριβώς όπως αυτό το γράμμα.</p>
+      </div>
+      <div class="menu-item">
+        <div class="row"><span class="no">06</span><h3 class="t-en">Nothing You Manage</h3><h3 class="t-el" hidden>Τίποτα να Διαχειριστείτε</h3><span class="dots"></span></div>
+        <p class="t-en">We build it and keep it running. You keep running the cafés.</p>
+        <p class="t-el" hidden>Το φτιάχνουμε και το συντηρούμε. Εσείς τρέχετε τα καφέ.</p>
+      </div>
+    </div>
+
+    <hr class="torn">
+
+    <div class="label t-en" style="text-align:center;display:block;">A sketch, not the dish</div>
+    <div class="label t-el" hidden style="text-align:center;display:block;">Ένα σκίτσο, όχι το πιάτο</div>
+
+    <div class="postcard-wrap">
+      <div class="postcard">
+        <div class="scene">
+          <div class="pnav">
+            <span class="t-en">Menu</span><span class="t-el" hidden>Μενού</span>
+            <span class="t-en">Locations</span><span class="t-el" hidden>Καταστήματα</span>
+            <span class="t-en">Order Cakes</span><span class="t-el" hidden>Παραγγελία</span>
+            <span class="t-en">Our Story</span><span class="t-el" hidden>Η Ιστορία</span>
+          </div>
+          <h3 class="t-en">Melissa's — Since 1969</h3>
+          <h3 class="t-el" hidden>Melissa's — Από το 1969</h3>
+          <p class="psub t-en">Handmade Greek cakes &amp; all-day dining, across Melbourne.</p>
+          <p class="psub t-el" hidden>Χειροποίητα ελληνικά γλυκά &amp; dining όλη μέρα.</p>
+          <span class="pbtn t-en">Order for pickup</span>
+          <span class="pbtn t-el" hidden>Παραγγείλετε</span>
+        </div>
+      </div>
+    </div>
+    <p class="cap t-en">A quick sketch — the real free sample uses your actual photos, menu and locations.</p>
+    <p class="cap t-el" hidden>Ένα γρήγορο σκίτσο — το πραγματικό δείγμα θα χρησιμοποιεί τις δικές σας φωτογραφίες.</p>
+
+    <hr class="torn">
+
+    <h2 class="menu-title t-en">What this kind of work has done, elsewhere</h2>
+    <h2 class="menu-title t-el" hidden>Τι έχει πετύχει αυτού του είδους η δουλειά, αλλού</h2>
+
+    <div class="ledger">
+      <div class="row"><span class="t-en">Reviews left instantly, via tap card — Air Canada Vacations</span><span class="t-el" hidden>Άμεσες κριτικές με κάρτα — Air Canada Vacations</span><b>+64%</b></div>
+      <div class="row"><span class="t-en">Follower growth from one content push — Duolingo</span><span class="t-el" hidden>Αύξηση ακολούθων από μια καμπάνια — Duolingo</span><b>+1,400%</b></div>
+      <div class="row"><span class="t-en">Website visits after a rebuild, 90 days — DocuSign</span><span class="t-el" hidden>Επισκέψεις μετά από ανασχεδιασμό — DocuSign</span><b>+1,170%</b></div>
+      <div class="row"><span class="t-en">Found on Google, improving what existed — Backlinko</span><span class="t-el" hidden>Εύρεση στο Google — Backlinko</span><b>+260%</b></div>
+    </div>
+    <p class="footnote t-en">Not Melissa's numbers — yet. Public, verifiable results from other businesses. We'd rather earn our own case study with you than borrow someone else's.</p>
+    <p class="footnote t-el" hidden>Όχι ακόμα νούμερα του Melissa's. Δημόσια, επαληθεύσιμα αποτελέσματα άλλων επιχειρήσεων. Προτιμούμε να κερδίσουμε τη δική μας μελέτη περίπτωσης μαζί σας.</p>
+
+    <blockquote class="pov t-en">Our honest view for <strong>Melissa's specifically</strong>: a 57-year-old, multi-location business with almost no owned digital footprint has a higher ceiling than most — you're not starting from zero reputation, you're starting from zero <em>capture</em>. Every person who already loves Melissa's and checks their phone before driving over is someone a proper website and review system could be catching, instead of losing to whichever listing page loads first.</blockquote>
+    <blockquote class="pov t-el" hidden>Η ειλικρινής μας άποψη ειδικά για το <strong>Melissa's</strong>: μια επιχείρηση 57 ετών, με πολλά καταστήματα και σχεδόν καμία δική της ψηφιακή παρουσία, έχει υψηλότερο ταβάνι απ' ό,τι οι περισσότερες — δεν ξεκινάτε από μηδενική φήμη, ξεκινάτε από μηδενική «σύλληψη» αυτής της φήμης. Κάθε άνθρωπος που ήδη αγαπά το Melissa's και κοιτάζει το κινητό πριν έρθει είναι κάποιος που μια σωστή ιστοσελίδα θα μπορούσε να «πιάσει».</blockquote>
+
+    <hr class="torn">
+
+    <h2 class="menu-title t-en">How this works — and why it costs you nothing to find out</h2>
+    <h2 class="menu-title t-el" hidden>Πώς λειτουργεί — και γιατί δεν κοστίζει τίποτα να το μάθετε</h2>
+
+    <div class="checklist">
+      <div class="cli"><span class="box">☐</span><div><h3 class="t-en">A free 15-minute call</h3><h3 class="t-el" hidden>Δωρεάν κλήση 15 λεπτών</h3><p class="t-en">Tell us about the cafés, the busy days. No pitch.</p><p class="t-el" hidden>Μας λέτε για τα καφέ. Καμία πώληση.</p></div></div>
+      <div class="cli"><span class="box">☐</span><div><h3 class="t-en">We build a real, free sample</h3><h3 class="t-el" hidden>Φτιάχνουμε δωρεάν δείγμα</h3><p class="t-en">Not a slide — a working page, on our own time and cost.</p><p class="t-el" hidden>Όχι διαφάνεια — λειτουργική σελίδα, με δικό μας κόστος.</p></div></div>
+      <div class="cli"><span class="box">☐</span><div><h3 class="t-en">You look at it, no pressure</h3><h3 class="t-el" hidden>Το βλέπετε, χωρίς πίεση</h3><p class="t-en">Show the family. Take your time.</p><p class="t-el" hidden>Δείξτε το στην οικογένεια. Πάρτε χρόνο.</p></div></div>
+      <div class="cli"><span class="box">☐</span><div><h3 class="t-en">You only pay if you like it</h3><h3 class="t-el" hidden>Πληρώνετε μόνο αν σας αρέσει</h3><p class="t-en">Not a fit? Walk away, no invoice. A fit? Fixed price, agreed first.</p><p class="t-el" hidden>Δεν ταιριάζει; Χωρίς τιμολόγιο. Ταιριάζει; Σταθερή τιμή, εκ των προτέρων.</p></div></div>
+    </div>
+
+    <hr class="torn">
+
+    <div class="faqwrap">
+      <details open>
+        <summary><span class="t-en">Do we need to understand any of this technically?</span><span class="t-el" hidden>Χρειάζεται να καταλαβαίνουμε από τεχνολογία;</span></summary>
+        <p class="t-en">No. You tell us about the business — we handle everything technical.</p>
+        <p class="t-el" hidden>Όχι. Μας λέτε για την επιχείρηση — εμείς αναλαμβάνουμε το τεχνικό κομμάτι.</p>
+      </details>
+      <details>
+        <summary><span class="t-en">What does the sample actually cost us?</span><span class="t-el" hidden>Τι κοστίζει το δείγμα;</span></summary>
+        <p class="t-en">Nothing. That's the point — real work, before any money changes hands.</p>
+        <p class="t-el" hidden>Τίποτα. Πραγματική δουλειά, πριν δοθεί οποιοδήποτε ποσό.</p>
+      </details>
+      <details>
+        <summary><span class="t-en">What would it cost, if we go ahead?</span><span class="t-el" hidden>Πόσο θα κοστίσει, αν προχωρήσουμε;</span></summary>
+        <p class="t-en">Confirmed on the free call, in one fixed number — never "it depends."</p>
+        <p class="t-el" hidden>Επιβεβαιώνεται στη δωρεάν κλήση, με σταθερό ποσό — ποτέ «εξαρτάται».</p>
+      </details>
+    </div>
+
+    <div class="sign">
+      <p class="warmly t-en">Warmly,</p>
+      <p class="warmly t-el" hidden>Με εκτίμηση,</p>
+      <p class="from">HowDoYouWant</p>
+
+      <div class="card-contact">
+        <div class="biz t-en">STUDIO — BARCELONA</div>
+        <div class="biz t-el" hidden>ΣΤΟΥΝΤΙΟ — ΒΑΡΚΕΛΩΝΗ</div>
+        <a href="tel:+34687701709">+34 687 70 17 09</a> &nbsp;·&nbsp;
+        <a href="https://wa.me/34687701709">WhatsApp</a>
+      </div>
+
+      <p class="ps t-en"><b>P.S.</b> — The sample really is free. Not a discount, not a trial that quietly starts billing. Free.</p>
+      <p class="ps t-el" hidden><b>Υ.Γ.</b> — Το δείγμα είναι πραγματικά δωρεάν. Όχι έκπτωση, όχι δοκιμή που ξαφνικά χρεώνει. Δωρεάν.</p>
+    </div>
+
+    <div class="foot">
+      <p class="t-en">This letter was written for Melissa's Cakes Cafe Bar and won't be sent to anyone else.</p>
+      <p class="t-el" hidden>Αυτό το γράμμα γράφτηκε για το Melissa's Cakes Cafe Bar και δεν θα σταλεί σε κανέναν άλλον.</p>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  function setLang(lang){
+    document.documentElement.lang = lang;
+    document.querySelectorAll('.t-en').forEach(function(el){ el.hidden = (lang === 'el'); });
+    document.querySelectorAll('.t-el').forEach(function(el){ el.hidden = (lang !== 'el'); });
+    document.querySelectorAll('.langbar button').forEach(function(b){
+      b.setAttribute('aria-pressed', b.dataset.lang === lang ? 'true' : 'false');
+    });
+  }
+  document.getElementById('btn-en').addEventListener('click', function(){ setLang('en'); });
+  document.getElementById('btn-el').addEventListener('click', function(){ setLang('el'); });
+</script>
+</body>
+</html>
