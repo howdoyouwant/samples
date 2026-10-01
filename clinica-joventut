@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<!--
+  COLD-OUTREACH MICRO-SITE — REUSABLE TEMPLATE
+  Theme pack applied: Dental Clinics & Cosmetic Dentists
+
+  This file is a TEMPLATE. Every {{TOKEN}} below is filled programmatically
+  per business before send. Nothing here is real content.
+
+  TOKEN REFERENCE
+  ----------------
+  Clínica Dental Joventut        plain text
+  L'Hospitalet de Llobregat                 plain text
+  Eres el número uno en Joventut. Fuera del barrio, nadie te encuentra.        plain text, hero thesis statement. Tone target for
+                            this theme: trust + ease (e.g. "Nobody Googles a
+                            dentist for fun. Make sure they land on you.")
+              image URL, OPTIONAL — leave empty string to omit.
+                            Section degrades gracefully if missing/broken.
+  {{GAP_STAT_1/2/3}}        plain text, each a single glanceable fact/number.
+  Abaden Dentistas Hospitalet: 310 reseñas, 4,7 estrellas. Riera Blanca: 190, 4,8. Dental Concept Barcelona: 140, 4,9. Clínica Dental Joventut: 34, 4,1. Mismo barrio, visibilidad muy distinta.    plain text or light inline HTML. One factual
+                            comparison, dropped directly into a callout card.
+  <li>Cartelería y tarjetas de la clínica desactualizadas</li><li>Web lenta en el móvil</li><li>Sin botón para pedir cita al instante</li><li>Reseñas de Google sin responder</li><li>Sin chat de WhatsApp</li>       raw HTML: one or more <li>…</li> items only.
+            image URL, required.
+  Así queda tu web: rápida, y con cita en un toque.        plain text, one line.
+  Tus pacientes ya te quieren por la atención de barrio. Ahora podrán encontrarte, escribirte y pedir cita sin llamar ni esperar al teléfono.     plain text, outcome-framed statement (not a
+                            service pitch).
+  Rediseño de cartelería y tarjetas, web nueva, perfil de Google Business y SEO local, optimización en redes sociales, gestión de reseñas y citaciones         plain text, short comma-separated list.
+  Soporte de infraestructura IT, integraciones de sistemas, hosting y gestión de servidores, flujos de trabajo digitales a medida    plain text, short comma-separated list.
+  HowDoYouWant          plain text, used only in the call button.
+  +34687701709          tel-ready string, e.g. +34600000000
+  es      one of: es ca en fr de it nl pt sv da no
+
+  No pricing slot exists anywhere in this file by design.
+  Exactly one contact element exists: the call button in THE CALL.
+-->
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clínica Dental Joventut</title>
+<style>
+  :root{
+    --paper:#ffffff;
+    --ink:#10201c;
+    --muted:#5b6864;
+    --teal:#157567;
+    --teal-deep:#0e5a4f;
+    --mint:#e7f5ef;
+    --sand:#f6f1e9;
+    --hair:rgba(16,32,28,0.14);
+    --maxw:640px;
+    --maxw-wide:980px;
+    --pad:24px;
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.5;
+    overflow-x:hidden;
+  }
+  img{max-width:100%;display:block;}
+  ul{margin:0;padding:0;}
+  a{color:inherit;}
+
+  .wrap{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding-left:var(--pad);
+    padding-right:var(--pad);
+  }
+  .wrap--wide{max-width:var(--maxw-wide);}
+
+  .kicker{
+    display:inline-block;
+    font-size:0.72rem;
+    font-weight:800;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--teal);
+  }
+
+  section{padding-top:64px;padding-bottom:64px;}
+
+  /* ---------- LANGUAGE SWITCHER ---------- */
+  .lang-switch{
+    position:fixed;
+    top:14px;
+    right:14px;
+    z-index:50;
+    display:flex;
+    align-items:center;
+    gap:6px;
+    font-size:0.68rem;
+    font-weight:700;
+    letter-spacing:0.06em;
+    background:rgba(255,255,255,0.86);
+    backdrop-filter:blur(6px);
+    padding:6px 10px;
+    border-radius:100px;
+    border:1px solid var(--hair);
+  }
+  .lang-switch button{
+    all:unset;
+    cursor:pointer;
+    color:var(--muted);
+    padding:2px 3px;
+  }
+  .lang-switch button.is-active{color:var(--teal);text-decoration:underline;text-underline-offset:3px;}
+  .lang-dot{color:var(--hair);}
+  .lang-more-wrap{position:relative;}
+  .lang-more-panel{
+    position:absolute;
+    top:calc(100% + 8px);
+    right:0;
+    background:var(--paper);
+    border:1px solid var(--hair);
+    border-radius:10px;
+    padding:8px;
+    display:grid;
+    grid-template-columns:repeat(4,auto);
+    gap:4px 10px;
+    box-shadow:0 8px 24px rgba(16,32,28,0.10);
+  }
+  .lang-more-panel[hidden]{display:none;}
+
+  /* ---------- HERO ---------- */
+  .hero{padding-top:96px;}
+  .hero .kicker{margin-bottom:18px;}
+  .hero h1{
+    font-size:clamp(2.4rem,9vw,4.2rem);
+    font-weight:900;
+    letter-spacing:-0.02em;
+    line-height:0.98;
+    margin:0 0 22px 0;
+  }
+  .hero .byline{
+    font-size:0.95rem;
+    color:var(--muted);
+    font-weight:600;
+  }
+  .hero .byline .dot{margin:0 8px;color:var(--hair);}
+  .hero-image{
+    margin-top:40px;
+    background:var(--sand);
+    border-radius:12px;
+    overflow:hidden;
+    border:1px solid var(--hair);
+  }
+  .hero-image img{width:100%;height:auto;}
+
+  /* ---------- THE GAP ---------- */
+  .gap{background:var(--mint);}
+  .gap-head{margin-bottom:36px;}
+  .gap-head h2{
+    font-size:clamp(1.6rem,5vw,2.1rem);
+    font-weight:900;
+    letter-spacing:-0.01em;
+    margin:10px 0 6px 0;
+  }
+  .gap-head p{margin:0;color:var(--muted);font-weight:600;}
+  .gap-stats{display:flex;flex-direction:column;}
+  .gap-stat{
+    padding:26px 0;
+    border-top:1px dashed rgba(16,32,28,0.28);
+  }
+  .gap-stats .gap-stat:last-child{border-bottom:1px dashed rgba(16,32,28,0.28);}
+  .gap-stat p{
+    margin:0;
+    font-size:clamp(1.5rem,6vw,2.1rem);
+    font-weight:800;
+    letter-spacing:-0.01em;
+    line-height:1.12;
+  }
+
+  /* ---------- THE COMPETITION ---------- */
+  .competition-head{margin-bottom:28px;}
+  .competition-head h2{
+    font-size:clamp(1.6rem,5vw,2.1rem);
+    font-weight:900;
+    letter-spacing:-0.01em;
+    margin:10px 0 6px 0;
+  }
+  .competition-head p{margin:0;color:var(--muted);font-weight:600;}
+  .competition-card{
+    border-left:4px solid var(--teal);
+    background:var(--mint);
+    border-radius:0 10px 10px 0;
+    padding:24px 24px;
+  }
+  .competition-card .tag{
+    display:block;
+    font-size:0.68rem;
+    font-weight:800;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--teal-deep);
+    margin-bottom:10px;
+  }
+  .competition-card .body{
+    font-size:1.05rem;
+    font-weight:600;
+    line-height:1.5;
+  }
+
+  /* ---------- WHAT THEY'RE MISSING ---------- */
+  .deficiency-head h2{
+    font-size:clamp(1.6rem,5vw,2.1rem);
+    font-weight:900;
+    letter-spacing:-0.01em;
+    margin:10px 0 28px 0;
+  }
+  .deficiency-list{list-style:none;}
+  .deficiency-list li{
+    position:relative;
+    padding:16px 0 16px 28px;
+    border-top:1px solid var(--hair);
+    font-size:1.05rem;
+    font-weight:600;
+  }
+  .deficiency-list li:last-child{border-bottom:1px solid var(--hair);}
+  .deficiency-list li::before{
+    content:"";
+    position:absolute;
+    left:2px;
+    top:24px;
+    width:8px;
+    height:8px;
+    background:var(--teal);
+    border-radius:2px;
+  }
+
+  /* ---------- THE MOCKUP ---------- */
+  .mockup{background:var(--sand);}
+  .mockup .kicker{display:block;margin-bottom:20px;}
+  .mockup-image{
+    border-radius:12px;
+    overflow:hidden;
+    border:1px solid var(--hair);
+    box-shadow:0 16px 40px rgba(16,32,28,0.10);
+  }
+  .mockup-caption{
+    margin-top:18px;
+    font-size:0.92rem;
+    font-style:italic;
+    color:var(--muted);
+    text-align:center;
+  }
+
+  /* ---------- WHAT CHANGES (MAIN section) ---------- */
+  .changes{background:var(--mint);}
+  .changes h2{
+    font-size:clamp(1.6rem,5vw,2.1rem);
+    font-weight:900;
+    letter-spacing:-0.01em;
+    margin:10px 0 22px 0;
+  }
+  .changes-copy{
+    font-size:clamp(1.15rem,3.4vw,1.45rem);
+    font-weight:700;
+    line-height:1.4;
+    margin:0 0 34px 0;
+  }
+  .changes-services{
+    font-size:0.92rem;
+    color:var(--muted);
+    font-weight:600;
+    border-top:1px solid var(--hair);
+    padding-top:18px;
+  }
+  .changes-services .prefix{
+    color:var(--teal-deep);
+    font-weight:800;
+    margin-right:6px;
+  }
+
+  /* ---------- RANGE (quiet secondary section) ---------- */
+  .range{background:#f4f5f4;padding-top:36px;padding-bottom:36px;}
+  .range .kicker{color:var(--muted);margin-bottom:8px;}
+  .range p{
+    margin:0;
+    font-size:0.88rem;
+    color:var(--muted);
+    font-weight:500;
+    line-height:1.5;
+  }
+
+  /* ---------- THE CALL ---------- */
+  .call{background:var(--teal-deep);color:#ffffff;text-align:center;padding-top:80px;padding-bottom:80px;}
+  .call p.eyebrow{
+    margin:0 0 24px 0;
+    font-size:0.85rem;
+    font-weight:700;
+    letter-spacing:0.04em;
+    color:rgba(255,255,255,0.72);
+  }
+  .call-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    width:100%;
+    max-width:420px;
+    background:#ffffff;
+    color:var(--teal-deep);
+    font-size:1.15rem;
+    font-weight:800;
+    letter-spacing:-0.01em;
+    padding:20px 28px;
+    border-radius:10px;
+    text-decoration:none;
+    transition:transform 0.15s ease, box-shadow 0.15s ease;
+    box-shadow:0 10px 30px rgba(0,0,0,0.18);
+  }
+  .call-btn:hover{transform:translateY(-2px);}
+  .call-btn:active{transform:translateY(0);}
+
+  @media (prefers-reduced-motion: reduce){
+    .call-btn{transition:none;}
+    .call-btn:hover{transform:none;}
+    .hero h1{animation:none !important;}
+  }
+
+  /* ---------- hero load-in (single orchestrated moment) ---------- */
+  .hero h1, .hero .byline{
+    opacity:0;
+    animation:rise 0.7s ease forwards;
+  }
+  .hero .byline{animation-delay:0.12s;}
+  @keyframes rise{
+    from{opacity:0;transform:translateY(10px);}
+    to{opacity:1;transform:translateY(0);}
+  }
+
+  /* ---------- TABLET / DESKTOP ---------- */
+  @media (min-width:768px){
+    :root{--pad:56px;}
+    section{padding-top:110px;padding-bottom:110px;}
+    .hero{padding-top:150px;}
+
+    .gap-stats{flex-direction:row;}
+    .gap-stat{
+      flex:1;
+      border-top:1px dashed rgba(16,32,28,0.28);
+      border-left:1px dashed rgba(16,32,28,0.28);
+      padding:0 32px 0 32px;
+    }
+    .gap-stats .gap-stat:first-child{border-left:none;}
+    .gap-stats .gap-stat:last-child{border-bottom:1px dashed rgba(16,32,28,0.28);}
+
+    .competition-card{padding:40px 48px;}
+    .competition-card .body{font-size:1.2rem;}
+
+    .mockup-image{max-width:var(--maxw-wide);margin:0 auto;}
+
+    .call-btn{width:auto;padding:22px 56px;}
+
+    .lang-switch{top:22px;right:28px;font-size:0.74rem;padding:8px 14px;}
+  }
+
+  @media (min-width:1200px){
+    .wrap{max-width:720px;}
+    .wrap--wide{max-width:1080px;}
+  }
+</style>
+</head>
+<body>
+
+  <!-- LANGUAGE SWITCHER -->
+  <div class="lang-switch" id="langSwitch">
+    <button type="button" class="lang-btn" data-lang="es">ES</button>
+    <span class="lang-dot">·</span>
+    <button type="button" class="lang-btn" data-lang="ca">CA</button>
+    <span class="lang-dot">·</span>
+    <button type="button" class="lang-btn" data-lang="en">EN</button>
+    <span class="lang-dot">·</span>
+    <div class="lang-more-wrap">
+      <button type="button" class="lang-more" id="langMoreBtn" aria-haspopup="true" aria-expanded="false" data-i18n-attr="aria-label:lang_more_label">+</button>
+      <div class="lang-more-panel" id="langMorePanel" hidden>
+        <button type="button" class="lang-btn" data-lang="fr">FR</button>
+        <button type="button" class="lang-btn" data-lang="de">DE</button>
+        <button type="button" class="lang-btn" data-lang="it">IT</button>
+        <button type="button" class="lang-btn" data-lang="nl">NL</button>
+        <button type="button" class="lang-btn" data-lang="pt">PT</button>
+        <button type="button" class="lang-btn" data-lang="sv">SV</button>
+        <button type="button" class="lang-btn" data-lang="da">DA</button>
+        <button type="button" class="lang-btn" data-lang="no">NO</button>
+      </div>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- 1. HERO -->
+    <section class="hero">
+      <div class="wrap">
+        <span class="kicker" data-i18n="hero_kicker">SITE CHECK</span>
+        <h1>Eres el número uno en Joventut. Fuera del barrio, nadie te encuentra.</h1>
+        <p class="byline">Clínica Dental Joventut<span class="dot">·</span>L'Hospitalet de Llobregat</p>
+        <div class="hero-image" id="heroImageWrap">
+          <img id="heroImage" src="" alt="Clínica Dental Joventut" onerror="this.parentElement.style.display='none'">
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. THE GAP -->
+    <section class="gap">
+      <div class="wrap">
+        <div class="gap-head">
+          <span class="kicker" data-i18n="gap_label">The Gap</span>
+          <p data-i18n="gap_subhead">Three numbers. No fluff.</p>
+        </div>
+        <div class="gap-stats">
+          <div class="gap-stat"><p>4,1 ★ · 34 reseñas · solo 2 nuevas en 90 días.</p></div>
+          <div class="gap-stat"><p>Nº1 en «dentista carrer Joventut Hospitalet». Nº18 en «clínica dental Hospitalet de Llobregat».</p></div>
+          <div class="gap-stat"><p>La clínica más cercana tiene casi 10 veces tus reseñas.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. THE COMPETITION -->
+    <section class="competition">
+      <div class="wrap">
+        <div class="competition-head">
+          <span class="kicker" data-i18n="competition_label">The Competition</span>
+        </div>
+        <div class="competition-card">
+          <span class="tag" data-i18n="competition_right_now">Right now</span>
+          <div class="body">Abaden Dentistas Hospitalet: 310 reseñas, 4,7 estrellas. Riera Blanca: 190, 4,8. Dental Concept Barcelona: 140, 4,9. Clínica Dental Joventut: 34, 4,1. Mismo barrio, visibilidad muy distinta.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. WHAT THEY'RE MISSING -->
+    <section class="deficiency">
+      <div class="wrap">
+        <div class="deficiency-head">
+          <span class="kicker" data-i18n="deficiency_label">What They're Missing</span>
+        </div>
+        <ul class="deficiency-list"><li>Cartelería y tarjetas de la clínica desactualizadas</li><li>Web lenta en el móvil</li><li>Sin botón para pedir cita al instante</li><li>Reseñas de Google sin responder</li><li>Sin chat de WhatsApp</li></ul>
+      </div>
+    </section>
+
+    <!-- 5. THE MOCKUP -->
+    <section class="mockup">
+      <div class="wrap wrap--wide">
+        <span class="kicker" data-i18n="mockup_label">A Quick Preview</span>
+        <div class="mockup-image">
+          <img src="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgOTgwIDYyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYmciIHgxPSIwIiB5MT0iMCIgeDI9IjAiIHkyPSIxIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y2ZjFlOSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlZmU3ZDgiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8ZmlsdGVyIGlkPSJzb2Z0IiB4PSItMjAlIiB5PSItMjAlIiB3aWR0aD0iMTQwJSIgaGVpZ2h0PSIxNDAlIj4KICAgICAgPGZlRHJvcFNoYWRvdyBkeD0iMCIgZHk9IjEwIiBzdGREZXZpYXRpb249IjE0IiBmbG9vZC1jb2xvcj0iIzEwMjAxYyIgZmxvb2Qtb3BhY2l0eT0iMC4xNCIvPgogICAgPC9maWx0ZXI+CiAgPC9kZWZzPgoKICA8cmVjdCB3aWR0aD0iOTgwIiBoZWlnaHQ9IjYyMCIgZmlsbD0idXJsKCNiZykiLz4KCiAgPCEtLSBQaG9uZSBmcmFtZSAtLT4KICA8ZyBmaWx0ZXI9InVybCgjc29mdCkiPgogICAgPHJlY3QgeD0iMzU1IiB5PSI0MCIgd2lkdGg9IjI3MCIgaGVpZ2h0PSI1NDAiIHJ4PSIzNCIgZmlsbD0iIzEwMjAxYyIvPgogICAgPHJlY3QgeD0iMzY3IiB5PSI2NCIgd2lkdGg9IjI0NiIgaGVpZ2h0PSI0OTIiIHJ4PSIyMCIgZmlsbD0iI2ZmZmZmZiIvPgogIDwvZz4KCiAgPCEtLSBTdGF0dXMgYmFyIC0tPgogIDxyZWN0IHg9IjM2NyIgeT0iNjQiIHdpZHRoPSIyNDYiIGhlaWdodD0iMjgiIGZpbGw9IiNmZmZmZmYiLz4KICA8Y2lyY2xlIGN4PSI0OTAiIGN5PSI3OCIgcj0iMyIgZmlsbD0iI2M3Y2ZjYiIvPgoKICA8IS0tIEhlYWRlciAtLT4KICA8cmVjdCB4PSIzNjciIHk9IjkyIiB3aWR0aD0iMjQ2IiBoZWlnaHQ9IjcwIiBmaWxsPSIjMGU1YTRmIi8+CiAgPHRleHQgeD0iNDkwIiB5PSIxMjIiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNSIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iI2ZmZmZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+Q2zDrW5pY2EgRGVudGFsIEpvdmVudHV0PC90ZXh0PgogIDx0ZXh0IHg9IjQ5MCIgeT0iMTQyIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTAiIGZvbnQtd2VpZ2h0PSI2MDAiIGZpbGw9IiNiZmUzZGEiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkwnSG9zcGl0YWxldCBkZSBMbG9icmVnYXQ8L3RleHQ+CgogIDwhLS0gSGVybyBpbWFnZSBibG9jayAtLT4KICA8cmVjdCB4PSIzNzkiIHk9IjE3NCIgd2lkdGg9IjIyMiIgaGVpZ2h0PSIxMTAiIHJ4PSIxMCIgZmlsbD0iI2U3ZjVlZiIvPgogIDxjaXJjbGUgY3g9IjQ0MCIgY3k9IjIyOSIgcj0iMTgiIGZpbGw9IiMxNTc1NjciIG9wYWNpdHk9IjAuMzUiLz4KICA8cmVjdCB4PSI0NzAiIHk9IjIwNSIgd2lkdGg9IjExMCIgaGVpZ2h0PSIxMCIgcng9IjUiIGZpbGw9IiMxNTc1NjciIG9wYWNpdHk9IjAuMzUiLz4KICA8cmVjdCB4PSI0NzAiIHk9IjIyMiIgd2lkdGg9IjgwIiBoZWlnaHQ9IjgiIHJ4PSI0IiBmaWxsPSIjMTU3NTY3IiBvcGFjaXR5PSIwLjIyIi8+CiAgPHJlY3QgeD0iNDcwIiB5PSIyMzgiIHdpZHRoPSI5NSIgaGVpZ2h0PSI4IiByeD0iNCIgZmlsbD0iIzE1NzU2NyIgb3BhY2l0eT0iMC4yMiIvPgoKICA8IS0tIFJhdGluZyBwaWxsIC0tPgogIDxyZWN0IHg9IjM3OSIgeT0iMjk2IiB3aWR0aD0iMTMwIiBoZWlnaHQ9IjI2IiByeD0iMTMiIGZpbGw9IiNmNmYxZTkiLz4KICA8dGV4dCB4PSI0NDQiIHk9IjMxMyIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjExIiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjMTAyMDFjIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7imIUgNCwxIMK3IDM0IHJlc2XDsWFzPC90ZXh0PgoKICA8IS0tIEJvb2tpbmcgYnV0dG9uICh0aGUgcG9pbnQgb2YgdGhlIG1vY2t1cCkgLS0+CiAgPHJlY3QgeD0iMzc5IiB5PSIzMzYiIHdpZHRoPSIyMjIiIGhlaWdodD0iNDYiIHJ4PSIxMCIgZmlsbD0iIzE1NzU2NyIvPgogIDx0ZXh0IHg9IjQ5MCIgeT0iMzY0IiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTQiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiNmZmZmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlBlZGlyIGNpdGEgYWhvcmE8L3RleHQ+CgogIDwhLS0gU2Vjb25kYXJ5IHRleHQgbGluZXMgLS0+CiAgPHJlY3QgeD0iMzc5IiB5PSIzOTgiIHdpZHRoPSIyMjIiIGhlaWdodD0iOCIgcng9IjQiIGZpbGw9IiNlNmU2ZTIiLz4KICA8cmVjdCB4PSIzNzkiIHk9IjQxNCIgd2lkdGg9IjE4MCIgaGVpZ2h0PSI4IiByeD0iNCIgZmlsbD0iI2U2ZTZlMiIvPgogIDxyZWN0IHg9IjM3OSIgeT0iNDMwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjgiIHJ4PSI0IiBmaWxsPSIjZTZlNmUyIi8+CgogIDwhLS0gTmF2IGJhciAtLT4KICA8cmVjdCB4PSIzNjciIHk9IjUwMCIgd2lkdGg9IjI0NiIgaGVpZ2h0PSI1NiIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjZWVlIiBzdHJva2Utd2lkdGg9IjEiLz4KICA8Y2lyY2xlIGN4PSI0MjUiIGN5PSI1MjgiIHI9IjEwIiBmaWxsPSIjMTU3NTY3IiBvcGFjaXR5PSIwLjg1Ii8+CiAgPGNpcmNsZSBjeD0iNDkwIiBjeT0iNTI4IiByPSIxMCIgZmlsbD0iI2M3Y2ZjYiIvPgogIDxjaXJjbGUgY3g9IjU1NSIgY3k9IjUyOCIgcj0iMTAiIGZpbGw9IiNjN2NmY2IiLz4KCiAgPCEtLSBXaGF0c0FwcCBmbG9hdGluZyBidWJibGUgLS0+CiAgPGcgZmlsdGVyPSJ1cmwoI3NvZnQpIj4KICAgIDxjaXJjbGUgY3g9IjYwMCIgY3k9IjQ3MCIgcj0iMjYiIGZpbGw9IiMyNUQzNjYiLz4KICAgIDxwYXRoIGQ9Ik01OTEgNDc2Yy0yLTQtMy04LTMtMTMgMC0xMSA5LTIwIDIwLTIwczIwIDkgMjAgMjAtOSAyMC0yMCAyMGMtNCAwLTctMS0xMC0ybC05IDN6IiBmaWxsPSIjZmZmZmZmIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtOCwtOCkgc2NhbGUoMC41NSkgdHJhbnNsYXRlKDYwMCw0NzApIi8+CiAgPC9nPgoKICA8IS0tIENhcHRpb24gc3RyaXAgLS0+CiAgPHRleHQgeD0iNDkwIiB5PSI2MDAiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMyIgZm9udC1zdHlsZT0iaXRhbGljIiBmaWxsPSIjNWI2ODY0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5WaXN0YSBkZSBtdWVzdHJhIOKAlCBzdXN0aXR1aXIgcG9yIGVsIGRpc2XDsW8gcmVhbCBhbnRlcyBkZSBlbnZpYXI8L3RleHQ+Cjwvc3ZnPgo=" data-i18n-attr="alt:mockup_alt" alt="Preview">
+        </div>
+        <p class="mockup-caption">Así queda tu web: rápida, y con cita en un toque.</p>
+      </div>
+    </section>
+
+    <!-- 6. WHAT CHANGES (main section — reserved visual weight) -->
+    <section class="changes">
+      <div class="wrap">
+        <h2 data-i18n="changes_label">What Changes</h2>
+        <p class="changes-copy">Tus pacientes ya te quieren por la atención de barrio. Ahora podrán encontrarte, escribirte y pedir cita sin llamar ni esperar al teléfono.</p>
+        <p class="changes-services">
+          <span class="prefix" data-i18n="changes_includes">Includes:</span>Rediseño de cartelería y tarjetas, web nueva, perfil de Google Business y SEO local, optimización en redes sociales, gestión de reseñas y citaciones
+        </p>
+      </div>
+    </section>
+
+    <!-- 7. RANGE (quiet, no CTA) -->
+    <section class="range">
+      <div class="wrap">
+        <span class="kicker" data-i18n="range_label">Also On The Range</span>
+        <p>Soporte de infraestructura IT, integraciones de sistemas, hosting y gestión de servidores, flujos de trabajo digitales a medida</p>
+      </div>
+    </section>
+
+    <!-- 8. THE CALL (single contact element) -->
+    <section class="call">
+      <div class="wrap">
+        <p class="eyebrow" data-i18n="call_heading">One tap. No forms.</p>
+        <a class="call-btn" href="tel:+34687701709">
+          <span data-i18n="call_verb">Call</span>&nbsp;HowDoYouWant
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+<script>
+(function(){
+
+  var I18N = {
+    en:{ hero_kicker:"SITE CHECK", gap_label:"The Gap", gap_subhead:"Three numbers. No fluff.",
+         competition_label:"The Competition", competition_right_now:"Right now",
+         deficiency_label:"What They're Missing", mockup_label:"A Quick Preview",
+         mockup_alt:"Preview of the redesigned site", changes_label:"What Changes",
+         changes_includes:"Includes:", range_label:"Also On The Range",
+         call_heading:"One tap. No forms.", call_verb:"Call", lang_more_label:"More languages" },
+
+    es:{ hero_kicker:"CHEQUEO WEB", gap_label:"La Brecha", gap_subhead:"Tres números. Sin rodeos.",
+         competition_label:"La Competencia", competition_right_now:"Ahora mismo",
+         deficiency_label:"Lo Que Les Falta", mockup_label:"Un Vistazo Rápido",
+         mockup_alt:"Vista previa del sitio rediseñado", changes_label:"Qué Cambia",
+         changes_includes:"Incluye:", range_label:"También Disponible",
+         call_heading:"Un toque. Sin formularios.", call_verb:"Llamar a", lang_more_label:"Más idiomas" },
+
+    ca:{ hero_kicker:"REVISIÓ RÀPIDA", gap_label:"La Bretxa", gap_subhead:"Tres números. Sense embuts.",
+         competition_label:"La Competència", competition_right_now:"Ara mateix",
+         deficiency_label:"El Que Els Falta", mockup_label:"Una Ullada Ràpida",
+         mockup_alt:"Vista prèvia del lloc redissenyat", changes_label:"Què Canvia",
+         changes_includes:"Inclou:", range_label:"També Disponible",
+         call_heading:"Un toc. Sense formularis.", call_verb:"Trucar a", lang_more_label:"Més idiomes" },
+
+    fr:{ hero_kicker:"AUDIT EXPRESS", gap_label:"L'Écart", gap_subhead:"Trois chiffres. Sans détour.",
+         competition_label:"La Concurrence", competition_right_now:"En ce moment",
+         deficiency_label:"Ce Qui Manque", mockup_label:"Un Aperçu Rapide",
+         mockup_alt:"Aperçu du site repensé", changes_label:"Ce Qui Change",
+         changes_includes:"Inclut :", range_label:"Aussi Disponible",
+         call_heading:"Un geste. Aucun formulaire.", call_verb:"Appeler", lang_more_label:"Plus de langues" },
+
+    de:{ hero_kicker:"SCHNELLCHECK", gap_label:"Die Lücke", gap_subhead:"Drei Zahlen. Ohne Umschweife.",
+         competition_label:"Der Wettbewerb", competition_right_now:"Gerade jetzt",
+         deficiency_label:"Was Fehlt", mockup_label:"Ein Kurzer Einblick",
+         mockup_alt:"Vorschau der überarbeiteten Seite", changes_label:"Was Sich Ändert",
+         changes_includes:"Enthält:", range_label:"Auch Verfügbar",
+         call_heading:"Ein Tipp. Keine Formulare.", call_verb:"Anrufen", lang_more_label:"Weitere Sprachen" },
+
+    it:{ hero_kicker:"CONTROLLO RAPIDO", gap_label:"Il Divario", gap_subhead:"Tre numeri. Senza fronzoli.",
+         competition_label:"La Concorrenza", competition_right_now:"Proprio ora",
+         deficiency_label:"Cosa Manca", mockup_label:"Un'Anteprima Rapida",
+         mockup_alt:"Anteprima del sito rinnovato", changes_label:"Cosa Cambia",
+         changes_includes:"Include:", range_label:"Anche Disponibile",
+         call_heading:"Un tocco. Nessun modulo.", call_verb:"Chiama", lang_more_label:"Altre lingue" },
+
+    nl:{ hero_kicker:"SNELLE CHECK", gap_label:"De Kloof", gap_subhead:"Drie cijfers. Geen omhaal.",
+         competition_label:"De Concurrentie", competition_right_now:"Op dit moment",
+         deficiency_label:"Wat Ontbreekt", mockup_label:"Een Snelle Preview",
+         mockup_alt:"Voorbeeld van de vernieuwde site", changes_label:"Wat Verandert",
+         changes_includes:"Inclusief:", range_label:"Ook Beschikbaar",
+         call_heading:"Eén tik. Geen formulieren.", call_verb:"Bel", lang_more_label:"Meer talen" },
+
+    pt:{ hero_kicker:"CHECAGEM RÁPIDA", gap_label:"A Lacuna", gap_subhead:"Três números. Sem enrolação.",
+         competition_label:"A Concorrência", competition_right_now:"Agora mesmo",
+         deficiency_label:"O Que Está Faltando", mockup_label:"Uma Prévia Rápida",
+         mockup_alt:"Prévia do site redesenhado", changes_label:"O Que Muda",
+         changes_includes:"Inclui:", range_label:"Também Disponível",
+         call_heading:"Um toque. Sem formulários.", call_verb:"Ligar para", lang_more_label:"Mais idiomas" },
+
+    sv:{ hero_kicker:"SNABBKOLL", gap_label:"Gapet", gap_subhead:"Tre siffror. Utan omvägar.",
+         competition_label:"Konkurrensen", competition_right_now:"Just nu",
+         deficiency_label:"Vad Som Saknas", mockup_label:"En Snabb Förhandstitt",
+         mockup_alt:"Förhandsgranskning av den nya sajten", changes_label:"Vad Som Förändras",
+         changes_includes:"Inkluderar:", range_label:"Finns Också",
+         call_heading:"Ett tryck. Inga formulär.", call_verb:"Ring", lang_more_label:"Fler språk" },
+
+    da:{ hero_kicker:"HURTIGTJEK", gap_label:"Kløften", gap_subhead:"Tre tal. Uden omsvøb.",
+         competition_label:"Konkurrencen", competition_right_now:"Lige nu",
+         deficiency_label:"Hvad Der Mangler", mockup_label:"Et Hurtigt Kig",
+         mockup_alt:"Forhåndsvisning af den nye side", changes_label:"Hvad Der Ændrer Sig",
+         changes_includes:"Inkluderer:", range_label:"Også Tilgængelig",
+         call_heading:"Ét tryk. Ingen formularer.", call_verb:"Ring til", lang_more_label:"Flere sprog" },
+
+    no:{ hero_kicker:"RASK SJEKK", gap_label:"Gapet", gap_subhead:"Tre tall. Uten omveier.",
+         competition_label:"Konkurransen", competition_right_now:"Akkurat nå",
+         deficiency_label:"Hva Som Mangler", mockup_label:"En Rask Titt",
+         mockup_alt:"Forhåndsvisning av den nye siden", changes_label:"Hva Som Endrer Seg",
+         changes_includes:"Inkluderer:", range_label:"Også Tilgjengelig",
+         call_heading:"Ett trykk. Ingen skjemaer.", call_verb:"Ring", lang_more_label:"Flere språk" }
+  };
+
+  // Template token, set at fill-time. Settable externally via
+  // window.ACTIVE_LANGUAGE before this script block runs.
+  window.ACTIVE_LANGUAGE = window.ACTIVE_LANGUAGE || "es";
+
+  function applyLanguage(lang){
+    if(!I18N[lang]) lang = "en";
+    window.ACTIVE_LANGUAGE = lang;
+    document.documentElement.lang = lang;
+
+    var dict = I18N[lang];
+
+    document.querySelectorAll("[data-i18n]").forEach(function(el){
+      var key = el.getAttribute("data-i18n");
+      if(dict[key] !== undefined) el.textContent = dict[key];
+    });
+
+    document.querySelectorAll("[data-i18n-attr]").forEach(function(el){
+      var pair = el.getAttribute("data-i18n-attr").split(":");
+      var attr = pair[0], key = pair[1];
+      if(dict[key] !== undefined) el.setAttribute(attr, dict[key]);
+    });
+
+    document.querySelectorAll(".lang-btn").forEach(function(btn){
+      btn.classList.toggle("is-active", btn.getAttribute("data-lang") === lang);
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", function(){
+    applyLanguage(window.ACTIVE_LANGUAGE);
+
+    document.querySelectorAll(".lang-btn").forEach(function(btn){
+      btn.addEventListener("click", function(){
+        applyLanguage(btn.getAttribute("data-lang"));
+        document.getElementById("langMorePanel").setAttribute("hidden", "");
+        document.getElementById("langMoreBtn").setAttribute("aria-expanded", "false");
+      });
+    });
+
+    var moreBtn = document.getElementById("langMoreBtn");
+    var morePanel = document.getElementById("langMorePanel");
+    moreBtn.addEventListener("click", function(){
+      var isHidden = morePanel.hasAttribute("hidden");
+      if(isHidden){
+        morePanel.removeAttribute("hidden");
+        moreBtn.setAttribute("aria-expanded", "true");
+      }else{
+        morePanel.setAttribute("hidden", "");
+        moreBtn.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    document.addEventListener("click", function(e){
+      if(!document.getElementById("langSwitch").contains(e.target)){
+        morePanel.setAttribute("hidden", "");
+        moreBtn.setAttribute("aria-expanded", "false");
+      }
+    });
+  });
+
+})();
+</script>
+
+</body>
+</html>
